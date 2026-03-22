@@ -1,0 +1,83 @@
+<style>
+/* IZOLOVANÝ DESIGN PRO KONVERZKY - HERO SEKCE */
+.hero-konverzky {
+    background-color: #0a0a0a;
+    font-family: 'Inter', sans-serif;
+    padding: 6rem 1rem 3rem 1rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.hero-konverzky * {
+    box-sizing: border-box;
+}
+.hero-konverzky .hero-bg-glow {
+    position: absolute;
+    top: -10%; left: 50%; transform: translateX(-50%);
+    width: 80vw; height: 80vh;
+    background: radial-gradient(circle, rgba(0, 232, 122, 0.08) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+.hero-konverzky .container {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.hero-konverzky .eyebrow {
+    color: #00E87A;
+    font-weight: 800;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+}
+.hero-konverzky .hero-headline {
+    font-size: clamp(1.8rem, 2.8vw, 2.75rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+.hero-konverzky .text-muted {
+    color: #999999;
+}
+.hero-konverzky .hero-subheadline {
+    font-size: 1.15rem;
+    color: #999999;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+.hero-konverzky .subhead-heavy {
+    color: white;
+    font-weight: 600;
+}
+</style>
+
+<!-- IMPORT FONTU INTER PRO JISTOTU -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+
+<!-- 1. HERO SEKCE (HTML) -->
+<header class="hero-konverzky">
+    <div class="hero-bg-glow"></div>
+    <div class="container">
+        <p class="eyebrow">EMAIL MARKETING</p>
+        
+        <h1 class="hero-headline text-white">
+            Když vám za první měsíc nevyděláme víc,<br>
+            než zaplatíte — druhý máte zdarma
+        </h1>
+        
+        <p class="hero-subheadline">
+            <span class="subhead-heavy">Máte seznam zákazníků, který jen leží a nic nevydělává?</span><br>
+            1 hovor. 15 emailů na míru. Váš seznam konečně vydělává.
+        </p>
+    </div>
+</header>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email #1 — YouTube Mastery</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111111; font-family: 'Poppins', Arial, sans-serif; }
+  .wrapper { max-width: 600px; margin: 0 auto; background: #000000; }
+
+  /* HEADER — marble */
+  .header {
+    background-image: url('https://assets.konverzkyapp.cz/data/projects/65193/minified/cF5yCmsFYUJClCLzmJiODu_rS7xGviONDFVjJPz8ons-1754299425.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 36px 40px 32px;
+    text-align: center;
+    position: relative;
+  }
+  .header-overlay {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.55);
+  }
+  .header-content { position: relative; z-index: 1; }
+  .header-brand {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .header-brand span { color: #faed00; }
+  .header-title {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-top: 8px;
+  }
+  .header-title em { color: #faed00; font-style: normal; }
+
+  /* BODY */
+  .body { padding: 36px 40px; background: #0d0d0d; }
+  .greeting { font-size: 15px; color: #ffffff; font-weight: 600; margin-bottom: 18px; }
+  .body p { font-size: 15px; color: #c8ccd6; line-height: 1.8; margin-bottom: 16px; }
+
+  /* STAT BLOCK — table-based */
+  .stats-table { width: 100%; border-collapse: collapse; margin: 28px 0; }
+  .stat-cell {
+    width: 50%;
+    text-align: center;
+    padding: 20px 12px;
+    background: #111318;
+    border: 1px solid #222530;
+  }
+  .stat-cell:first-child { border-right: none; border-radius: 8px 0 0 8px; }
+  .stat-cell:last-child { border-radius: 0 8px 8px 0; }
+  .stat-label { font-size: 11px; color: #6b7180; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+  .stat-number { font-size: 28px; font-weight: 800; color: #ffffff; line-height: 1; margin-bottom: 6px; }
+  .stat-number.yellow { color: #faed00; }
+  .stat-desc { font-size: 12px; color: #8890a4; line-height: 1.5; }
+
+  /* RPM COMPARISON — table */
+  .rpm-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+  .rpm-row-head td {
+    padding: 10px 14px;
+    background: #1a1d24;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6b7180;
+    border-bottom: 1px solid #222530;
+  }
+  .rpm-row td {
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #c8ccd6;
+    border-bottom: 1px solid #1a1d24;
+  }
+  .rpm-row .niche { color: #ffffff; font-weight: 600; }
+  .rpm-row .rpm-low { color: #ff4444; font-weight: 700; }
+  .rpm-row .rpm-high { color: #faed00; font-weight: 700; }
+  .rpm-row.winner td { background: rgba(250,237,0,0.05); }
+
+  /* HIGHLIGHT BOX */
+  .highlight {
+    background: #111318;
+    border-left: 3px solid #faed00;
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .highlight p { font-size: 15px; color: #d0d4dc; line-height: 1.8; margin: 0; }
+  .highlight strong { color: #faed00; }
+
+  /* CTA */
+  .cta-box {
+    background-image: url('https://assets.konverzkyapp.cz/data/projects/65193/minified/cF5yCmsFYUJClCLzmJiODu_rS7xGviONDFVjJPz8ons-1754299425.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin: 28px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-overlay {
+    background: rgba(0,0,0,0.75);
+    padding: 28px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+  }
+  .cta-box p { color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.65; margin-bottom: 20px; }
+  .cta-btn {
+    display: inline-block;
+    background: #faed00;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 14px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+  }
+
+  /* PS BOX */
+  .ps-box {
+    background: #111318;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-top: 24px;
+    border: 1px solid #1e2030;
+  }
+  .ps-box p { font-size: 13px; color: #7a8094; line-height: 1.65; margin: 0; }
+  .ps-box strong { color: #ffffff; }
+  .ps-box .yellow { color: #faed00; font-weight: 700; }
+
+  /* SIGNATURE */
+  .signature { margin-top: 32px; padding-top: 20px; border-top: 1px solid #1e2030; }
+  .signature p { font-size: 14px; color: #6b7180; line-height: 1.6; margin-bottom: 4px; }
+  .signature .name { font-size: 16px; font-weight: 700; color: #ffffff; }
+  .signature .title { font-size: 12px; color: #faed00; }
+
+  /* FOOTER */
+  .footer { background: #000000; padding: 24px 40px; text-align: center; border-top: 1px solid #1a1a1a; }
+  .footer p { font-size: 11px; color: rgba(255,255,255,0.25); line-height: 1.6; }
+  .footer a { color: rgba(255,255,255,0.25); }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-overlay"></div>
+    <div class="header-content">
+      <div class="header-brand">YOUTUBE <span>MASTERY</span></div>
+      <div class="header-title">Proč video s 1 200 views<br>vydělalo víc než video s <em>milionem</em></div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+    <p class="greeting">Ahoj, 📊</p>
+
+    <p>
+      Existuje jedno číslo, které 99 % lidí na YouTube vůbec nezná. A přitom rozhoduje o tom, kolik vyděláš — nezávisle na počtu zhlédnutí, sledujících ani virálním potenciálu.
+    </p>
+
+    <p>
+      Jmenuje se <strong style="color:#faed00;">RPM</strong> — příjem za každých 1 000 zhlédnutí. A je to přesně ten důvod, proč jedno moje video s 1 200 views vydělalo <strong style="color:#ffffff;">104 dolarů</strong>. Zatímco jiný kanál měl million views a vydělal méně.
+    </p>
+
+    <!-- STATS -->
+    <table class="stats-table" role="presentation">
+      <tr>
+        <td class="stat-cell">
+          <div class="stat-label">Video A</div>
+          <div class="stat-number">1 200</div>
+          <div class="stat-desc">views<br>RPM $20 (business)</div>
+        </td>
+        <td class="stat-cell">
+          <div class="stat-label">Výdělek</div>
+          <div class="stat-number yellow">$104</div>
+          <div class="stat-desc">z jednoho videa<br>náklady: $3</div>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      To je 34násobná návratnost z jediného videa, které nestálo víc než oběd.
+    </p>
+
+    <p>
+      A tady je ještě důležitější číslo — RPM se dramaticky liší podle tématu:
+    </p>
+
+    <!-- RPM TABLE -->
+    <table class="rpm-table" role="presentation">
+      <tr class="rpm-row-head">
+        <td>Téma</td>
+        <td>RPM</td>
+        <td>1 000 views = ?</td>
+      </tr>
+      <tr class="rpm-row">
+        <td class="niche">Gaming / zábava</td>
+        <td class="rpm-low">$0.50</td>
+        <td style="color:#666;">50 centů</td>
+      </tr>
+      <tr class="rpm-row">
+        <td class="niche">Lifestyle</td>
+        <td class="rpm-low">$1–2</td>
+        <td style="color:#666;">pár korun</td>
+      </tr>
+      <tr class="rpm-row">
+        <td class="niche">Tech / software</td>
+        <td style="color:#aaa; font-weight:700;">$5–8</td>
+        <td style="color:#aaa;">obstojné</td>
+      </tr>
+      <tr class="rpm-row winner">
+        <td class="niche">💰 Finance / business</td>
+        <td class="rpm-high">$15–25</td>
+        <td style="color:#faed00; font-weight:700;">jackpot</td>
+      </tr>
+    </table>
+
+    <p>
+      Jinak řečeno — video o "jak investovat" s 10 000 views vydělá víc než gaming video s 500 000 views. Tohle většina lidí nikdy nepochopí. A proto většina lidí na YouTube nevydělá nic.
+    </p>
+
+    <div class="highlight">
+      <p>
+        <strong>Správný model YouTube automatizace</strong> nestojí na náhodě nebo virálech. Stojí na matematice — vybereš téma s vysokým RPM, necháš tým vytvořit videa za $3 kus a škáluješ objem. Výsledky jsou předvídatelné. Spočítatelné. Opakovatelné.
+      </p>
+    </div>
+
+    <p>
+      V dalším emailu ti ukážu přesně, jak tenhle systém funguje krok za krokem — a proč jde spustit i s nulovými zkušenostmi.
+    </p>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <div class="cta-overlay">
+        <p>Chceš vidět konkrétní příklady videí, která vydělávají díky vysokému RPM — bez kamery, bez tváře, bez sledujících?</p>
+        <a class="cta-btn" href="https://ytmastery.cz/ebook/upsell-351925">👉 Zobrazit celý program</a>
+      </div>
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="signature">
+      <p>Měj se skvěle,</p>
+      <p class="name">Roman</p>
+      <p class="title">YouTube Mastery · ytmastery.cz</p>
+    </div>
+
+    <!-- PS -->
+    <div class="ps-box">
+      <p><strong>PS:</strong> V příštím emailu odhalím <span class="yellow">3 typy YouTube automatizace</span> — a který z nich vydělává nejvíc při nejnižších nákladech. Je tam jeden, o kterém skoro nikdo nemluví. <strong>Pošlu to zítra.</strong> 🎯</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>
+      YouTube Mastery · ytmastery.cz<br>
+      Dostáváš tento email, protože sis stáhl náš materiál.<br>
+      <a href="#">Odhlásit odběr</a>
+    </p>
+  </div>
+
+</div>
+</body>
+</html>

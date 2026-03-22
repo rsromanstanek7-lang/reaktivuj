@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-mail 2 — Online Pilates</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f5f0f0; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .wrapper { max-width: 600px; margin: 0 auto; background: #ffffff; }
+  .header { background: linear-gradient(135deg, #5C2D3A, #BB727E); padding: 32px 40px; text-align: center; }
+  .header-name { color: #f5d5db; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+  .body { padding: 40px; }
+  .greeting { font-size: 16px; color: #1a1a2e; font-weight: 600; margin-bottom: 6px; }
+  .body p { font-size: 15px; color: #333; line-height: 1.75; margin-bottom: 16px; }
+  .myth-block { margin: 24px 0; }
+  .myth-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 14px 18px; border-radius: 8px; margin-bottom: 10px;
+  }
+  .myth-item.myth { background: #fff0f0; }
+  .myth-item.reality { background: #f0fdf4; }
+  .myth-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+  .myth-text { font-size: 14px; line-height: 1.6; color: #333; }
+  .myth-text strong { display: block; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .myth-item.myth .myth-text strong { color: #c0392b; }
+  .myth-item.reality .myth-text strong { color: #27ae60; }
+  .cta-box {
+    background: linear-gradient(135deg, #5C2D3A, #BB727E);
+    border-radius: 10px; padding: 24px 28px; margin: 28px 0; text-align: center;
+  }
+  .cta-box p { color: rgba(255,255,255,0.85); font-size: 14px; line-height: 1.65; margin-bottom: 16px; }
+  .cta-box a {
+    display: inline-block; background: #fff; color: #5C2D3A;
+    font-size: 14px; font-weight: 700; padding: 12px 28px; border-radius: 6px;
+    text-decoration: none; letter-spacing: 0.5px;
+  }
+  .ps-box { background: #f9f6f0; border-radius: 8px; padding: 18px 22px; margin-top: 28px; }
+  .ps-box p { font-size: 13px; color: #666; line-height: 1.65; margin: 0; }
+  .ps-box strong { color: #5C2D3A; }
+  .signature { margin-top: 28px; padding-top: 20px; border-top: 1px solid #f0e0e4; }
+  .signature p { font-size: 14px; color: #444; line-height: 1.6; margin-bottom: 4px; }
+  .signature .name { font-size: 16px; font-weight: 700; color: #5C2D3A; }
+  .signature .title { font-size: 12px; color: #BB727E; }
+  .footer { background: #5C2D3A; padding: 24px 40px; text-align: center; }
+  .footer p { font-size: 11px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .footer a { color: rgba(255,255,255,0.5); }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-name">Online Pilates</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+    <p class="greeting">Ahoj, <span style="font-size:18px;">🧘‍♀️</span></p>
+    <p>
+      dovolím si vsadit, že jsi o pilates někdy slyšela tohle:
+    </p>
+    <p>
+      <em>„Pilates je jen pro flexibilní lidi."</em><br>
+      <em>„Na hubnutí to nestačí."</em><br>
+      <em>„Tohle je cvičení pro starší ženy."</em>
+    </p>
+    <p>
+      Rozumím. Sama jsem to jako lékařka i jako žena musela vysvětlovat znovu a znovu. Tak ti to vysvětlím jednou provždy — a věcně. 😊
+    </p>
+
+    <!-- MYTHS vs REALITY -->
+    <div class="myth-block">
+
+      <div class="myth-item myth">
+        <div class="myth-icon">❌</div>
+        <div class="myth-text">
+          <strong>Mýtus</strong>
+          „Pilates je jen pro ty, kdo jsou už flexibilní."
+        </div>
+      </div>
+      <div class="myth-item reality">
+        <div class="myth-icon">✅</div>
+        <div class="myth-text">
+          <strong>Realita</strong>
+          Pilates <em>buduje</em> flexibilitu — nevyžaduje ji. Začínáš přesně tam, kde jsi. Tělo se přizpůsobí tobě, ne naopak.
+        </div>
+      </div>
+
+      <div class="myth-item myth" style="margin-top:16px;">
+        <div class="myth-icon">❌</div>
+        <div class="myth-text">
+          <strong>Mýtus</strong>
+          „Na hubnutí mi pilates nestačí, potřebuju intenzivnější cvičení."
+        </div>
+      </div>
+      <div class="myth-item reality">
+        <div class="myth-icon">✅</div>
+        <div class="myth-text">
+          <strong>Realita</strong>
+          Pilates zapojuje hluboké svaly, které jiné sporty ignorují. Vyšší svalová hmota = vyšší bazální metabolismus = tělo spaluje víc i v klidu. To je věda, ne marketing.
+        </div>
+      </div>
+
+      <div class="myth-item myth" style="margin-top:16px;">
+        <div class="myth-icon">❌</div>
+        <div class="myth-text">
+          <strong>Mýtus</strong>
+          „To je cvičení pro starší nebo po porodu — ne pro mě."
+        </div>
+      </div>
+      <div class="myth-item reality">
+        <div class="myth-icon">✅</div>
+        <div class="myth-text">
+          <strong>Realita</strong>
+          Pilates je pro každou fázi života — od 18 do 80. Právě proto ho doporučuji i svým pacientkám. Tělo vždy ocení pohyb, který respektuje jeho přirozené funkce.
+        </div>
+      </div>
+
+    </div>
+
+    <p>
+      Na blogu jsem o tomhle napsala celý článek — s konkrétními cviky a vysvětlením, proč fungují. Pokud tě to zajímá více do hloubky, mrkni se tam. 👇
+    </p>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <p>Přečti si celý článek na blogu — zjistíš, která cvičení jsou pro tebe ta nejúčinnější právě teď.</p>
+      <a href="https://www.onlinepilates.cz/blog">Číst článek na blogu →</a>
+    </div>
+
+    <p>
+      A jestli máš otázku, na kterou jsi ještě nikde nenašla odpověď — napiš mi. Čtu každou zprávu. 🤍
+    </p>
+
+    <!-- SIGNATURE -->
+    <div class="signature">
+      <p>S přáním pohybu a radosti,</p>
+      <p class="name">Kristýna</p>
+      <p class="title">MDDr. Kristýna Karmazínová · zakladatelka Online Pilates</p>
+    </div>
+
+    <!-- PS BOX -->
+    <div class="ps-box">
+      <p><strong>PS:</strong> V příštím e-mailu ti pošlu něco, co mi opakovaně píší ženy, které se mnou cvičí — <strong>co se stalo s jejich tělem a energií po 30 dnech</strong>. Výsledky mě pokaždé překvapí. 🌟</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>
+      Online Pilates · onlinepilates.cz<br>
+      Dostáváš tento e-mail, protože jsi součástí naší komunity.<br>
+      <a href="#">Odhlásit odběr</a>
+    </p>
+  </div>
+
+</div>
+</body>
+</html>

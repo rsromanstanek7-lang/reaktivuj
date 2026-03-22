@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reaktivuj | Email marketing, který přináší výsledky</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="scroll-progress-bar" id="scroll-progress"></div>
+
+    <nav class="navbar"><div class="container"><a href="#" class="logo">reaktivuj</a></div></nav>
+
+    <header class="section hero" style="padding-bottom: 2rem;">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-content text-center">
+            <p class="eyebrow reveal">Email marketing.</p>
+            <h1 class="hero-headline reveal delay-1 text-white" style="font-size: clamp(1.2rem, 1.8vw, 2.1rem); max-width: 1200px; margin: 0 auto; letter-spacing: -0.01em;">Do 72 hodin přivedeme vaše zákazníky zpět, kteří u vás přestali<br>nakupovat a do 30 dnů zvýšíme obraty. Jinak nic neplatíte.</h1>
+            <div class="hero-bez reveal delay-3 mt-6"><span>Bez reklamy</span><span class="bez-dot">·</span><span>Bez nové databáze</span><span class="bez-dot">·</span><span>Bez vaší práce navíc</span></div>
+        </div>
+    </header>
+
+    <section class="section vsl-section pt-0" style="padding-top: 0; padding-bottom: 4rem;">
+        <div class="container">
+            <div class="vsl-wrapper reveal delay-3 text-center">
+                <div class="vsl-video-placeholder">
+                    <div class="play-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                           <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="hero-cta-wrapper mt-8 mb-4">
+                    <a href="#" class="btn btn-primary cta-btn" onclick="openLeadModal(); return false;">Chci bezplatný hovor &rarr;</a>
+                </div>
+                <div class="hero-trust-signals mt-4">
+                    <span>✓ Emaily na míru, ne šablony</span>
+                    <span>✓ Výsledky nebo neplatíte</span>
+                    <span>✓ Bez dlouhých smluv</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section founder-section pt-0">
+        <div class="container">
+            <div class="founder-grid reveal">
+                <div class="founder-left">
+                    <p class="eyebrow">VÝSLEDKY — NE TEORIE</p>
+                    <h2 class="section-title" style="font-size: clamp(1.5rem, 3vw, 2.2rem); max-width: 100%; letter-spacing: -0.01em;">315 104 Kč za 4 měsíce.<br>Z toho až 47% Open Rate.</h2>
+                    <p class="founder-body">Vytvořil jsem dostupný produkt — jednoduchý vstup za pár stovek. Jeho jediný účel: sbírat emaily lidí, kteří mají zájem. V jednu chvíli přicházelo 40 až 50 nových odběratelů denně.</p>
+                    <p class="founder-body mt-4">Během pěti měsíců jsme napříč projekty nasbírali přes 2 100 aktivních kontaktů. Jeden z těchto projektů vygeneroval 315 104 Kč — z toho přes 40 % čistě z emailů. Bez reklamy. Bez slevy.</p>
+                    <p class="founder-body mt-4">Jen správná zpráva. Správnému člověku. Ve správný čas.</p>
+
+                    <div class="founder-stats mt-8" style="grid-template-columns: 1fr 1fr;">
+                        <div class="founder-stat-item"><div class="founder-stat-num">315 104 Kč</div><div class="founder-stat-label">obrat jednoho projektu za 4 měsíce</div></div>
+                        <div class="founder-stat-item"><div class="founder-stat-num">2 100+</div><div class="founder-stat-label">aktivních kontaktů napříč projekty za 5 měsíců</div></div>
+                        <div class="founder-stat-item"><div class="founder-stat-num">40–50</div><div class="founder-stat-label">nových odběratelů denně na vrcholu</div></div>
+                        <div class="founder-stat-item"><div class="founder-stat-num">33-47%</div><div class="founder-stat-label">Open rate emailů</div></div>
+                    </div>
+
+                    <p class="founder-body mt-8" style="font-weight:600; color:var(--text-white);">Přesně to samé teď stavíme pro naše klienty. Aktivujeme váš stávající seznam — nebo vám pomůžeme vytvořit offer, která zákazníky sama sbírá. A email je pak mění v pravidelný příjem.</p>
+                    <div class="mt-8 text-center">
+                        <a href="#" class="btn btn-primary cta-btn" onclick="openLeadModal(); return false;">Chci bezplatný hovor</a>
+                    </div>
+                </div>
+                <div class="founder-right" style="display:flex; flex-direction:column; gap:1.5rem;">
+                    <div class="stripe-proof-card" style="padding:1rem;">
+                        <div class="stripe-badge" style="margin-bottom:0.5rem; color:#00e87a;">✓ Ověřeno — Stripe Dashboard</div>
+                        <img src="assets/stripe.png" alt="Stripe Screenshot" class="proof-img" onclick="openLightbox(this.src)" style="width:100%; border-radius:8px; border:1px solid #333;">
+                    </div>
+                    <div class="stripe-proof-card" style="padding:1rem;">
+                        <div class="stripe-badge" style="margin-bottom:0.5rem; color:#f5c518;">✓ Ověřeno — MailerLite Stats</div>
+                        <img src="assets/mailerlite.png" alt="MailerLite Screenshot" class="proof-img" onclick="openLightbox(this.src)" style="width:100%; border-radius:8px; border:1px solid #333;">
+                    </div>
+                    <div class="stripe-proof-card" style="padding:1rem;">
+                        <div class="stripe-badge" style="margin-bottom:0.5rem; color:#4dabf7;">✓ Ověřeno — Open Rate</div>
+                        <img src="assets/open_rate.png" alt="Open Rate Screenshot" class="proof-img" onclick="openLightbox(this.src)" style="width:100%; border-radius:8px; border:1px solid #333;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section pain-points-section">
+        <div class="container">
+            <div class="text-center reveal">
+                <p class="eyebrow">PROBLÉM</p>
+                <h2 class="section-title">Většina podnikatelů dělá jednu z těchto chyb. Nebo všechny najednou.</h2>
+            </div>
+            <div class="grid-3 mt-12 pain-grid">
+                <div class="card pain-card reveal delay-1"><div class="card-icon">🎭</div><h3 class="card-title">Nevíte, kdo jsou vaši zákazníci</h3><p class="card-body">Bez přesného avatara posíláte zprávu do prázdna. Email, který neodpovídá na reálnou potřebu, se nečte — bez ohledu na to, jak je hezky napsaný.</p></div>
+                <div class="card pain-card reveal delay-2"><div class="card-icon">🤖</div><h3 class="card-title">Emaily znějí genericky</h3><p class="card-body">Šablony z internetu, AI bez kontextu, copy-paste od konkurence. Zákazníci to poznají okamžitě. A okamžitě přestanou číst.</p></div>
+                <div class="card pain-card reveal delay-3"><div class="card-icon">👥</div><h3 class="card-title">Všichni dostávají to samé</h3><p class="card-body">Nový zákazník dostane stejný email jako ten, kdo u vás nakupuje pět let. Výsledek? Oba odejdou s pocitem, že jim nerozumíte.</p></div>
+                <div class="card pain-card reveal delay-1"><div class="card-icon">👻</div><h3 class="card-title">Zákazník nakoupí jednou a zmizí</h3><p class="card-body">72 % prvních kupujících se nikdy nevrátí — pokud s nimi nepracujete dál. Email je jediný kanál, který ho udrží bez dalších nákladů na reklamu.</p></div>
+                <div class="card pain-card reveal delay-2"><div class="card-icon">📉</div><h3 class="card-title">Prodáváte, ale nevytváříte vztah</h3><p class="card-body">Každý email je nabídka. Zákazník cítí, že mu chcete jen prodat — ne pomoci. Bez vztahu není loajalita. Bez loajality není opakovaný nákup.</p></div>
+                <div class="card pain-card reveal delay-3"><div class="card-icon">💸</div><h3 class="card-title">Platíte za reklamu místo retence</h3><p class="card-body">Každý den utrácíte za nové zákazníky — přestože staří by znovu koupili za zlomek ceny, kdyby dostali správný email ve správný čas.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section py-8">
+        <div class="container">
+            <div class="stat-bar reveal">
+                <div class="stat-grid">
+                    <div class="stat-item"><div class="stat-number"><span class="count-up" data-target="43">0</span> %</div><div class="stat-label">českých e-shopů nekomunikuje se svým seznamem vůbec</div></div>
+                    <div class="stat-item"><div class="stat-number"><span class="count-up" data-target="16">0</span>&times;</div><div class="stat-label">více vydělá automatický email než manuálně rozeslaný newsletter</div></div>
+                    <div class="stat-item"><div class="stat-number"><span class="count-up" data-target="42">0</span>&times;</div><div class="stat-label">vyšší ROI má email marketing oproti jakémukoliv jinému kanálu</div></div>
+                </div>
+                <p class="stat-source text-center mt-4">Zdroj: Sherpas TECH ČR 2025 &middot; Litmus ROI Report 2025 &middot; Omnisend 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section money-section">
+        <div class="container">
+            <div class="text-center reveal">
+                <p class="eyebrow">REALITA</p>
+                <h2 class="section-title">Kolik peněz leží ve vašem seznamu?</h2>
+                <p class="section-subtitle">Většina podnikatelů tohle číslo nezná. A právě proto ho nechávají ležet ladem.</p>
+            </div>
+
+            <div class="reveal mt-12 flex-center" style="display:flex; justify-content:center;">
+                <div style="background:#111; border:1px solid #222; border-radius:16px; padding:3rem; width:100%; max-width:900px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                    <h3 style="font-size:1.4rem; font-weight:700; margin-bottom:2rem; text-align:center;">Smutná realita e-shopů a podnikatelů v ČR</h3>
+                    
+                    <div style="display:flex; height:36px; border-radius:100px; overflow:hidden; margin-bottom:2rem;">
+                        <div style="width:43%; background:#ff4a4a; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:0.9rem; color:#000;">43 %</div>
+                        <div style="width:45%; background:#f5c518; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:0.9rem; color:#000;">45 %</div>
+                        <div style="width:12%; background:var(--accent-color); display:flex; align-items:center; justify-content:center; font-weight:900; font-size:0.9rem; color:#000;">12 %</div>
+                    </div>
+                    
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1.5rem; text-align:left;">
+                        <div style="display:flex; align-items:flex-start; gap:1rem;">
+                            <div style="width:16px; height:16px; border-radius:50%; background:#ff4a4a; flex-shrink:0; margin-top:4px;"></div>
+                            <div>
+                                <strong style="color:#fff; font-size:1rem; display:block; margin-bottom:4px;">Zahazují 100 % peněz</strong>
+                                <span style="color:#888; font-size:0.85rem; line-height:1.4;">Vůbec neposílají emaily. Přicházejí s každým novým měsícem o desítky tisíc zdarma.</span>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:flex-start; gap:1rem;">
+                            <div style="width:16px; height:16px; border-radius:50%; background:#f5c518; flex-shrink:0; margin-top:4px;"></div>
+                            <div>
+                                <strong style="color:#fff; font-size:1rem; display:block; margin-bottom:4px;">Pálí si databázi</strong>
+                                <span style="color:#888; font-size:0.85rem; line-height:1.4;">Posílají jen slevové akce. Zákazníci je ignorují, padají do spamu, nevytváří si vztah.</span>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:flex-start; gap:1rem;">
+                            <div style="width:16px; height:16px; border-radius:50%; background:var(--accent-color); flex-shrink:0; margin-top:4px;"></div>
+                            <div>
+                                <strong style="color:#fff; font-size:1rem; display:block; margin-bottom:4px;">Dělají to správně</strong>
+                                <span style="color:#888; font-size:0.85rem; line-height:1.4;">Zlomek firem s Open Rate nad 40 %, pro které email funguje jako penězovod z autopilotu.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="money-grid mt-12">
+                <div class="money-widget reveal delay-1">
+                    <div class="widget-header"><span class="widget-title">Potenciál vašeho seznamu / měsíc</span></div>
+                    <div class="widget-body">
+                        <div class="calc-row"><span class="calc-label">500 kontaktů</span><span class="calc-value">= <strong>10 000 Kč/měs</strong></span></div>
+                        <div class="calc-row"><span class="calc-label">2 000 kontaktů</span><span class="calc-value">= <strong>40 000 Kč/měs</strong></span></div>
+                        <div class="calc-row"><span class="calc-label">5 000 kontaktů</span><span class="calc-value">= <strong>100 000 Kč/měs</strong></span></div>
+                        <div class="calc-row highlight"><span class="calc-label">10 000 kontaktů</span><span class="calc-value">= <strong>200 000 Kč/měs</strong></span></div>
+                        <p class="calc-note">Každý email v databázi = min. 20 Kč/měsíc při správné práci se seznamem</p>
+                    </div>
+                </div>
+                <div class="money-widget reveal delay-2">
+                    <div class="widget-header"><span class="widget-title">Open Rate srovnání</span></div>
+                    <div class="widget-body">
+                        <div class="bar-row"><span class="bar-label">Generický newsletter</span><div class="bar-track"><div class="bar-fill bad" style="width:18%"></div></div></div>
+                        <div class="bar-row"><span class="bar-label">Průměrná agentura</span><div class="bar-track"><div class="bar-fill mid" style="width:26%"></div></div></div>
+                        <div class="bar-row"><span class="bar-label">reaktivuj — personalizace</span><div class="bar-track"><div class="bar-fill good" style="width:47%"></div></div></div>
+                        <p class="calc-note">Rozdíl dělá avatar a personalizace — ne design nebo frekvence</p>
+                    </div>
+                </div>
+                <div class="money-widget reveal delay-3">
+                    <div class="widget-header"><span class="widget-title">ROI srovnání</span></div>
+                    <div class="widget-body">
+                        <div class="roi-row"><span class="roi-channel">Facebook Ads</span><div class="roi-bar-wrap"><div class="roi-bar" style="width:14%">2×</div></div></div>
+                        <div class="roi-row"><span class="roi-channel">Google Ads</span><div class="roi-bar-wrap"><div class="roi-bar" style="width:20%">4×</div></div></div>
+                        <div class="roi-row"><span class="roi-channel">SEO / obsah</span><div class="roi-bar-wrap"><div class="roi-bar" style="width:30%">6×</div></div></div>
+                        <div class="roi-row"><span class="roi-channel">Email marketing</span><div class="roi-bar-wrap"><div class="roi-bar accent" style="width:100%">42×</div></div></div>
+                        <p class="calc-note">Zdroj: Litmus Email Marketing ROI Report 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section how-it-works-section">
+        <div class="container">
+            <div class="text-center reveal">
+                <p class="eyebrow">JAK PRACUJEME</p>
+                <h2 class="section-title">Tři kroky, které mění seznam kontaktů<br>na zdroj pravidelného obratu.</h2>
+                <p class="section-subtitle">Žádné generické šablony. Žádné AI copy-paste. Jen hluboká znalost vašich zákazníků a e-maily, které budují důvěru.</p>
+            </div>
+            <div class="grid-3 mt-12">
+                <div class="how-card card reveal"><div class="how-number">01</div><h3 class="card-title">1 hodina — víme o zákaznících víc než konkurence</h3><p class="card-body">Konzultace, kde společně postavíme přesný avatar. Zjistíme potřeby a porozumíme vašim zákazníkům. Zanalyzujeme jak mluví, co je trápí, proč u vás nakoupili a proč se možná přestali vracet.</p></div>
+                <div class="how-card card reveal"><div class="how-number">02</div><h3 class="card-title">Emaily v jejich jazyce, vaším hlasem</h3><p class="card-body">Napíšeme sekvenci, která zní přesně jako vy — váš styl, vaše barvy, vaše logo. Zákazníci nepoznají, že to nepíšete sami. A právě proto čtou, reagují a nakupují.</p></div>
+                <div class="how-card card reveal"><div class="how-number">03</div><h3 class="card-title">Vztah, který zvyšuje obrat každý měsíc</h3><p class="card-body">Emaily nejen prodávají — budují důvěru. Nový zákazník se vrátí. Starý zákazník nakoupí znovu. Sledujeme výsledky a každý měsíc optimalizujeme co funguje.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section offer-section">
+        <div class="container">
+            <div class="text-center reveal">
+                <p class="eyebrow">CO DOSTANETE</p>
+                <h2 class="section-title">Emaily, které zní jako vy.<br>Zákazníci, kteří se vrací.</h2>
+                <p class="section-subtitle">Nejde nám jen o to napsat emaily. Jde nám o to porozumět vašim zákazníkům tak dobře, aby každý email budoval vztah — a vztah budoval obrat. Měsíc po měsíci.</p>
+            </div>
+            
+            <div class="grid-3 mt-12 reveal">
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3 class="feature-title">Hluboká analýza avatara zákazníka</h3>
+                    <p class="feature-text">Konzultace, kde zjistíme, kdo jsou vaši zákazníci, jak mluví a co potřebují...</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3 class="feature-title">Emaily psané jejich jazykem, vaším hlasem</h3>
+                    <p class="feature-text">Váš styl, barvy, logo. Zákazníci nepoznají, že to nepíšete sami.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3 class="feature-title">Obsah, který buduje vztah i prodává</h3>
+                    <p class="feature-text">Každý email má dvojí úkol: prohloubit důvěru a přivést tržby.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3 class="feature-title">Automatizace pro nové i spící zákazníky</h3>
+                    <p class="feature-text">Nový zákazník dostane uvítací sekvenci. Spící dostane reaktivaci.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3 class="feature-title">Měsíční report a průběžná optimalizace</h3>
+                    <p class="feature-text">Open rate, kliky, tržby z emailu. Každý měsíc víte co funguje.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3 class="feature-title">Záruka výsledků na první měsíc</h3>
+                    <p class="feature-text">Nepřivedeme za první měsíc zpět zákazníky a nezvýšíme obrat? Další měsíc máte zdarma. Bez podmínek.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section email-previews-section">
+        <div class="container">
+            <div class="text-center reveal">
+                <p class="eyebrow">UKÁZKY PRÁCE</p><h2 class="section-title">Jak vypadají naše emaily</h2><p class="section-subtitle">Každý email je jiný — protože každý zákazník je jiný. Tady jsou tři příklady z reálných klientů.</p>
+            </div>
+            <div class="grid-3 mt-12 gap-10">
+                <div class="portfolio-card reveal delay-1"><a href="ukazky/email_seq1_v3.html" target="_blank" class="card-link-overlay"></a><div class="portfolio-badge badge-green">YouTube Business</div><div class="iframe-container"><iframe src="ukazky/email_seq1_v3.html" tabindex="-1"></iframe></div><div class="portfolio-caption">Datová sekvence — statistiky, RPM tabulky, osobní hlas autora</div></div>
+                <div class="portfolio-card reveal delay-2"><a href="ukazky/email_2_kopriva.html" target="_blank" class="card-link-overlay"></a><div class="portfolio-badge badge-red" style="background: rgba(255,165,0,0.15); color: orange;">Personalizovaná šablona</div><div class="iframe-container"><iframe src="ukazky/email_2_kopriva.html" tabindex="-1"></iframe></div><div class="portfolio-caption">Kompletní ukázka personalizované šablony — hlas, barvy a logo klienta</div></div>
+                <div class="portfolio-card reveal delay-3"><a href="ukazky/onlinepilates_email_seq2.html" target="_blank" class="card-link-overlay"></a><div class="portfolio-badge badge-red">Online Pilates</div><div class="iframe-container"><iframe src="ukazky/onlinepilates_email_seq2.html" tabindex="-1"></iframe></div><div class="portfolio-caption">Vztahová sekvence — hlas lékařky, osobní příběh, mýty vs. realita</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section for-whom-section">
+        <div class="container">
+            <div class="text-center reveal"><p class="eyebrow">PRO KOHO</p><h2 class="section-title">Hodí se to pro vás?</h2><p class="section-subtitle">Pracujeme s podnikateli, kteří mají zákazníky — a chtějí, aby se vraceli.</p></div>
+            <div class="for-whom-grid mt-12">
+                <div class="for-whom-col reveal">
+                    <h3 class="for-whom-title for-whom-yes">✓ Ano, hodí — pokud:</h3>
+                    <ul class="for-whom-list">
+                        <li>Máte seznam alespoň 300 kontaktů — zákazníků, odběratelů nebo leadů</li>
+                        <li>Provozujete e-shop, online kurz, studio, koučink nebo jinou službu</li>
+                        <li>Neposíláte emaily vůbec — nebo posíláte, ale bez strategie a výsledků</li>
+                        <li>Chcete, aby vaši zákazníci nakupovali znovu — bez dalších výdajů za reklamu</li>
+                        <li>Záleží vám na tom, jak vás zákazníci vnímají — chcete budovat značku, ne jen prodávat</li>
+                    </ul>
+                </div>
+                <div class="for-whom-col reveal">
+                    <h3 class="for-whom-title for-whom-no">✗ Nehodí se — pokud:</h3>
+                    <ul class="for-whom-list">
+                        <li>Nemáte žádný seznam kontaktů nebo zákazníků</li>
+                        <li>Hledáte nejlevnější variantu — ne nejlepší výsledky</li>
+                        <li>Nechcete sdílet informace o svém byznysu a zákaznících</li>
+                        <li>Očekáváte výsledky přes noc bez jakékoliv spolupráce</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section faq-section">
+        <div class="container">
+            <div class="text-center reveal"><p class="eyebrow">ČASTÉ OTÁZKY</p><h2 class="section-title">Máte otázky? Máme odpovědi.</h2></div>
+            <div class="faq-list mt-12">
+                <div class="faq-item reveal"><div class="faq-question">Q1: Co se stane na té první hodině?</div><div class="faq-answer">Je to konzultace, kde společně postavíme přesný avatar vašeho zákazníka. Zjistíme, jak mluví, co ho trápí, proč nakoupil — a proč se možná přestal vracet. Čím více víme, tím přesnější a účinnější bude každý email. Bez tohoto základu jsou emaily jen hádání.</div></div>
+                <div class="faq-item reveal"><div class="faq-question">Q2: Budou emaily znít jako já — nebo jako robot?</div><div class="faq-answer">Přesně jako vy. Váš styl, vaše barvy, vaše logo, váš způsob komunikace. Zákazníci nepoznají, že to nepíšete sami — a právě proto jim věří a reagují. Dostáváme zpětnou vazbu od zákazníků klientů: "To jste psali sami?" — ne, ale zní to tak.</div></div>
+                <div class="faq-item reveal"><div class="faq-question">Q3: Jak rychle uvidím výsledky?</div><div class="faq-answer">Závisí na velikosti vašeho seznamu. Spící seznam 500 lidí, kteří vás znají, vydělá víc než databáze 50 000 cizích. První reakce zákazníků přijdou během prvních 72 hodin od odeslání. Větší tržební efekt se buduje s každým dalším emailem. Garantujeme výsledky za první měsíc spolupráce.</div></div>
+                <div class="faq-item reveal"><div class="faq-question">Q4: Musím mít velký seznam? Mám jen pár stovek kontaktů.</div><div class="faq-answer">300 kontaktů stačí — pokud jsou to vaši zákazníci nebo lidé, kteří vás znají. Seznam 500 lidí vydělá víc než databáze 50 000 cizích. Kvalita vztahu rozhoduje, ne číslo v tabulce.</div></div>
+                <div class="faq-item reveal"><div class="faq-question">Q5: Musím se sám starat o techniku a nastavení?</div><div class="faq-answer">Vůbec ne. Texty, design, automatizace, nastavení — vše řešíme za vás. Potřebujeme přístup do vaší emailové platformy (MailerLite, Klaviyo, Mailchimp…) a tu jednu hodinu na avatar session. Zbytek je na nás.</div></div>
+                <div class="faq-item reveal"><div class="faq-question">Q6: Kolik to stojí?</div><div class="faq-answer">Cenu sdělíme až po úvodním hovoru — závisí na velikosti seznamu, rozsahu sekvence a vašich cílech. Úvodní hovor je zdarma a nezávazný. Cena vždy odpovídá potenciálu, který ve vašem seznamu vidíme.</div></div>
+                <div class="faq-item reveal"><div class="faq-question">Q7: Jak funguje záruka?</div><div class="faq-answer">Pokud za první měsíc spolupráce nepřivedeme zpět zákazníky a nezvýšíme váš obrat — další měsíc máte zdarma. Bez papírování, bez podmínek. Buď to funguje, nebo neplatíte.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section final-cta-section text-center">
+        <div class="container reveal">
+            <h2 class="final-cta-headline mb-8">Připraveni zjistit, kolik vydělají vaši zákazníci — když jim dáte správný email?</h2>
+            <a href="#" class="btn btn-primary cta-btn" onclick="openLeadModal(); return false;">Chci bezplatný hovor &rarr;</a>
+            <p class="cta-subtext mt-4">Nezávazný hovor &middot; 30 minut &middot; Zdarma</p>
+            <div class="guarantee-badge mt-12 text-center"><span class="shield">🛡</span> Za první měsíc nepřivedeme zákazníky zpět a nezvýšíme obrat? Další měsíc máte zdarma.</div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container text-center"><div class="footer-logo">reaktivuj</div><p class="footer-tagline">Přivedeme nové zákazníky. Reaktivujeme ty staré.</p><p class="footer-email">info@reaktivuj.cz</p><p class="footer-copy">&copy; 2025 reaktivuj.cz &middot; Všechna práva vyhrazena.</p></div>
+    </footer>
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Custom 2-Step Lead Modal -->
+    <div id="leadModal" class="lead-modal-overlay" onclick="closeLeadModal()">
+        <div class="lead-modal-content" onclick="event.stopPropagation()">
+            <div class="lead-modal-header">
+                <h3 id="lead-modal-title">Rezervace hovoru (krok 1 z 2)</h3>
+                <button class="lead-modal-close" onclick="closeLeadModal()">&times;</button>
+            </div>
+            <div class="lead-modal-body">
+                
+                <!-- STEP 1 -->
+                <div id="lead-step1">
+                    <p style="color:#888; font-size:0.95rem; margin-bottom:1.5rem;">Začneme vaším kontaktem, na který potvrdíme domluvený termín.</p>
+                    <form id="form-step1" onsubmit="goToStep2(event)">
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="l_name">Jméno a příjmení</label>
+                            <input type="text" id="l_name" class="form-input" required placeholder="Jan Novák">
+                        </div>
+                        <div class="form-group mb-6">
+                            <label class="form-label" for="l_email">E-mail</label>
+                            <input type="email" id="l_email" class="form-input" required placeholder="jan@vas-eshop.cz">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%">Pokračovat k otázkám &rarr;</button>
+                    </form>
+                </div>
+
+                                <!-- STEP 2 -->
+                <div id="lead-step2" style="display:none;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                        <span id="quiz-progress-text" style="color:#00e87a; font-weight:700; font-size:0.95rem; text-transform:uppercase; letter-spacing:0.05em;">Otázka 1 z 5</span>
+                    </div>
+                    
+                    <p style="color:#888; font-size:0.85rem; margin-bottom:2rem; line-height:1.4;">Jen pár rychlých otázek, abychom se na hovor mohli perfektně připravit.</p>
+                    
+                    <form id="form-step2" onsubmit="submitLeadForm(event)">
+                        
+                        <!-- Q1 -->
+                        <div class="quiz-step" id="qstep-1">
+                            <label class="form-label" style="color:#fff; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Čemu se věnujete?</label>
+                            <div class="radio-group" style="display:flex; flex-direction:column; gap:0.5rem;">
+                                <label class="radio-label"><input type="radio" name="q_niche" value="E-shop / produkt" onclick="nextQuizStep()" required> 🛒 E-shop / produkt</label>
+                                <label class="radio-label"><input type="radio" name="q_niche" value="Online kurzy nebo koučink" onclick="nextQuizStep()"> 🧠 Online kurzy nebo koučink</label>
+                                <label class="radio-label"><input type="radio" name="q_niche" value="Studio / fyzická provozovna" onclick="nextQuizStep()"> 💆 Studio / fyzická provozovna</label>
+                                <label class="radio-label"><input type="radio" name="q_niche" value="Freelancer / služby" onclick="nextQuizStep()"> 🧑‍💼 Freelancer / konzultant / služby</label>
+                                <label class="radio-label"><input type="radio" name="q_niche" value="B2B / SaaS" onclick="nextQuizStep()"> 🏢 B2B / software / SaaS</label>
+                                <label class="radio-label"><input type="radio" name="q_niche" value="Jiné" onclick="nextQuizStep()"> Jiné</label>
+                            </div>
+                            <button type="button" class="btn btn-outline mt-6" style="padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#333; color:#aaa;" onclick="goBackToStep1()">← Zpět na kontakty</button>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="quiz-step" id="qstep-2" style="display:none;">
+                            <label class="form-label" style="color:#fff; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Kolik kontaktů máte přibližně v databázi?</label>
+                            <div class="radio-group" style="display:flex; flex-direction:column; gap:0.5rem;">
+                                <label class="radio-label"><input type="radio" name="q_contacts" value="Zatím žádný nebo pod 100" onclick="nextQuizStep()" required> Zatím žádný nebo pod 100</label>
+                                <label class="radio-label"><input type="radio" name="q_contacts" value="100 – 500" onclick="nextQuizStep()"> 100 – 500</label>
+                                <label class="radio-label"><input type="radio" name="q_contacts" value="500 – 2 000" onclick="nextQuizStep()"> 500 – 2 000</label>
+                                <label class="radio-label"><input type="radio" name="q_contacts" value="2 000 – 10 000" onclick="nextQuizStep()"> 2 000 – 10 000</label>
+                                <label class="radio-label"><input type="radio" name="q_contacts" value="Víc než 10 000" onclick="nextQuizStep()"> Víc než 10 000</label>
+                            </div>
+                            <button type="button" class="btn btn-outline mt-6" style="padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#333; color:#aaa;" onclick="prevQuizStep()">← Zpět</button>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="quiz-step" id="qstep-3" style="display:none;">
+                            <label class="form-label" style="color:#fff; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Posíláte teď zákazníkům emaily?</label>
+                            <div class="radio-group" style="display:flex; flex-direction:column; gap:0.5rem;">
+                                <label class="radio-label"><input type="radio" name="q_sending" value="Ne, vůbec neposíláme" onclick="nextQuizStep()" required> Ne, vůbec neposíláme</label>
+                                <label class="radio-label"><input type="radio" name="q_sending" value="Občas — bez strategie" onclick="nextQuizStep()"> Občas — ale bez strategie nebo nepravidelně</label>
+                                <label class="radio-label"><input type="radio" name="q_sending" value="Ano, sekvenci" onclick="nextQuizStep()"> Ano, posíláme newsletter nebo sekvenci</label>
+                                <label class="radio-label"><input type="radio" name="q_sending" value="Posíláme, slabé výsledky" onclick="nextQuizStep()"> Posíláme, ale výsledky jsou slabé</label>
+                            </div>
+                            <button type="button" class="btn btn-outline mt-6" style="padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#333; color:#aaa;" onclick="prevQuizStep()">← Zpět</button>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="quiz-step" id="qstep-4" style="display:none;">
+                            <label class="form-label" style="color:#fff; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Co chcete emailem hlavně řešit?</label>
+                            <div class="radio-group" style="display:flex; flex-direction:column; gap:0.5rem;">
+                                <label class="radio-label"><input type="radio" name="q_goal" value="Vrátit zákazníky" onclick="nextQuizStep()" required> Vrátit zákazníky, kteří přestali nakupovat</label>
+                                <label class="radio-label"><input type="radio" name="q_goal" value="Zvýšit nákupy stávajících" onclick="nextQuizStep()"> Zvýšit opakované nákupy stávajících zákazníků</label>
+                                <label class="radio-label"><input type="radio" name="q_goal" value="Od nuly" onclick="nextQuizStep()"> Vybudovat email marketing od nuly</label>
+                                <label class="radio-label"><input type="radio" name="q_goal" value="Zlepšit stávající" onclick="nextQuizStep()"> Zlepšit výsledky toho, co už posíláme</label>
+                                <label class="radio-label"><input type="radio" name="q_goal" value="Nevim" onclick="nextQuizStep()"> Nevím přesně — chci se poradit</label>
+                            </div>
+                            <button type="button" class="btn btn-outline mt-6" style="padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#333; color:#aaa;" onclick="prevQuizStep()">← Zpět</button>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="quiz-step" id="qstep-5" style="display:none;">
+                            <label class="form-label" style="color:#fff; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Jaký je přibližný měsíční obrat vašeho podnikání?</label>
+                            <div class="radio-group" style="display:flex; flex-direction:column; gap:0.5rem; margin-bottom:2rem;">
+                                <label class="radio-label"><input type="radio" name="q_revenue" value="Pod 50 000 Kč" required> Pod 50 000 Kč</label>
+                                <label class="radio-label"><input type="radio" name="q_revenue" value="50 000 – 150 000 Kč"> 50 000 – 150 000 Kč</label>
+                                <label class="radio-label"><input type="radio" name="q_revenue" value="150 000 – 500 000 Kč"> 150 000 – 500 000 Kč</label>
+                                <label class="radio-label"><input type="radio" name="q_revenue" value="Nad 500 000 Kč"> Nad 500 000 Kč</label>
+                                <label class="radio-label"><input type="radio" name="q_revenue" value="Nechci uvádět"> Nechci uvádět</label>
+                            </div>
+                            
+                            <div style="display:flex; gap:1rem;">
+                                <button type="button" class="btn btn-outline" style="flex:1; padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#333; color:#aaa;" onclick="prevQuizStep()">← Zpět</button>
+                                <button type="submit" class="btn btn-primary" style="flex:2">Vybrat termín &rarr;</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div></div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox').style.display = 'flex';
+            document.getElementById('lightbox-img').src = src;
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+                // --- Lead Modal Logic ---
+        let leadData = {};
+        let currentQuizStep = 1;
+        const totalQuizSteps = 5;
+
+        function openLeadModal() {
+            document.getElementById('leadModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            document.getElementById('lead-step1').style.display = 'block';
+            document.getElementById('lead-step2').style.display = 'none';
+            document.getElementById('lead-modal-title').innerText = 'Rezervace hovoru (krok 1 z 2)';
+            
+            // Reset wizard
+            currentQuizStep = 1;
+            for(let i=1; i<=totalQuizSteps; i++) {
+                let el = document.getElementById('qstep-'+i);
+                if(el) el.style.display = (i===1) ? 'block' : 'none';
+            }
+            let info = document.getElementById('quiz-progress-text');
+            if(info) info.innerText = 'Otázka 1 z 5';
+        }
+
+        function closeLeadModal() {
+            document.getElementById('leadModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function nextQuizStep() {
+            if (currentQuizStep >= totalQuizSteps) return;
+            
+            // Add a small delay for visual feedback of the radio click
+            setTimeout(() => {
+                document.getElementById('qstep-'+currentQuizStep).style.display = 'none';
+                currentQuizStep++;
+                document.getElementById('qstep-'+currentQuizStep).style.display = 'block';
+                document.getElementById('quiz-progress-text').innerText = `Otázka ${currentQuizStep} z ${totalQuizSteps}`;
+            }, 300);
+        }
+
+        function prevQuizStep() {
+            if (currentQuizStep <= 1) return;
+            document.getElementById('qstep-'+currentQuizStep).style.display = 'none';
+            currentQuizStep--;
+            document.getElementById('qstep-'+currentQuizStep).style.display = 'block';
+            document.getElementById('quiz-progress-text').innerText = `Otázka ${currentQuizStep} z ${totalQuizSteps}`;
+        }
+
+        function goToStep2(e) {
+            e.preventDefault();
+            leadData.name = document.getElementById('l_name').value;
+            leadData.email = document.getElementById('l_email').value;
+
+            // Odeslání do MailerLite na pozadí
+            const mlData = new URLSearchParams();
+            mlData.append('fields[name]', leadData.name);
+            mlData.append('fields[email]', leadData.email);
+            mlData.append('ml-submit', '1');
+            mlData.append('anticsrf', 'true');
+
+            fetch('https://assets.mailerlite.com/jsonp/2209594/forms/182614663782991427/subscribe', {
+                method: 'POST',
+                body: mlData,
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            }).catch(err => console.log('ML odesílání: ', err));
+            
+            document.getElementById('lead-step1').style.display = 'none';
+            document.getElementById('lead-step2').style.display = 'block';
+            document.getElementById('lead-modal-title').innerText = 'Kvalifikace (krok 2 z 2)';
+            document.querySelector('.lead-modal-body').scrollTo(0,0);
+        }
+
+        function goBackToStep1() {
+            document.getElementById('lead-step1').style.display = 'block';
+            document.getElementById('lead-step2').style.display = 'none';
+            document.getElementById('lead-modal-title').innerText = 'Rezervace hovoru (krok 1 z 2)';
+        }
+
+        function submitLeadForm(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            for (let pair of formData.entries()) {
+                leadData[pair[0]] = pair[1];
+            }
+            
+            console.log("Final lead payload ready for DB/Webhook:", leadData);
+            
+            closeLeadModal();
+
+            if(window.Calendly) {
+                Calendly.initPopupWidget({
+                    url: 'https://calendly.com/reaktivuj/45min', 
+                    prefill: {
+                        name: leadData.name,
+                        email: leadData.email
+                    }
+                });
+            } else {
+                alert("Vyplněno! (Záložní akce pro Calendly)");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,858 @@
+═══════════════════════════════════════════════════════════════════
+ 1. KROK: TENTO KÓD VLOŽTE DO STRÁNKY DO BLOKU "VLASTNÍ HTML"
+═══════════════════════════════════════════════════════════════════
+
+<!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scroll-progress"></div>
+
+    <!-- 1. NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">reaktivuj</a>
+        </div>
+    </nav>
+    
+    <!-- 2. HERO -->
+    <header class="section hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-content text-center">
+            
+            <p class="eyebrow reveal">EMAIL MARKETING</p>
+            
+            <h1 class="hero-headline reveal delay-1 text-white">
+                Když vám za první měsíc nevyděláme víc,<br>
+                než zaplatíte — druhý máte zdarma
+            </h1>
+            
+            <p class="hero-subheadline reveal delay-2">
+                <span class="text-white subhead-heavy">Máte seznam zákazníků, který jen leží a nic nevydělává?</span><br>
+                1 hovor. 15 emailů na míru. Váš seznam konečně vydělává.
+            </p>
+        </div>
+    </header>
+
+    <!-- 3. VSL VIDEO -->
+    <section class="section vsl-section">
+        <div class="container">
+            <div class="vsl-wrapper reveal">
+                <div class="vsl-video-placeholder">
+                    <div class="play-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                           <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="vsl-cta-wrapper mt-8 mb-4">
+                    <a href="" class="btn btn-primary cta-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/VASE_URL_ZDE'});return false;">Rezervovat hovor <span class="arrow">&rarr;</span></a>
+                </div>
+                
+                <div class="vsl-trust-signals mt-4">
+                    <span><svg class="check-icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Žádné dlouhé smlouvy</span>
+                    <span><svg class="check-icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Výsledky nebo neplatíte</span>
+                    <span><svg class="check-icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Hotovo do 7 dní</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PAIN POINTS -->
+    <section class="section pain-points-section">
+        <div class="container">
+            <div class="text-center reveal">
+                <p class="eyebrow">PROČ VÁŠ EMAIL NEVYDĚLÁVÁ</p>
+                <h2 class="section-title">Většina podnikatelů dělá jednu z těchto chyb.</h2>
+            </div>
+            
+            <div class="grid-3 mt-12 pain-grid">
+                <div class="card pain-card reveal delay-1">
+                    <div class="card-icon">📭</div>
+                    <h3 class="card-title">Neposíláte vůbec nic</h3>
+                    <p class="card-body">Váš seznam zákazníků leží ladem. Každý měsíc ticha jsou peníze, které nikdy nepřijdou.</p>
+                </div>
+                <div class="card pain-card reveal delay-2">
+                    <div class="card-icon">🔄</div>
+                    <h3 class="card-title">Žádná automatizace</h3>
+                    <p class="card-body">70 % zákazníků opustí košík. Bez automatického emailu je nikdy neoslovíte zpět — přestože stačí jedna zpráva.</p>
+                </div>
+                <div class="card pain-card reveal delay-3">
+                    <div class="card-icon">👥</div>
+                    <h3 class="card-title">Všem stejný email</h3>
+                    <p class="card-body">Věrný zákazník dostane stejnou zprávu jako někdo, kdo vás vidí poprvé. Výsledek? Oba ignorují.</p>
+                </div>
+                <div class="card pain-card reveal delay-1">
+                    <div class="card-icon">👻</div>
+                    <h3 class="card-title">Zákazník nakoupí jednou a zmizí</h3>
+                    <p class="card-body">72 % prvních kupujících se nikdy nevrátí — pokud je aktivně neudržíte v kontaktu.</p>
+                </div>
+                <div class="card pain-card reveal delay-2">
+                    <div class="card-icon">🔍</div>
+                    <h3 class="card-title">Nevíte, co funguje</h3>
+                    <p class="card-body">Nevíte, který email vydělal a který ne. Řídíte jednu z nejsilnějších prodejních zbraní poslepu.</p>
+                </div>
+                <div class="card pain-card reveal delay-3">
+                    <div class="card-icon">💸</div>
+                    <h3 class="card-title">Platíte za reklamu zbytečně</h3>
+                    <p class="card-body">Každý den utrácíte za nové zákazníky — přestože máte stovky starých, kteří by znovu koupili za zlomek ceny.</p>
+                </div>
+            </div>
+
+            <!-- STAT BAR -->
+            <div class="stat-bar mt-12 reveal">
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">
+                            <span class="count-up" data-target="43">0</span> %
+                        </div>
+                        <div class="stat-label">českých e-shopů nekomunikuje se svým seznamem vůbec</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">
+                            <span class="count-up" data-target="16">0</span>&times;
+                        </div>
+                        <div class="stat-label">více vydělá automatický email než manuálně rozeslaný newsletter</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">
+                            <span class="count-up" data-target="36">0</span>&times;
+                        </div>
+                        <div class="stat-label">vyšší ROI než jakýkoliv jiný marketingový kanál</div>
+                    </div>
+                </div>
+                <p class="stat-source text-center mt-4">Zdroj: Sherpas TECH ČR 2025 &middot; Omnisend 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. EMAIL PREVIEWS -->
+    <section class="section email-previews-section">
+        <div class="container">
+            <div class="text-center reveal">
+                <p class="eyebrow">UKÁZKY PRÁCE</p>
+                <h2 class="section-title">Jak vypadají naše emaily</h2>
+                <p class="section-subtitle">Každý email píšeme a navrhujeme na míru. Žádné šablony ze šuplíku.</p>
+            </div>
+
+            <div class="grid-3 mt-12 gap-10">
+                <!-- Preview Card 1 -->
+                <div class="portfolio-card reveal delay-1">
+                    <a href=".tmp/email_seq1_v3.html" target="_blank" class="card-link-overlay" title="Otevřít na celou obrazovku"></a>
+                    <div class="portfolio-badge badge-green">YouTube Business</div>
+                    <div class="iframe-container">
+                        <iframe src=".tmp/email_seq1_v3.html" tabindex="-1"></iframe>
+                    </div>
+                    <div class="portfolio-caption">
+                        Datová sekvence — statistiky, RPM tabulky, osobní hlas autora
+                    </div>
+                </div>
+
+                <!-- Preview Card 2 -->
+                <div class="portfolio-card reveal delay-2">
+                    <a href=".tmp/email_2_kopriva.html" target="_blank" class="card-link-overlay" title="Otevřít na celou obrazovku"></a>
+                    <div class="portfolio-badge badge-red" style="background: rgba(255,165,0,0.15); color: orange;">Nová šablona</div>
+                    <div class="iframe-container">
+                        <iframe src=".tmp/email_2_kopriva.html" tabindex="-1"></iframe>
+                    </div>
+                    <div class="portfolio-caption">
+                        Kompletní ukázka nové šablony (Kopřiva)
+                    </div>
+                </div>
+
+                <!-- Preview Card 3 -->
+                <div class="portfolio-card reveal delay-3">
+                    <a href=".tmp/onlinepilates_email_seq2.html" target="_blank" class="card-link-overlay" title="Otevřít na celou obrazovku"></a>
+                    <div class="portfolio-badge badge-red">Online Pilates</div>
+                    <div class="iframe-container">
+                        <iframe src=".tmp/onlinepilates_email_seq2.html" tabindex="-1"></iframe>
+                    </div>
+                    <div class="portfolio-caption">
+                        Sekvence pro pilates studio — mýty vs. realita, osobní tón lékařky
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. TESTIMONIALS -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="text-center reveal">
+                <p class="eyebrow">VÝSLEDKY</p>
+                <h2 class="section-title">Klienti mluví za vše</h2>
+            </div>
+            
+            <div class="grid-2 mt-12">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card card reveal delay-1">
+                    <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+                    <p class="quote">"E-shop znovu oslovil 2 400 zákazníků ze spícího seznamu za 3 týdny. Bez jediné koruny do reklamy."</p>
+                    <div class="author-row mt-6">
+                        <div class="avatar avatar-green">E</div>
+                        <div class="author-info">
+                            <div class="author-name">E-shop &mdash; Praha</div>
+                            <div class="author-role">Móda & doplňky</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card card reveal delay-2">
+                    <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+                    <p class="quote">"Zvýšili jsme obsazenost lekcí o 40 %. Emaily jsou osobní, zákaznice se ptají kdo to píše — vůbec nevědí, že je to automatické."</p>
+                    <div class="author-row mt-6">
+                        <div class="avatar avatar-red">P</div>
+                        <div class="author-info">
+                            <div class="author-name">Pilates Studio &mdash; Praha</div>
+                            <div class="author-role">Fitness & wellness</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FINAL CTA -->
+    <section class="section final-cta-section text-center">
+        <div class="container reveal">
+            <h2 class="final-cta-headline mb-8">Připraveni zjistit, kolik vám email může vydělat?</h2>
+            
+            <a href="" class="btn btn-primary cta-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/VASE_URL_ZDE'});return false;">Rezervovat bezplatný hovor <span class="arrow">&rarr;</span></a>
+            <p class="cta-subtext mt-4">Nezávazný hovor &middot; 30 minut &middot; Zdarma</p>
+            
+            <div class="guarantee-badge mt-12 text-center">
+                <span class="shield">🛡</span> "Nezaděláme za první měsíc? Druhý máte zdarma. Bez podmínek."
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FOOTER -->
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="footer-logo">reaktivuj</div>
+            <p class="footer-tagline">Email marketing, který vydělává.</p>
+            <p class="footer-email">ahoj@reaktivuj.cz</p>
+            <p class="footer-copy">&copy; 2025 reaktivuj.cz &middot; Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+
+
+═══════════════════════════════════════════════════════════════════
+ 2. KROK: TENTO TEXT VLOŽTE V NASTAVENÍ STRÁNKY DO "VLASTNÍ CSS"
+═══════════════════════════════════════════════════════════════════
+
+:root {
+    --bg-color: #0a0a0a;
+    --card-bg: #111111;
+    --border-color: #1a1a1a;
+    --accent-color: #00e87a;
+    --accent-glow: rgba(0, 232, 122, 0.4);
+    --text-white: #ffffff;
+    --text-muted: #999999;
+    --text-dark: #666666;
+    --stars: #FFD700;
+    
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --layout-padding: clamp(3rem, 6vw, 6rem);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.text-white { color: var(--text-white); }
+.text-muted { color: var(--text-muted); }
+.text-dark { color: var(--text-dark); }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+.mt-12 { margin-top: 3rem; }
+.mb-8 { margin-bottom: 2rem; }
+.relative { position: relative; }
+
+/* Scroll Progress indicator */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent-color);
+    z-index: 9999;
+}
+
+/* Layout & Containers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: var(--layout-padding) 0;
+    position: relative;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.gap-10 {
+    gap: 2.5rem;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    color: var(--text-white);
+}
+
+.eyebrow {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-headline {
+    font-size: clamp(1.8rem, 2.8vw, 2.75rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.hero-subheadline {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: var(--text-muted);
+    margin: 1.5rem auto 0;
+    max-width: 700px;
+}
+
+.subhead-heavy {
+    font-weight: 600;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    outline: none;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #000000;
+    font-weight: 800;
+    border-radius: 999px;
+    padding: 1.25rem 3rem;
+    font-size: 1.2rem;
+    animation: idlePulse 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes idlePulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0,232,122,0); }
+    50% { box-shadow: 0 0 20px 4px rgba(0,232,122,0.3); }
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 28px 6px rgba(0, 232, 122, 0.45);
+    transform: translateY(-2px);
+    animation: none; /* stop pulse on hover */
+}
+
+.btn-primary .arrow {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* Base elements */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: var(--transition);
+}
+
+.check-icon {
+    width: 20px;
+    height: 20px;
+    stroke: var(--accent-color);
+    vertical-align: middle;
+}
+
+.check-icon-small {
+    width: 14px;
+    height: 14px;
+    stroke: var(--text-dark);
+}
+
+/* SEC 1: NAVBAR */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.5rem 0;
+    z-index: 100;
+    background: transparent;
+}
+.logo {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    text-decoration: none;
+    letter-spacing: -0.05em;
+}
+
+/* SEC 2: HERO */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 7rem;
+    padding-bottom: 2rem;
+}
+
+.hero-bg-glow {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    height: 80vh;
+    background: radial-gradient(circle, rgba(0, 232, 122, 0.08) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-cta-wrapper {
+    margin: 2rem 0;
+}
+
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: rgba(255,255,255,0.03);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    border: 1px solid var(--border-color);
+}
+
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--accent-color);
+    width: 32px;
+    height: 32px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-10px) translateX(-50%); }
+    60% { transform: translateY(-5px) translateX(-50%); }
+}
+
+/* SEC 3: VSL */
+.vsl-section {
+    padding: 0 0 5rem 0;
+}
+.vsl-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.vsl-video-placeholder {
+    aspect-ratio: 16/9;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.vsl-video-placeholder:hover {
+    border-color: rgba(0,232,122,0.3);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+.vsl-video-placeholder .play-btn {
+    width: 80px;
+    height: 80px;
+    background: rgba(0,232,122,0.1);
+    color: var(--text-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0,232,122,0.2);
+    transition: var(--transition);
+}
+.vsl-video-placeholder .play-btn svg {
+    width: 32px;
+    height: 32px;
+    margin-left: 4px; /* Optical center */
+}
+.vsl-video-placeholder:hover .play-btn {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+.vsl-trust-signals {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    color: var(--text-dark);
+    font-size: 0.875rem;
+}
+
+/* SEC 4: PAIN POINTS */
+.pain-card {
+    border-left: 3px solid var(--accent-color);
+    border-radius: 12px;
+}
+.pain-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+.card-body {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* STAT BAR */
+.stat-bar {
+    background: #0d0d0d;
+    border-top: 1px solid var(--border-color);
+    padding: 3rem;
+    border-radius: 1rem;
+}
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+.stat-number {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+.stat-label {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 500;
+    max-width: 250px;
+    margin: 0 auto;
+}
+.stat-source {
+    font-size: 0.7rem;
+    color: #333333;
+}
+
+/* SEC 5: EMAIL PREVIEWS */
+.portfolio-card {
+    background: #111111;
+    border: 1px solid var(--border-color);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: var(--transition);
+    position: relative;
+}
+.portfolio-card:hover {
+    border-color: rgba(0,232,122,0.25);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.card-link-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.portfolio-badge {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-weight: 700;
+    z-index: 10;
+}
+.badge-green {
+    background: rgba(0,232,122,0.12);
+    color: var(--accent-color);
+}
+.badge-red {
+    background: rgba(187,114,126,0.15);
+    color: #BB727E;
+}
+
+.iframe-container {
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+.iframe-container iframe {
+    width: 600px;
+    height: 1250px;
+    border: none;
+    transform: scale(0.35); /* scaled down further for 3 columns */
+    transform-origin: top left;
+    pointer-events: none; /* disable iframe interaction */
+}
+@media (max-width: 450px) {
+    .iframe-container iframe {
+        transform: scale(0.35);
+    }
+}
+@media (min-width: 500px) and (max-width: 768px) {
+    .iframe-container iframe {
+        transform: scale(0.5);
+    }
+}
+@media (min-width: 1024px) {
+    .iframe-container iframe {
+        width: 800px;
+        transform: scale(0.42); /* slightly bigger on desktop, but fits 3 cols */
+    }
+    .portfolio-card { height: 100%; display: flex; flex-direction: column; }
+    .iframe-container { height: 550px; flex-grow: 1; }
+}
+
+.portfolio-caption {
+    font-size: 0.875rem;
+    color: var(--text-dark);
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--border-color);
+    background: #0d0d0d;
+}
+
+/* SEC 6: TESTIMONIALS */
+.testimonial-card {
+    border-top: 3px solid var(--accent-color);
+    padding: 2.5rem 2rem;
+}
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.stars {
+    color: var(--stars);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+.quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-white);
+    line-height: 1.7;
+}
+.author-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+.avatar-green {
+    background: rgba(0,232,122,0.1);
+    color: var(--accent-color);
+    border: 1px solid rgba(0,232,122,0.2);
+}
+.avatar-red {
+    background: rgba(187,114,126,0.1);
+    color: #BB727E;
+    border: 1px solid rgba(187,114,126,0.2);
+}
+.author-name {
+    font-weight: 700;
+    color: var(--text-white);
+}
+.author-role {
+    font-size: 0.8rem;
+    color: var(--text-dark);
+}
+
+/* SEC 7: FINAL CTA */
+.final-cta-section {
+    padding: 8rem 2rem;
+}
+.final-cta-headline {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+}
+.cta-subtext {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+.guarantee-badge {
+    display: inline-block;
+    background: rgba(0,232,122,0.05);
+    border: 1px solid rgba(0,232,122,0.2);
+    border-radius: 100px;
+    padding: 1.5rem 3rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.guarantee-badge .shield {
+    margin-right: 0.5rem;
+}
+
+/* SEC 8: FOOTER */
+.footer {
+    background: #050505;
+    border-top: 1px solid var(--border-color);
+    padding: 3rem;
+}
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    letter-spacing: -0.05em;
+}
+.footer-tagline {
+    color: #444;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+.footer-email {
+    color: var(--text-dark);
+    margin-top: 0.5rem;
+}
+.footer-copy {
+    color: #333;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+}
+
+/* Animations (Intersection Observer Targets) */
+.reveal {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .stat-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+═══════════════════════════════════════════════════════════════════
+ 3. KROK: TENTO KÓD VLOŽTE DO "SKRIPTY DO HLAVIČKY (HEAD)"
+═══════════════════════════════════════════════════════════════════
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>

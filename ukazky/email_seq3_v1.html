@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email #3 — YouTube Mastery</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #f2f2f2; font-family: 'Poppins', Arial, sans-serif; }
+  .wrapper { max-width: 600px; margin: 0 auto; background: #ffffff; }
+
+  .header {
+    background: linear-gradient(135deg, #cc0000, #ff0a0a);
+    padding: 32px 40px;
+    text-align: center;
+  }
+  .header-brand {
+    color: rgba(255,255,255,0.75);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .header-title {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-top: 8px;
+  }
+  .header-title em { color: #faed00; font-style: normal; }
+
+  .body { padding: 40px; }
+  .greeting { font-size: 16px; color: #111111; font-weight: 600; margin-bottom: 6px; }
+  .body p { font-size: 15px; color: #333333; line-height: 1.8; margin-bottom: 16px; }
+
+  /* STEP LIST — table-based */
+  .steps-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+  .step-row { width: 100%; }
+  .step-row td { padding: 0; }
+  .step-num-cell {
+    width: 44px;
+    vertical-align: top;
+    padding: 14px 0 14px 0;
+  }
+  .step-num {
+    width: 36px;
+    height: 36px;
+    background: #ff0a0a;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 36px;
+    display: inline-block;
+  }
+  .step-text-cell {
+    vertical-align: top;
+    padding: 14px 0 14px 12px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .step-title { font-size: 14px; font-weight: 700; color: #111; margin-bottom: 4px; }
+  .step-desc { font-size: 13px; color: #666; line-height: 1.6; }
+  .step-desc strong { color: #cc0000; }
+
+  /* INCOME CALC */
+  .calc-box {
+    background: #fff5f5;
+    border: 1px solid #ffd0d0;
+    border-radius: 8px;
+    padding: 22px 24px;
+    margin: 24px 0;
+  }
+  .calc-title { font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 14px; }
+  .calc-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #ffe0e0; }
+  .calc-label { font-size: 13px; color: #555; }
+  .calc-val { font-size: 13px; font-weight: 700; color: #111; }
+  .calc-total { display: flex; justify-content: space-between; padding-top: 12px; margin-top: 4px; }
+  .calc-total .calc-label { font-size: 15px; font-weight: 700; color: #111; }
+  .calc-total .calc-val { font-size: 18px; font-weight: 800; color: #ff0a0a; }
+
+  /* HIGHLIGHT */
+  .highlight {
+    background: #fff5f5;
+    border-left: 4px solid #ff0a0a;
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .highlight p { font-size: 15px; color: #333; line-height: 1.8; margin: 0; }
+  .highlight strong { color: #cc0000; }
+
+  /* CTA */
+  .cta-box {
+    background: linear-gradient(135deg, #cc0000, #ff0a0a);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 28px 0;
+    text-align: center;
+  }
+  .cta-box p { color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.65; margin-bottom: 18px; }
+  .cta-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #cc0000;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 13px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+
+  /* PS */
+  .ps-box { background: #fafafa; border-radius: 8px; padding: 18px 22px; margin-top: 24px; }
+  .ps-box p { font-size: 13px; color: #666; line-height: 1.65; margin: 0; }
+  .ps-box strong { color: #111; }
+  .ps-box .red { color: #ff0a0a; font-weight: 700; }
+
+  /* SIGNATURE */
+  .signature { margin-top: 28px; padding-top: 20px; border-top: 1px solid #f0f0f0; }
+  .signature p { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 4px; }
+  .signature .name { font-size: 16px; font-weight: 700; color: #111; }
+  .signature .title { font-size: 12px; color: #ff0a0a; }
+
+  /* FOOTER */
+  .footer { background: #cc0000; padding: 24px 40px; text-align: center; }
+  .footer p { font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .footer a { color: rgba(255,255,255,0.6); }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-brand">YouTube <span style="color:#faed00;">Mastery</span></div>
+    <div class="header-title">Jak vypadá výdělečný kanál.<br><em>Krok za krokem.</em></div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+    <p class="greeting">Ahoj,</p>
+
+    <p>
+      slíbil jsem ti ukázat, jak přesně vypadá výdělečný kanál — od výběru tématu až po první příjem. Takže jdeme krok za krokem.
+    </p>
+
+    <p>
+      Tohle je přesný postup, který jsem sám prošel. Ne teorie. Reálné kroky v reálném pořadí.
+    </p>
+
+    <!-- STEPS -->
+    <table class="steps-table" role="presentation">
+      <tr class="step-row">
+        <td class="step-num-cell"><span class="step-num">1</span></td>
+        <td class="step-text-cell">
+          <div class="step-title">Výběr tématu s vysokým RPM</div>
+          <div class="step-desc">Nehledám, co mě baví. Hledám, co <strong>vydělává</strong>. Finance, business, AI, software — RPM $15–25. Tohle je rozhodnutí číslo jedna.</div>
+        </td>
+      </tr>
+      <tr class="step-row">
+        <td class="step-num-cell"><span class="step-num">2</span></td>
+        <td class="step-text-cell">
+          <div class="step-title">SEO research — klíčová slova</div>
+          <div class="step-desc">Najdu výrazy, které lidi hledají každý měsíc. „jak investovat pro začátečníky", „nejlepší spořicí účet 2025". Videa na tyto výrazy přinášejí trafic roky.</div>
+        </td>
+      </tr>
+      <tr class="step-row">
+        <td class="step-num-cell"><span class="step-num">3</span></td>
+        <td class="step-text-cell">
+          <div class="step-title">Tým tvoří video za $3</div>
+          <div class="step-desc">Scénář, voice-over, střih — tři různí freelanceři z Upwork/Fiverr. Já video nevidím, neschvaluji, nenahrávám. <strong>$3 na video</strong>, 10 videí denně.</div>
+        </td>
+      </tr>
+      <tr class="step-row">
+        <td class="step-num-cell"><span class="step-num">4</span></td>
+        <td class="step-text-cell">
+          <div class="step-title">Nahrání + SEO optimalizace</div>
+          <div class="step-desc">Titulek, popis, tagy — vše na základě klíčových slov z kroku 2. YouTube pak video sám doporučuje lidem, kteří to hledají.</div>
+        </td>
+      </tr>
+      <tr class="step-row">
+        <td class="step-num-cell"><span class="step-num">5</span></td>
+        <td class="step-text-cell">
+          <div class="step-title">Monetizace + škálování</div>
+          <div class="step-desc">Po 1 000 odběratelích a 4 000 hodinách sledování přijde monetizace. Pak škáluješ objem — čím víc videí, tím <strong>předvídatelnější příjem</strong>.</div>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      A tady je matematika, která z toho dělá skutečný byznys:
+    </p>
+
+    <!-- INCOME CALC -->
+    <div class="calc-box">
+      <div class="calc-title">Reálná čísla — kolik vydělává objem videí</div>
+      <table style="width:100%; border-collapse:collapse;">
+        <tr>
+          <td style="font-size:13px; color:#555; padding:6px 0; border-bottom:1px solid #ffe0e0;">100 videí</td>
+          <td style="font-size:13px; font-weight:700; color:#111; padding:6px 0; border-bottom:1px solid #ffe0e0; text-align:right;">~$30–40 / měsíc</td>
+        </tr>
+        <tr>
+          <td style="font-size:13px; color:#555; padding:6px 0; border-bottom:1px solid #ffe0e0;">500 videí</td>
+          <td style="font-size:13px; font-weight:700; color:#111; padding:6px 0; border-bottom:1px solid #ffe0e0; text-align:right;">~$150–200 / měsíc</td>
+        </tr>
+        <tr>
+          <td style="font-size:13px; color:#555; padding:6px 0; border-bottom:1px solid #ffe0e0;">1 000 videí</td>
+          <td style="font-size:17px; font-weight:800; color:#ff0a0a; padding:6px 0; border-bottom:1px solid #ffe0e0; text-align:right;">$300–400 / měsíc</td>
+        </tr>
+        <tr style="border-top:2px solid #ffd0d0;">
+          <td style="font-size:13px; color:#555; padding:10px 0 0;">2 000 videí</td>
+          <td style="font-size:20px; font-weight:800; color:#ff0a0a; padding:10px 0 0; text-align:right;">$600–800 / měsíc</td>
+        </tr>
+      </table>
+    </div>
+
+    <p>
+      A to je jen jeden kanál. S každým dalším kanálem — nebo vyšším objemem videí — ta čísla rostou.
+    </p>
+
+    <img src="https://storage.mlcdn.com/account_image/2209594/tyqw1zuMrQgFiZdlOsP9FTxooxfMuYZqHG1ztDhW.png" alt="Příjem z kanálu $566 měsíčně" style="display:block; max-width:100%; width:100%; border-radius:8px; margin:16px 0;">
+
+    <div class="highlight">
+      <p>
+        Tohle není pasivní příjem „ze spaní" bez práce. Je to <strong>systém</strong> — jednou ho postavíš, pak ho škáluješ. Přesně tak, jak funguje každý normální byznys. Jen bez kamery, bez tváře, bez šéfa.
+      </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <p>Pokud chceš vidět celý systém — jak ho stavím, co konkrétně outsourcuju a kolik to stojí — je to všechno v programu.</p>
+      <a class="cta-btn" href="https://ytmastery.cz/ebook/upsell-351925">Podívat se na program →</a>
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="signature">
+      <p>Měj se skvěle,</p>
+      <p class="name">Roman</p>
+      <p class="title">YouTube Mastery · ytmastery.cz/ebook</p>
+    </div>
+
+    <!-- PS -->
+    <div class="ps-box">
+      <p><strong>PS:</strong> Zítra ti ukážu <span class="red">největší chybu, kterou dělají lidi, kteří zkouší YouTube poprvé</span> — a proč přesně tahle chyba stojí měsíce zbytečné práce. Je to věc, které jsem se sám naučil až po roce. <strong>Stojí za přečtení.</strong> 🎯</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>
+      YouTube Mastery · ytmastery.cz/ebook<br>
+      Dostáváš tento email, protože sis stáhl náš materiál.<br>
+      <a href="#">Odhlásit odběr</a>
+    </p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<style>
+/* IZOLOVANÝ DESIGN PRO KONVERZKY */
+.pain-points-konverzky {
+    background-color: #0a0a0a;
+    font-family: 'Inter', sans-serif;
+    padding: 5rem 0;
+}
+.pain-points-konverzky * {
+    box-sizing: border-box;
+}
+.pain-points-konverzky .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.pain-points-konverzky .text-center { text-align: center; }
+.pain-points-konverzky .mb-12 { margin-bottom: 4rem; }
+.pain-points-konverzky .eyebrow {
+    color: #00E87A;
+    font-weight: 800;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+}
+.pain-points-konverzky .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+.pain-points-konverzky .text-muted {
+    color: #999999;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.pain-points-konverzky .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+@media (min-width: 768px) {
+    .pain-points-konverzky .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+    .pain-points-konverzky .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+}
+.pain-points-konverzky .feature-card {
+    background: #111111;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    transition: all 0.3s ease;
+    border-left: 2px solid transparent;
+}
+.pain-points-konverzky .feature-card:hover {
+    border-left: 2px solid #00E87A;
+    transform: translateX(5px);
+    background: #141414;
+}
+.pain-points-konverzky .feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+.pain-points-konverzky h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+    margin-top: 0;
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<div class="pain-points-konverzky">
+    <div class="container">
+        <div class="text-center mb-12">
+            <p class="eyebrow">PROČ VÁŠ EMAIL NEVYDĚLÁVÁ</p>
+            <h2 class="section-title">Většina podnikatelů dělá jednu z těchto chyb.</h2>
+        </div>
+        
+        <div class="grid-3">
+            <div class="feature-card">
+                <div class="feature-icon">📬</div>
+                <h3>Neposíláte vůbec nic</h3>
+                <p class="text-muted">Váš seznam zákazníků leží ladem. Každý měsíc ticha jsou peníze, které nikdy nepřijdou.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Žádná automatizace</h3>
+                <p class="text-muted">70 % zákazníků opustí košík. Bez automatického emailu je nikdy neoslovíte zpět — přestože stačí jedna zpráva.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Všem stejný email</h3>
+                <p class="text-muted">Věrný zákazník dostane stejnou zprávu jako někdo, kdo vás vidí poprvé. Výsledek? Oba ignorují.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👻</div>
+                <h3>Zákazník nakoupí jednou a zmizí</h3>
+                <p class="text-muted">72 % prvních kupujících se nikdy nevrátí — pokud je aktivně neudržíte v kontaktu.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Nevíte, co funguje</h3>
+                <p class="text-muted">Nevíte, který email vydělal a který ne. Řídíte jednu z nejsilnějších prodejních zbraní poslepu.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💸</div>
+                <h3>Platíte za reklamu zbytečně</h3>
+                <p class="text-muted">Každý den utrácíte za nové zákazníky — přestože máte stovky starých, kteří by znovu koupili za zlomek ceny.</p>
+            </div>
+        </div>
+    </div>
+</div>

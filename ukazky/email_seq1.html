@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email #1 — NOFACE Empire</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #16181c; font-family: 'Poppins', Arial, sans-serif; }
+  .wrapper { max-width: 600px; margin: 0 auto; background: #212529; }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #0d1117 0%, #0f2a5e 100%);
+    padding: 28px 40px;
+    text-align: center;
+    border-bottom: 3px solid #1e6ff1;
+  }
+  .header-brand {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .header-brand span { color: #1e6ff1; }
+
+  /* BODY */
+  .body { padding: 40px; }
+  .greeting { font-size: 16px; color: #ffffff; font-weight: 600; margin-bottom: 20px; }
+  .body p { font-size: 15px; color: #d0d4dc; line-height: 1.8; margin-bottom: 16px; }
+
+  /* FAILURE LIST */
+  .fail-list { margin: 24px 0; }
+  .fail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding: 12px 16px;
+    background: rgba(255, 10, 10, 0.07);
+    border-left: 3px solid #ff0a0a;
+    border-radius: 0 6px 6px 0;
+  }
+  .fail-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .fail-text { font-size: 14px; color: #c0c4cc; line-height: 1.6; }
+  .fail-text strong { color: #ffffff; }
+
+  /* HIGHLIGHT BOX */
+  .highlight {
+    background: linear-gradient(135deg, #0f2a5e, #1e3a8a);
+    border-left: 4px solid #1e6ff1;
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin: 28px 0;
+  }
+  .highlight p {
+    font-size: 15px;
+    color: #e0e6ff;
+    line-height: 1.75;
+    margin: 0;
+  }
+  .highlight strong { color: #ffffff; }
+
+  /* CTA */
+  .cta-box {
+    background: linear-gradient(135deg, #0d1b4b, #1e3a8a);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 28px 0;
+    text-align: center;
+    border: 1px solid #1e6ff1;
+  }
+  .cta-box p {
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: #1e6ff1;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+
+  /* PS BOX */
+  .ps-box {
+    background: #1a1d23;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-top: 28px;
+    border: 1px solid #2d3240;
+  }
+  .ps-box p { font-size: 13px; color: #8890a4; line-height: 1.65; margin: 0; }
+  .ps-box strong { color: #ffffff; }
+  .ps-box .highlight-red { color: #ff0a0a; font-weight: 700; }
+
+  /* SIGNATURE */
+  .signature { margin-top: 32px; padding-top: 20px; border-top: 1px solid #2d3240; }
+  .signature p { font-size: 14px; color: #8890a4; line-height: 1.6; margin-bottom: 4px; }
+  .signature .name { font-size: 16px; font-weight: 700; color: #ffffff; }
+  .signature .title { font-size: 12px; color: #1e6ff1; }
+
+  /* FOOTER */
+  .footer { background: #0d1117; padding: 24px 40px; text-align: center; border-top: 1px solid #1e2030; }
+  .footer p { font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.6; }
+  .footer a { color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-brand">NOFACE <span>EMPIRE</span></div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+    <p class="greeting">Ahoj, 🛫</p>
+
+    <p>
+      podnikám od svých 18 let. A pokud mám být úplně upřímný — vyzkoušel jsem snad všechno, co internet kdy nabídl.
+    </p>
+
+    <p>
+      MLM, forex, crypto, akcie, affiliate… Každý z těchto modelů mě něco naučil. Ale taky mě pořádně vytloukl.
+    </p>
+
+    <!-- FAIL LIST -->
+    <div class="fail-list">
+      <div class="fail-item">
+        <span class="fail-icon">❌</span>
+        <span class="fail-text"><strong>MLM</strong> — pořád jsem někoho přesvědčoval. Nebylo to moje.</span>
+      </div>
+      <div class="fail-item">
+        <span class="fail-icon">❌</span>
+        <span class="fail-text"><strong>Forex</strong> — byl jsem otrokem grafů a adrenalinu. 24/7.</span>
+      </div>
+      <div class="fail-item">
+        <span class="fail-icon">❌</span>
+        <span class="fail-text"><strong>Krypto</strong> — vydělal jsem... a pak to všechno zase ztratil.</span>
+      </div>
+      <div class="fail-item">
+        <span class="fail-icon">❌</span>
+        <span class="fail-text"><strong>Akcie</strong> — pochopil jsem, že potřebuju kapitál, který nemám.</span>
+      </div>
+      <div class="fail-item">
+        <span class="fail-icon">❌</span>
+        <span class="fail-text"><strong>Affiliate</strong> — funguje, ale jen když přivedete tisíce lidí měsíčně.</span>
+      </div>
+    </div>
+
+    <p>
+      Měl jsem sen o svobodě. Místo toho jsem měl další práci — akorát bez šéfa, kterého mohl viním za výsledky.
+    </p>
+
+    <p>
+      Před pěti lety jsem sbalil batoh, odešel z Česka a vyrazil do světa. 🌍 Cestoval jsem přes 70 zemí. Žil jsem v Brazílii, Thajsku, Bali, Kolumbii, Peru…
+    </p>
+
+    <p>
+      A během těch let jsem poznal desítky byznys modelů. Lidi, kteří na dálku skutečně žijí to, o čem ostatní jen mluví.
+    </p>
+
+    <div class="highlight">
+      <p>
+        Ale jeden model mi doslova <strong>cvakl</strong>. 🎥<br><br>
+        <strong>YouTube Automatizace.</strong><br><br>
+        Kanál bez tváře. Videa bez kamery. Příjem bez toho, aby mě kdokoliv znal. A přesto to vydělává — i když spím.
+      </p>
+    </div>
+
+    <p>
+      Vždycky jsem chtěl tvořit videa. Ale nechtěl jsem být vidět. Před 8 lety jsem to zkusil — dělal jsem vlogy z Bali. Každý den jsem točil, 4–5 hodin denně stříhal. Nulové výsledky. Nikdo to neviděl.
+    </p>
+
+    <p>
+      Dnes chápu, co jsem dělal špatně. A právě o tomhle ti budu psát. 👇
+    </p>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <p>Pokud ještě nemáš eBook — stáhni si ho teď. Je tam přesně to, co mi trvalo 2 roky zjistit.</p>
+      <a class="cta-btn" href="https://ytmastery.cz/ebook/">👉 Stáhnout eBook zdarma</a>
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="signature">
+      <p>Měj se skvěle,</p>
+      <p class="name">Roman</p>
+      <p class="title">Zakladatel NOFACE Empire</p>
+    </div>
+
+    <!-- PS -->
+    <div class="ps-box">
+      <p><strong>PS:</strong> V příštím emailu ti pošlu <span class="highlight-red">DÁREK zdarma 🎁</span> — checklist, díky kterému pochopíš přesně jak YouTube funguje a co díky němu můžeš získat. <strong>Nenech si ho ujít.</strong></p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>
+      NOFACE Empire · ytmastery.cz<br>
+      Dostáváš tento email, protože sis stáhl/a náš eBook.<br>
+      <a href="#">Odhlásit odběr</a>
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
