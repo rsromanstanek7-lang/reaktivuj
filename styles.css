@@ -1119,3 +1119,78 @@ h1, h2, h3, h4 {
     from {transform:translateY(20px); opacity:0;}
     to {transform:translateY(0); opacity:1;}
 }
+
+/* ===================== PREMIUM LEAD MODAL REDESIGN ===================== */
+.lead-modal-overlay {
+    backdrop-filter: blur(25px) !important;
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
+.lead-modal-content {
+    background: linear-gradient(135deg, #161616, #0a0a0a) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 28px !important;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 50px rgba(0, 232, 122, 0.05) !important;
+    overflow: hidden;
+}
+.lead-modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent) !important;
+    opacity: 0.7;
+}
+.lead-modal-header {
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+    padding: 2.5rem 3rem 1.5rem !important;
+}
+.lead-modal-header h3 {
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em;
+}
+.lead-modal-close {
+    font-size: 2.5rem !important;
+    font-weight: 300 !important;
+}
+.lead-modal-body {
+    padding: 1rem 3rem 3rem !important;
+}
+.form-input {
+    background: rgba(255, 255, 255, 0.015) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important;
+    padding: 1.25rem 1.5rem !important;
+    font-size: 1.05rem !important;
+}
+.form-input:focus {
+    background: rgba(0, 232, 122, 0.02) !important;
+    border-color: rgba(0, 232, 122, 0.5) !important;
+    box-shadow: 0 0 20px rgba(0, 232, 122, 0.15) !important;
+}
+.radio-label {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 16px !important;
+    padding: 1.25rem 1.5rem !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    color: #bbb !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.radio-label:hover {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-2px) !important;
+}
+.radio-label:has(input:checked) {
+    background: rgba(0, 232, 122, 0.08) !important;
+    border-color: var(--accent-color) !important;
+    color: #fff !important;
+    box-shadow: 0 15px 30px rgba(0, 232, 122, 0.15) !important;
+    transform: translateY(-2px) !important;
+}
+#lead-step2 p {
+    font-size: 0.95rem !important;
+    color: #777 !important;
+}
