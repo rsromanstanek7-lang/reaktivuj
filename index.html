@@ -138,22 +138,22 @@
                         <div style="display:flex; align-items:flex-start; gap:1rem;">
                             <div style="width:16px; height:16px; border-radius:50%; background:#ff4a4a; flex-shrink:0; margin-top:4px;"></div>
                             <div>
-                                <strong style="color:#fff; font-size:1rem; display:block; margin-bottom:4px;">Zahazují 100 % peněz</strong>
-                                <span style="color:#888; font-size:0.85rem; line-height:1.4;">Vůbec neposílají e-maily. Přicházejí tak každý měsíc o desítky tisíc korun. Zcela zbytečně.</span>
+                                <strong style="color:#111; font-size:1rem; display:block; margin-bottom:4px;">Zahazují 100 % peněz</strong>
+                                <span style="color:#555; font-size:0.85rem; line-height:1.4;">Vůbec neposílají e-maily. Přicházejí tak každý měsíc o desítky tisíc korun. Zcela zbytečně.</span>
                             </div>
                         </div>
                         <div style="display:flex; align-items:flex-start; gap:1rem;">
                             <div style="width:16px; height:16px; border-radius:50%; background:#f5c518; flex-shrink:0; margin-top:4px;"></div>
                             <div>
-                                <strong style="color:#fff; font-size:1rem; display:block; margin-bottom:4px;">Pálí si databázi</strong>
-                                <span style="color:#888; font-size:0.85rem; line-height:1.4;">Posílají jen slevové akce. Zákazníci je ignorují, padají do spamu, nevytváří si vztah.</span>
+                                <strong style="color:#111; font-size:1rem; display:block; margin-bottom:4px;">Pálí si databázi</strong>
+                                <span style="color:#555; font-size:0.85rem; line-height:1.4;">Posílají jen slevové akce. Zákazníci je ignorují, padají do spamu, nevytváří si vztah.</span>
                             </div>
                         </div>
                         <div style="display:flex; align-items:flex-start; gap:1rem;">
                             <div style="width:16px; height:16px; border-radius:50%; background:var(--accent-color); flex-shrink:0; margin-top:4px;"></div>
                             <div>
-                                <strong style="color:#fff; font-size:1rem; display:block; margin-bottom:4px;">Dělají to správně</strong>
-                                <span style="color:#888; font-size:0.85rem; line-height:1.4;">Zlomek firem s Open Rate nad 40 %, pro které e-mail funguje jako penězovod na autopilota.</span>
+                                <strong style="color:#111; font-size:1rem; display:block; margin-bottom:4px;">Dělají to správně</strong>
+                                <span style="color:#555; font-size:0.85rem; line-height:1.4;">Zlomek firem s Open Rate nad 40 %, pro které e-mail funguje jako penězovod na autopilota.</span>
                             </div>
                         </div>
                     </div>
@@ -336,7 +336,7 @@
                 
                 <!-- STEP 1 -->
                 <div id="lead-step1">
-                    <p style="color:#888; font-size:0.95rem; margin-bottom:1.5rem;">Začneme vaším kontaktem, na který potvrdíme domluvený termín.</p>
+                    <p style="color:#555; font-size:0.95rem; margin-bottom:1.5rem;">Začneme vaším kontaktem, na který potvrdíme domluvený termín.</p>
                     <form id="form-step1" onsubmit="goToStep2(event)">
                         <div class="form-group mb-4">
                             <label class="form-label" for="l_name">Jméno a příjmení</label>
@@ -356,13 +356,13 @@
                         <span id="quiz-progress-text" style="color:#00e87a; font-weight:700; font-size:0.95rem; text-transform:uppercase; letter-spacing:0.05em;">Otázka 1 z 5</span>
                     </div>
                     
-                    <p style="color:#888; font-size:0.85rem; margin-bottom:2rem; line-height:1.4;">Jen pár rychlých otázek, abychom se na hovor mohli perfektně připravit.</p>
+                    <p style="color:#555; font-size:0.85rem; margin-bottom:2rem; line-height:1.4;">Jen pár rychlých otázek, abychom se na hovor mohli perfektně připravit.</p>
                     
                     <form id="form-step2" onsubmit="submitLeadForm(event)">
                         
                         <!-- Q1 -->
                         <div class="quiz-step" id="qstep-1">
-                            <label class="form-label" style="color:#fff; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Čemu se věnujete?</label>
+                            <label class="form-label" style="color:#111; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Čemu se věnujete?</label>
                             <div class="radio-group" style="display:flex; flex-direction:column; gap:0.5rem;">
                                 <label class="radio-label"><input type="radio" name="q_niche" value="E-shop / produkt" onclick="nextQuizStep()" required> 🛒 E-shop / produkt</label>
                                 <label class="radio-label"><input type="radio" name="q_niche" value="Online kurzy nebo koučink" onclick="nextQuizStep()"> 🧠 Online kurzy nebo koučink</label>
@@ -371,12 +371,12 @@
                                 <label class="radio-label"><input type="radio" name="q_niche" value="B2B / SaaS" onclick="nextQuizStep()"> 🏢 B2B / software / SaaS</label>
                                 <label class="radio-label"><input type="radio" name="q_niche" value="Jiné" onclick="nextQuizStep()"> Jiné</label>
                             </div>
-                            <button type="button" class="btn btn-outline mt-6" style="padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#333; color:#aaa;" onclick="goBackToStep1()">← Zpět na kontakty</button>
+                            <button type="button" class="btn btn-outline mt-6" style="padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#ddd; color:#444;" onclick="goBackToStep1()">← Zpět na kontakty</button>
                         </div>
 
                         <!-- Q2 -->
                         <div class="quiz-step" id="qstep-2" style="display:none;">
-                            <label class="form-label" style="color:#fff; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Kolik kontaktů máte přibližně v databázi?</label>
+                            <label class="form-label" style="color:#111; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Kolik kontaktů máte přibližně v databázi?</label>
                             <div class="radio-group" style="display:flex; flex-direction:column; gap:0.5rem;">
                                 <label class="radio-label"><input type="radio" name="q_contacts" value="Zatím žádný nebo pod 100" onclick="nextQuizStep()" required> Zatím žádný nebo pod 100</label>
                                 <label class="radio-label"><input type="radio" name="q_contacts" value="100 – 500" onclick="nextQuizStep()"> 100 – 500</label>
@@ -384,24 +384,24 @@
                                 <label class="radio-label"><input type="radio" name="q_contacts" value="2 000 – 10 000" onclick="nextQuizStep()"> 2 000 – 10 000</label>
                                 <label class="radio-label"><input type="radio" name="q_contacts" value="Víc než 10 000" onclick="nextQuizStep()"> Víc než 10 000</label>
                             </div>
-                            <button type="button" class="btn btn-outline mt-6" style="padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#333; color:#aaa;" onclick="prevQuizStep()">← Zpět</button>
+                            <button type="button" class="btn btn-outline mt-6" style="padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#ddd; color:#444;" onclick="prevQuizStep()">← Zpět</button>
                         </div>
 
                         <!-- Q3 -->
                         <div class="quiz-step" id="qstep-3" style="display:none;">
-                            <label class="form-label" style="color:#fff; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Posíláte teď zákazníkům e-maily?</label>
+                            <label class="form-label" style="color:#111; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Posíláte teď zákazníkům e-maily?</label>
                             <div class="radio-group" style="display:flex; flex-direction:column; gap:0.5rem;">
                                 <label class="radio-label"><input type="radio" name="q_sending" value="Ne, vůbec neposíláme" onclick="nextQuizStep()" required> Ne, vůbec neposíláme</label>
                                 <label class="radio-label"><input type="radio" name="q_sending" value="Občas — bez strategie" onclick="nextQuizStep()"> Občas — ale bez strategie nebo nepravidelně</label>
                                 <label class="radio-label"><input type="radio" name="q_sending" value="Ano, sekvenci" onclick="nextQuizStep()"> Ano, posíláme newsletter nebo sekvenci</label>
                                 <label class="radio-label"><input type="radio" name="q_sending" value="Posíláme, slabé výsledky" onclick="nextQuizStep()"> Posíláme, ale výsledky jsou slabé</label>
                             </div>
-                            <button type="button" class="btn btn-outline mt-6" style="padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#333; color:#aaa;" onclick="prevQuizStep()">← Zpět</button>
+                            <button type="button" class="btn btn-outline mt-6" style="padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#ddd; color:#444;" onclick="prevQuizStep()">← Zpět</button>
                         </div>
 
                         <!-- Q4 -->
                         <div class="quiz-step" id="qstep-4" style="display:none;">
-                            <label class="form-label" style="color:#fff; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Co chcete e-mailem hlavně řešit?</label>
+                            <label class="form-label" style="color:#111; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Co chcete e-mailem hlavně řešit?</label>
                             <div class="radio-group" style="display:flex; flex-direction:column; gap:0.5rem;">
                                 <label class="radio-label"><input type="radio" name="q_goal" value="Vrátit zákazníky" onclick="nextQuizStep()" required> Vrátit zákazníky, kteří přestali nakupovat</label>
                                 <label class="radio-label"><input type="radio" name="q_goal" value="Zvýšit nákupy stávajících" onclick="nextQuizStep()"> Zvýšit opakované nákupy stávajících zákazníků</label>
@@ -409,12 +409,12 @@
                                 <label class="radio-label"><input type="radio" name="q_goal" value="Zlepšit stávající" onclick="nextQuizStep()"> Zlepšit výsledky toho, co už posíláme</label>
                                 <label class="radio-label"><input type="radio" name="q_goal" value="Nevim" onclick="nextQuizStep()"> Nevím přesně — chci se poradit</label>
                             </div>
-                            <button type="button" class="btn btn-outline mt-6" style="padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#333; color:#aaa;" onclick="prevQuizStep()">← Zpět</button>
+                            <button type="button" class="btn btn-outline mt-6" style="padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#ddd; color:#444;" onclick="prevQuizStep()">← Zpět</button>
                         </div>
 
                         <!-- Q5 -->
                         <div class="quiz-step" id="qstep-5" style="display:none;">
-                            <label class="form-label" style="color:#fff; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Jaký je přibližný měsíční obrat vašeho podnikání?</label>
+                            <label class="form-label" style="color:#111; font-size:1.6rem; font-weight:800; margin-bottom:1.5rem; display:block; line-height:1.3;">Jaký je přibližný měsíční obrat vašeho podnikání?</label>
                             <div class="radio-group" style="display:flex; flex-direction:column; gap:0.5rem; margin-bottom:2rem;">
                                 <label class="radio-label"><input type="radio" name="q_revenue" value="Pod 50 000 Kč" required> Pod 50 000 Kč</label>
                                 <label class="radio-label"><input type="radio" name="q_revenue" value="50 000 – 150 000 Kč"> 50 000 – 150 000 Kč</label>
@@ -424,7 +424,7 @@
                             </div>
                             
                             <div style="display:flex; gap:1rem;">
-                                <button type="button" class="btn btn-outline" style="flex:1; padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#333; color:#aaa;" onclick="prevQuizStep()">← Zpět</button>
+                                <button type="button" class="btn btn-outline" style="flex:1; padding:0.6rem 1.2rem; font-size:0.9rem; border-color:#ddd; color:#444;" onclick="prevQuizStep()">← Zpět</button>
                                 <button type="submit" class="btn btn-primary" style="flex:2">Vybrat termín &rarr;</button>
                             </div>
                         </div>
