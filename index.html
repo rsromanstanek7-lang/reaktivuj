@@ -543,7 +543,14 @@
                     url: 'https://calendly.com/reaktivuj/45min', 
                     prefill: {
                         name: leadData.name,
-                        email: leadData.email
+                        email: leadData.email,
+                        customAnswers: {
+                            a1: leadData.q_niche || "",
+                            a2: leadData.q_contacts || "",
+                            a3: leadData.q_sending || "",
+                            a4: leadData.q_goal || "",
+                            a5: leadData.q_revenue || ""
+                        }
                     }
                 });
             } else {
