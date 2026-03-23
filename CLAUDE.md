@@ -8,6 +8,8 @@ Roman teaches Czech/Slovak audience how to build faceless, outsourced YouTube ch
 ## Skills (always read before writing)
 - `skills/youtube-email.md` — Roman's email style, brand voice, sequence structure. READ BEFORE WRITING ANY EMAIL.
 - `skills/czech-grammar.md` — Czech grammar rules: tykání, vokativ, punctuation, quotes, etc. READ BEFORE WRITING ANY CZECH COPY.
+- `skills/email-marketing-hamza.md` — Hamza Nedvěd: Pizza Party, 5+1 warming sequence, Hook Story Offer framework.
+- `skills/email-marketing-hormozi.md` — Alex Hormozi: Mozi Money Minute structure, deliverability, segmentation, metrics.
 
 ## Brand
 - **Brand:** YouTube Mastery

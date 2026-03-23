@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kolik ti leží v databázi? — reaktivuj.cz</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0f1117;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .card {
+    background: #1a1d27;
+    border: 1px solid #2a2d3a;
+    border-radius: 20px;
+    padding: 48px 40px;
+    max-width: 540px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .brand {
+    font-size: 12px;
+    font-weight: 700;
+    color: #f97316;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  h1 span { color: #f97316; }
+
+  .sub {
+    color: #9ca3af;
+    font-size: 15px;
+    margin-bottom: 36px;
+    line-height: 1.6;
+  }
+
+  /* Fields */
+  .field {
+    margin-bottom: 18px;
+    text-align: left;
+  }
+
+  .field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #d1d5db;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .field input[type="number"],
+  .field input[type="email"] {
+    width: 100%;
+    background: #0f1117;
+    border: 1.5px solid #2a2d3a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 16px;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.2s;
+    -moz-appearance: textfield;
+  }
+
+  .field input::-webkit-outer-spin-button,
+  .field input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+  .field input:focus { border-color: #f97316; }
+  .field input::placeholder { color: #4b5563; }
+
+  .field input.error { border-color: #ef4444; }
+
+  .radio-group { display: flex; gap: 10px; }
+
+  .radio-option { flex: 1; position: relative; }
+
+  .radio-option input[type="radio"] {
+    position: absolute; opacity: 0; width: 0; height: 0;
+  }
+
+  .radio-option label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 10px;
+    background: #0f1117;
+    border: 1.5px solid #2a2d3a;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: #9ca3af;
+    transition: all 0.2s;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .radio-option input:checked + label {
+    border-color: #f97316;
+    color: #fff;
+    background: rgba(249,115,22,0.08);
+  }
+
+  /* Buttons */
+  .btn {
+    width: 100%;
+    padding: 16px;
+    background: #f97316;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s, transform 0.1s;
+    letter-spacing: -0.01em;
+  }
+
+  .btn:hover { background: #ea6c0a; }
+  .btn:active { transform: scale(0.99); }
+  .btn:disabled { background: #374151; cursor: not-allowed; }
+
+  .btn-secondary {
+    background: transparent;
+    border: 1.5px solid #2a2d3a;
+    color: #9ca3af;
+    font-size: 14px;
+    padding: 12px;
+    margin-top: 10px;
+  }
+
+  .btn-secondary:hover { background: rgba(255,255,255,0.04); }
+
+  /* Divider */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    color: #4b5563;
+    font-size: 12px;
+  }
+
+  .divider::before,
+  .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #2a2d3a;
+  }
+
+  /* Email gate box */
+  .gate-box {
+    background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(249,115,22,0.03));
+    border: 1.5px solid rgba(249,115,22,0.25);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .gate-box .gate-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 6px;
+  }
+
+  .gate-box .gate-sub {
+    font-size: 13px;
+    color: #9ca3af;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  /* Spinner */
+  #step-loading {
+    display: none;
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  .spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid #2a2d3a;
+    border-top-color: #f97316;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 20px;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .loading-text {
+    font-size: 15px;
+    color: #9ca3af;
+    line-height: 1.6;
+  }
+
+  .loading-text strong { color: #f1f5f9; }
+
+  /* Fine print */
+  .fine-print {
+    font-size: 12px;
+    color: #4b5563;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  .fine-print a { color: #6b7280; text-decoration: underline; }
+
+  /* Steps indicator */
+  .steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .step-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2a2d3a;
+    transition: background 0.3s;
+  }
+
+  .step-dot.active { background: #f97316; }
+  .step-dot.done { background: #22c55e; }
+
+  @media (max-width: 480px) {
+    .card { padding: 28px 18px; }
+    h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- STEP 1: Kalkulačka -->
+  <div id="step-calc">
+    <div class="brand">reaktivuj.cz</div>
+
+    <div class="steps">
+      <div class="step-dot active" id="dot1"></div>
+      <div class="step-dot" id="dot2"></div>
+    </div>
+
+    <h1>Kolik ti každý měsíc<br><span>leží v databázi?</span></h1>
+    <p class="sub">Zadej 3 čísla a zjisti, kolik peněz teď necháváš každý měsíc ležet ve své emailové databázi.</p>
+
+    <div class="field">
+      <label>Počet kontaktů v databázi</label>
+      <input type="number" id="contacts" placeholder="např. 3 000" min="0">
+    </div>
+
+    <div class="field">
+      <label>Typ byznysu</label>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" name="biztype" id="type-eshop" value="eshop" checked>
+          <label for="type-eshop">🛒 E-shop</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="biztype" id="type-coach" value="coach">
+          <label for="type-coach">🎓 Kouč / kurzy</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Průměrná objednávka / cena kurzu (Kč)</label>
+      <input type="number" id="avg-order" placeholder="např. 1 200" min="0">
+    </div>
+
+    <button class="btn" onclick="showGate()">Vyhodnotit →</button>
+
+    <p class="fine-print">Výpočet je orientační. Žádné osobní údaje neukládáme bez vašeho souhlasu.</p>
+  </div>
+
+  <!-- STEP 2: Email gate -->
+  <div id="step-gate" style="display:none;">
+    <div class="brand">reaktivuj.cz</div>
+
+    <div class="steps">
+      <div class="step-dot done" id="dot1b"></div>
+      <div class="step-dot active" id="dot2b"></div>
+    </div>
+
+    <h1>Výsledky jsou<br><span>připravené</span> 🎯</h1>
+    <p class="sub">Zadej svůj email a zobrazíme ti přesný výpočet — kolik peněz teď necháváš ležet a jak je odemknout.</p>
+
+    <div class="gate-box">
+      <div class="gate-title">Co dostaneš:</div>
+      <div class="gate-sub">✅ Konkrétní číslo tvého potenciálu (Kč/měsíc)<br>✅ Kde přicházíš nejvíc o peníze<br>✅ Co udělat jako první krok</div>
+
+      <div class="field" style="margin-bottom:0;">
+        <label>Tvůj email</label>
+        <input type="email" id="email-input" placeholder="jmeno@tvujeshop.cz">
+      </div>
+    </div>
+
+    <button class="btn" id="btn-submit" onclick="submitEmail()">Zobrazit moje výsledky →</button>
+    <button class="btn btn-secondary" onclick="backToCalc()">← Zpět</button>
+
+    <p class="fine-print">Odesláním souhlasíš se zpracováním emailu. Žádný spam — posíláme jen věci, které mají smysl. Odhlásit se můžeš kdykoliv.</p>
+  </div>
+
+  <!-- STEP 3: Loading -->
+  <div id="step-loading">
+    <div class="spinner"></div>
+    <div class="loading-text">
+      <strong>Vyhodnocujeme tvoji databázi…</strong><br>
+      Porovnáváme s průměry v tvém segmentu
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // ─── CONFIG ───────────────────────────────────────────────
+  const MAILERLITE_API_KEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZjU1MjQyZTkyYjg4NjMwMWI3ZDNkNzMxMmQ1MGI3OTY2ZWY1MDQyZDI4ZjNlZjlmNzk3Nzc0MjUyNTM3ODRjODZjOTBjNDkwYmQ1N2MxNDYiLCJpYXQiOjE3NzQyMjQ1ODAuOTMyMzc0LCJuYmYiOjE3NzQyMjQ1ODAuOTMyMzc2LCJleHAiOjQ5Mjk4OTgxODAuOTI4NTgyLCJzdWIiOiIyMjI5MzAyIiwic2NvcGVzIjpbXX0.taZPz5ZrV97RlGocwUQ7ZF1_YNUbsCZ_29gpXqTyqrxoqalFXDnKu6gaSc91VUjFVNIPdRb5FJDA7fVhBeu1xteWCOvQ-w48-u1p0XC-3mQliEH9j9Sww2nKhGe0hrg3DpU5KXfBs64CP-_iS1ehYh1c9dzm__1Jv7SHis_ggCIxKDMsZfOBzRNFzriT3VdcEjG-j9yoQqYoJOGF0qKh7k2tsyqAZIKy9EKIFotGk3WSmq2dVxl3jqX7apvZ-xkdMLjGLIwCu9J4DLZ9o0YOIlzT8-qHJjgyYJ_KHt4dl6enEONOO9C7qauLQXiZEgo5bXynSYsRau_-8SLo8ZlMZz6aBFKPWz40DljCqZZtNG8Xc7fgBVF7vsi43ttPjKRIfylw7hUt-Yascb0UDP-UhBZYcL2ZjVmZ3axxGrfHDpd-SpuU6jdi5j8u7ADxTqA1J3_k-8iqYBoxCUqtdnbgv_PzA_vTF2s6XR9460qCjbKUgWEP7VAAcrKJBnpalvyBqAcQ-1_P2e7gFpuvZWC5RQckBHM1W6FoSwHVtmnz-KGOEdr2exnzSEkOCU_jsE7H0kCzYPfeinKNHXx8xGCYkONMqFrnpzOn53fIlUK_rtry6IhBhSjjlcQCvrT7hh8YNMOxWpQIyFH7TyeTTtEQdRR3x4TjdFnkJLaMrUKknp4';
+  const MAILERLITE_GROUP_ID = '182614679389996933'; // Skupina: Reaktivuj
+  const REDIRECT_URL = 'https://reaktivuj.cz/';
+  // ──────────────────────────────────────────────────────────
+
+  let calcData = {};
+
+  function getInputs() {
+    return {
+      contacts: parseInt(document.getElementById('contacts').value) || 0,
+      avgOrder: parseInt(document.getElementById('avg-order').value) || 0,
+      bizType: document.querySelector('input[name="biztype"]:checked').value,
+    };
+  }
+
+  function validate() {
+    const { contacts, avgOrder } = getInputs();
+    let ok = true;
+
+    const cEl = document.getElementById('contacts');
+    const oEl = document.getElementById('avg-order');
+
+    if (!contacts || contacts < 1) { cEl.classList.add('error'); ok = false; }
+    else cEl.classList.remove('error');
+
+    if (!avgOrder || avgOrder < 1) { oEl.classList.add('error'); ok = false; }
+    else oEl.classList.remove('error');
+
+    return ok;
+  }
+
+  function compute(contacts, avgOrder, bizType) {
+    // ─── Warm contact benchmarks ────────────────────────────────────────
+    // ─── Warm contact benchmarks ────────────────────────────────────────
+    // Zdroj: Klaviyo Benchmark 2024, Russell Brunson (DotCom Secrets),
+    //        Hormozi (Gym Launch), real CZ data: JB Sport 4 349% ROI,
+    //        SEVT +176% email revenue, Grizly 15% obratu z emailů
+    //
+    // Warm contact = zákazník nebo odběratel který tě zná.
+    // Pravděpodobnost opakovaného nákupu je 6–7× vyšší než u nového (Hormozi).
+    // Průměrný ROI email marketingu v retailu: 42 Kč za každou 1 Kč (DMA 2024).
+    // Brunsonovo pravidlo: min. 20 Kč/kontakt/měsíc z aktivní databáze.
+    // ────────────────────────────────────────────────────────────────────
+
+    // ─── Výpočet ─────────────────────────────────────────────────────────
+    // Teplá databáze (zákazníci / odběratelé kteří tě znají):
+    //   1 kontakt = 20–25 Kč / měsíc při správně nastavených emailech
+    //
+    // Konzervativní: 20 Kč/kontakt (jen základní kampaně)
+    // Realistický:   25 Kč/kontakt (kampaně + automatizace)
+    // Optimistický:  38 Kč/kontakt (segmentace + reaktivace + plná automatizace)
+    //
+    // Zdroj: Klaviyo & Omnisend Benchmark 2024
+    // ────────────────────────────────────────────────────────────────────
+
+    const low  = contacts * 20;
+    const mid  = contacts * 25;
+    const high = contacts * 38;
+    const yearly = mid * 12;
+
+    return { low, mid, high, yearly };
+  }
+
+  function fmt(n) {
+    return n.toLocaleString('cs-CZ') + ' Kč';
+  }
+
+  function showGate() {
+    if (!validate()) return;
+    const { contacts, avgOrder, bizType } = getInputs();
+    calcData = { contacts, avgOrder, bizType, ...compute(contacts, avgOrder, bizType) };
+
+    document.getElementById('step-calc').style.display = 'none';
+    document.getElementById('step-gate').style.display = 'block';
+  }
+
+  function backToCalc() {
+    document.getElementById('step-gate').style.display = 'none';
+    document.getElementById('step-calc').style.display = 'block';
+  }
+
+  async function submitEmail() {
+    const emailEl = document.getElementById('email-input');
+    const email = emailEl.value.trim();
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailEl.classList.add('error');
+      emailEl.focus();
+      return;
+    }
+    emailEl.classList.remove('error');
+
+    // Zobraz loading
+    document.getElementById('step-gate').style.display = 'none';
+    document.getElementById('step-loading').style.display = 'block';
+
+    // Pošli do MailerLite (async, nečekáme na výsledek)
+    addToMailerLite(email, calcData).catch(console.error);
+
+    // Počkej 1.8s (UX efekt) → redirect
+    await delay(1800);
+
+    const params = new URLSearchParams({
+      kontakty: calcData.contacts,
+      typ: calcData.bizType,
+      objednavka: calcData.avgOrder,
+      potencial_low: calcData.low,
+      potencial_mid: calcData.mid,
+      potencial_high: calcData.high,
+      rocni_ztrata: calcData.yearly,
+    });
+
+    window.location.href = REDIRECT_URL + '?' + params.toString();
+  }
+
+  async function addToMailerLite(email, data) {
+    const body = {
+      email: email,
+      groups: [MAILERLITE_GROUP_ID],
+      fields: {
+        kontakty: String(data.contacts),
+        biz_typ: data.bizType,
+        avg_objednavka: String(data.avgOrder),
+        potencial_low: String(data.low),
+      }
+    };
+
+    await fetch('https://connect.mailerlite.com/api/subscribers', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + MAILERLITE_API_KEY,
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+  }
+
+  function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+</script>
+
+</body>
+</html>

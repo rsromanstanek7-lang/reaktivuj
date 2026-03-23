@@ -1,5 +1,34 @@
 # CHANGELOG — YouTube Mastery Email Sequence
 
+## 2026-03-22 — Session: reaktivuj.cz funnel + VSL + kalkulačka
+
+### VSL
+- Napsán VSL v2 pro reaktivuj.cz (`vsl_reaktivuj_v2.md`)
+- Framework: Pattern Interrupt → Stats Shock → Pain → Villain → Solution → Proof → Objections → CTA
+- Délka ~4:30, cílí na e-shopy i kouče/tvůrce kurzů
+- Klíčová čísla: 49 700 e-shopů, 42 Kč ROI, JB Sport 4 349 %, SEVT +176 %
+
+### Calculator Funnel (kompletní, live)
+- Vytvořen `kalkulator.html` — 3 pole, email gate, MailerLite integrace
+- Flow: kalkulačka → email gate → MailerLite (skupina Reaktivuj) → spinner → redirect
+- Výpočet: 1 kontakt = 20 Kč (konz.) / 25 Kč (real.) / 38 Kč (opt.) za měsíc
+- Popup na reaktivuj.cz — zobrazí se jen při příchodu z kalkulačky (URL params)
+- Popup: velké číslo, vzorec, roční ztráta, 2 tlačítka (video / zavřít)
+
+### Nasazení
+- reaktivuj.cz → Vercel projekt `reaktivuj` (přesunuto z reaktivuj-2)
+- kalkulator.reaktivuj.cz → Vercel projekt `kalkulator-reaktivuj` (nový)
+- DNS: A záznamy přidány ve Websupport (TTL 600)
+
+### Ad copy
+- 6 Meta static ad textů ve 4 úhlech: loss, otázka, social proof, strach
+
+### Skills vytvořeny
+- `skills/vsl-framework.md` — VSL 8-step framework
+- `skills/calculator-funnel.md` — lead kalkulačka, psychologie, technický stack
+- `skills/vercel-deploy.md` — Vercel deploy workflow, DNS, časté problémy
+- `skills/reaktivuj-client.md` — klient info, čísla, stack, funnel
+
 ## 2026-03-20 — Session 3 (Screenshoty do emailů + kontakty)
 
 ### Screenshoty přiřazeny do emailů (plán dokončen)

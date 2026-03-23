@@ -558,5 +558,166 @@
             }
         }
     </script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     KALKULAČKA POPUP — zobrazí se jen při příchodu z kalkulačky
+     ════════════════════════════════════════════════════════════ -->
+<div id="kalk-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:9999; display:none; align-items:center; justify-content:center; padding:20px;">
+  <div id="kalk-popup" style="
+    background:#1a1d27;
+    border:1.5px solid rgba(249,115,22,0.35);
+    border-radius:20px;
+    max-width:480px;
+    width:100%;
+    padding:36px 32px;
+    position:relative;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    text-align:center;
+    animation: popIn 0.3s ease;
+  ">
+    <style>
+      @keyframes popIn {
+        from { transform: scale(0.92); opacity: 0; }
+        to   { transform: scale(1);    opacity: 1; }
+      }
+    </style>
+
+    <!-- Zavřít -->
+    <button onclick="closeKalkPopup()" style="
+      position:absolute; top:14px; right:16px;
+      background:none; border:none; cursor:pointer;
+      color:#6b7280; font-size:22px; line-height:1;
+      padding:4px 8px; border-radius:6px;
+    " title="Zavřít">✕</button>
+
+    <!-- Eyebrow -->
+    <div style="font-size:11px;font-weight:700;color:#f97316;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px;">
+      Výsledek tvého výpočtu
+    </div>
+
+    <!-- Hlavní headline -->
+    <div style="font-size:15px;color:#9ca3af;margin-bottom:6px;">
+      Každý měsíc přicházíš o
+    </div>
+    <div id="kalk-mid" style="font-size:48px;font-weight:900;color:#f97316;line-height:1;margin-bottom:6px;">—</div>
+    <div id="kalk-range" style="font-size:13px;color:#6b7280;margin-bottom:20px;">—</div>
+
+    <!-- Breakdown -->
+    <div id="kalk-breakdown" style="
+      background:#0f1117;
+      border-radius:12px;
+      padding:16px;
+      font-size:13px;
+      color:#9ca3af;
+      line-height:1.8;
+      text-align:left;
+      margin-bottom:20px;
+    ">—</div>
+
+    <!-- Roční ztráta -->
+    <div id="kalk-yearly" style="
+      background:rgba(239,68,68,0.08);
+      border:1px solid rgba(239,68,68,0.2);
+      border-radius:10px;
+      padding:12px 16px;
+      font-size:14px;
+      font-weight:600;
+      color:#fca5a5;
+      margin-bottom:24px;
+    ">—</div>
+
+    <!-- CTA -->
+    <a href="#" onclick="kalkPlayVideo(); return false;" style="
+      display:block;
+      background:#f97316;
+      color:#fff;
+      text-decoration:none;
+      padding:15px;
+      border-radius:12px;
+      font-size:15px;
+      font-weight:700;
+      margin-bottom:10px;
+    ">Chci vědět jak to odemknout →</a>
+
+    <button onclick="closeKalkPopup()" style="
+      width:100%;
+      background:none;
+      border:1.5px solid #2a2d3a;
+      color:#6b7280;
+      padding:11px;
+      border-radius:10px;
+      font-size:13px;
+      cursor:pointer;
+    ">Zavřít a prohlédnout si stránku</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  function fmtKc(n) {
+    if (!n || isNaN(n)) return '—';
+    return Number(n).toLocaleString('cs-CZ') + ' Kč';
+  }
+
+  function showKalkPopup() {
+    const p = new URLSearchParams(window.location.search);
+    const mid   = parseInt(p.get('potencial_mid'));
+    const low   = parseInt(p.get('potencial_low'));
+    const high  = parseInt(p.get('potencial_high'));
+    const yearly = parseInt(p.get('rocni_ztrata'));
+    const kontakty = p.get('kontakty');
+    const objednavka = p.get('objednavka');
+    const typ = p.get('typ');
+
+    // Zobraz jen pokud přišli z kalkulačky
+    if (!mid || isNaN(mid)) return;
+
+    document.getElementById('kalk-mid').textContent = fmtKc(mid);
+    document.getElementById('kalk-range').textContent =
+      'Rozsah: ' + fmtKc(low) + ' – ' + fmtKc(high) + ' / měsíc';
+
+    document.getElementById('kalk-breakdown').innerHTML =
+      kontakty + ' kontaktů × 25 Kč/kontakt/měsíc = <strong style="color:#f1f5f9;">' + fmtKc(parseInt(mid)) + '/měsíc</strong>';
+
+    document.getElementById('kalk-yearly').textContent =
+      '📉 Za rok to dělá ' + fmtKc(yearly) + ', které každý měsíc necháváš ležet';
+
+    const overlay = document.getElementById('kalk-overlay');
+    overlay.style.display = 'flex';
+
+    // Čistý URL (smaž parametry z adresního řádku)
+    history.replaceState({}, '', window.location.pathname);
+  }
+
+  function closeKalkPopup() {
+    document.getElementById('kalk-overlay').style.display = 'none';
+  }
+
+  function kalkPlayVideo() {
+    closeKalkPopup();
+    // Scroll na video sekci
+    const vsl = document.querySelector('.vsl-video-placeholder') || document.querySelector('.vsl-section');
+    if (vsl) {
+      vsl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Trigger play button po scrollu
+      setTimeout(() => {
+        const playBtn = document.querySelector('.play-btn');
+        if (playBtn) playBtn.click();
+      }, 600);
+    }
+  }
+
+  window.closeKalkPopup = closeKalkPopup;
+  window.kalkPlayVideo = kalkPlayVideo;
+
+  // Spusť po načtení stránky
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', showKalkPopup);
+  } else {
+    showKalkPopup();
+  }
+})();
+</script>
+
 </body>
 </html>
