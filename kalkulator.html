@@ -443,6 +443,13 @@
     // Pošli do MailerLite (async, nečekáme na výsledek)
     addToMailerLite(email, calcData).catch(console.error);
 
+    // Track email capture
+    fetch('https://reaktivuj-dashboard.vercel.app/api/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event: 'email_capture', variant: 'kalkulator' })
+    }).catch(() => {});
+
     // Počkej 1.8s (UX efekt) → redirect
     await delay(1800);
 
