@@ -444,7 +444,7 @@
     addToMailerLite(email, calcData).catch(console.error);
 
     // Track email capture
-    fetch('https://reaktivuj-dashboard.vercel.app/api/track', {
+    fetch('https://reaktivuj.cz/api/track', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ event: 'email_capture', variant: 'kalkulator' })
@@ -496,7 +496,7 @@
 
 <script>
   // Kalkulator pageview tracking
-  fetch('https://reaktivuj-dashboard.vercel.app/api/track', {
+  fetch('https://reaktivuj.cz/api/track', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ event: 'pageview', variant: 'kalkulator' })
