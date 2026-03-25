@@ -38,7 +38,7 @@
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 34px;
     font-weight: 800;
     line-height: 1.25;
     margin-bottom: 10px;
@@ -271,8 +271,8 @@
       <div class="step-dot" id="dot2"></div>
     </div>
 
-    <h1>Kolik ti každý měsíc<br><span>leží v databázi?</span></h1>
-    <p class="sub">Zadej 3 čísla a zjisti, kolik peněz teď necháváš každý měsíc ležet ve své emailové databázi.</p>
+    <h1>Spočítej, kolik peněz ti leží<br>každý měsíc v <span>e-mailové databázi.</span></h1>
+    <p class="sub">Zadej 3 čísla.</p>
 
     <div class="field">
       <label>Počet kontaktů v databázi</label>
@@ -485,6 +485,15 @@
   function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+</script>
+
+<script>
+  // Kalkulator pageview tracking
+  fetch('https://reaktivuj-dashboard.vercel.app/api/track', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ event: 'pageview', variant: 'kalkulator' })
+  }).catch(() => {});
 </script>
 
 </body>
