@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Vítací email sekvence pro e-shop: 5 emailů + šablony | reaktivuj</title>
+    <meta name="description" content="Jak postavit vítací email sekvenci pro e-shop, která přemění nové odběratele na kupující. 5 emailů, hotové šablony a příklady subject lines.">
+    <meta name="keywords" content="welcome email sekvence, vítací emaily eshop, uvítací sekvence, vítací email šablona">
+    <link rel="canonical" href="https://reaktivuj.cz/blog/vitaci-email-sekvence">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vítací email sekvence pro e-shop: 5 emailů + hotové šablony">
+    <meta property="og:description" content="Jak postavit vítací email sekvenci pro e-shop, která přemění nové odběratele na kupující. 5 emailů, hotové šablony a příklady subject lines.">
+    <meta property="og:url" content="https://reaktivuj.cz/blog/vitaci-email-sekvence">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=1200&q=80">
+    <meta property="og:site_name" content="reaktivuj">
+    <meta property="article:published_time" content="2026-03-25">
+    <meta property="article:author" content="Roman Staněk">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vítací email sekvence pro e-shop: 5 emailů + hotové šablony">
+    <meta name="twitter:description" content="Jak postavit vítací email sekvenci, která přemění nové odběratele na kupující.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=1200&q=80">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #0a0a0a;
+            --card-bg: #111111;
+            --border: #1a1a1a;
+            --accent: #00e87a;
+            --accent-dim: rgba(0, 232, 122, 0.12);
+            --text: #e8e8e8;
+            --text-muted: #888;
+            --text-subtle: #555;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ─── NAVBAR ─── */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 1.5rem;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); }
+        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+        .nav-link { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+        .nav-link:hover { color: #fff; text-decoration: none; }
+        .btn-nav {
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.5rem 1.1rem;
+            border-radius: 6px;
+            transition: opacity 0.2s;
+            text-decoration: none;
+        }
+        .btn-nav:hover { opacity: 0.85; text-decoration: none; }
+
+        /* ─── LAYOUT ─── */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ─── HERO IMAGE ─── */
+        .article-hero {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* ─── ARTICLE HEADER ─── */
+        .article-header {
+            padding: 3rem 0 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: var(--accent-dim);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+        }
+        .article-meta-small {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .article-title {
+            font-size: clamp(1.75rem, 4vw, 2.6rem);
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            color: #fff;
+            margin-bottom: 1.25rem;
+        }
+        .article-intro {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+            max-width: 720px;
+        }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1.75rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent) 0%, #00b85e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: #000;
+            flex-shrink: 0;
+        }
+        .author-name { font-weight: 600; font-size: 0.9rem; color: #fff; }
+        .author-role { font-size: 0.8rem; color: var(--text-muted); }
+        .meta-divider { width: 1px; height: 32px; background: var(--border); }
+        .meta-item { font-size: 0.82rem; color: var(--text-muted); }
+        .meta-item strong { color: var(--text); }
+
+        /* ─── ARTICLE BODY ─── */
+        .article-body {
+            padding: 3rem 0 4rem;
+        }
+        .article-body h2 {
+            font-size: 1.65rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #fff;
+            margin: 2.5rem 0 1rem;
+            line-height: 1.3;
+        }
+        .article-body h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 1.75rem 0 0.75rem;
+        }
+        .article-body p {
+            margin-bottom: 1.25rem;
+            color: var(--text);
+            font-size: 1.02rem;
+        }
+        .article-body ul, .article-body ol {
+            margin: 0 0 1.25rem 1.5rem;
+            color: var(--text);
+        }
+        .article-body li { margin-bottom: 0.5rem; font-size: 1.02rem; }
+
+        /* ─── STATS BOX ─── */
+        .stats-box {
+            background: var(--accent-dim);
+            border: 1px solid rgba(0, 232, 122, 0.25);
+            border-left: 4px solid var(--accent);
+            border-radius: 12px;
+            padding: 1.75rem 2rem;
+            margin: 2rem 0;
+        }
+        .stats-box-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+        }
+        .stats-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .stats-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.85rem;
+            font-size: 0.97rem;
+            color: var(--text);
+        }
+        .stats-list li:last-child { margin-bottom: 0; }
+        .stats-list li::before {
+            content: '→';
+            color: var(--accent);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .stats-list strong { color: #fff; }
+
+        /* ─── EMAIL STEP CARDS ─── */
+        .steps-grid { display: flex; flex-direction: column; gap: 1.5rem; margin: 2rem 0; }
+
+        .step-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem;
+            position: relative;
+            transition: border-color 0.2s;
+        }
+        .step-card:hover { border-color: rgba(0, 232, 122, 0.3); }
+
+        .step-number-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .step-number {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #000;
+            font-weight: 900;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .step-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+        .step-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #fff;
+            margin-top: 0.15rem;
+        }
+        .step-subject {
+            background: #0a0a0a;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .subject-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter---spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-subtle);
+            white-space: nowrap;
+        }
+        .subject-text {
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: 600;
+        }
+        .step-body { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; }
+        .step-items {
+            list-style: none;
+            margin: 0.75rem 0 1rem;
+            padding: 0;
+        }
+        .step-items li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-bottom: 0.45rem;
+            font-size: 0.93rem;
+            color: var(--text-muted);
+        }
+        .step-items li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .step-cta-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--accent-dim);
+            border: 1px solid rgba(0, 232, 122, 0.2);
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 0.35rem 0.85rem;
+            border-radius: 100px;
+            margin-top: 0.5rem;
+        }
+
+        /* ─── TABLE ─── */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        thead tr {
+            background: #111;
+            border-bottom: 1px solid #222;
+        }
+        th {
+            padding: 0.9rem 1.1rem;
+            text-align: left;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+        td {
+            padding: 0.85rem 1.1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+            vertical-align: top;
+        }
+        tr:last-child td { border-bottom: none; }
+        tbody tr:hover { background: rgba(255,255,255,0.02); }
+        .email-num-badge {
+            background: var(--accent-dim);
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        /* ─── PLATFORM BLOCKS ─── */
+        .platform-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+        .platform-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        .platform-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+        .platform-card p { font-size: 0.9rem; color: var(--text-muted); margin: 0; line-height: 1.6; }
+
+        /* ─── MISTAKES LIST ─── */
+        .mistakes-list { list-style: none; margin: 1.5rem 0; padding: 0; }
+        .mistake-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .mistake-item:last-child { border-bottom: none; }
+        .mistake-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255,74,74,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        .mistake-text strong { display: block; color: #fff; font-weight: 700; margin-bottom: 0.2rem; font-size: 0.95rem; }
+        .mistake-text span { font-size: 0.88rem; color: var(--text-muted); }
+
+        /* ─── CASE STUDY BOX ─── */
+        .case-study {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem 2.25rem;
+            margin: 2.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .case-study::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), #00b85e);
+        }
+        .case-study-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .case-study-stat {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.04em;
+        }
+        .case-study-stat-label { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+        .case-study p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin: 0; }
+
+        /* ─── EMAIL MOCKUP ─── */
+        .email-mockup {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 14px;
+            overflow: hidden;
+            margin: 2.5rem 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .mockup-chrome {
+            background: #222;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        .chrome-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .chrome-dot.red { background: #ff5f57; }
+        .chrome-dot.yellow { background: #febc2e; }
+        .chrome-dot.green { background: #28c840; }
+        .mockup-header {
+            background: #161616;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        .mockup-from { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.3rem; }
+        .mockup-from strong { color: #fff; }
+        .mockup-subject-line { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+        .mockup-to { font-size: 0.75rem; color: var(--text-subtle); }
+        .mockup-body { padding: 2rem 1.5rem; }
+        .mockup-greeting { font-size: 1rem; color: #fff; font-weight: 600; margin-bottom: 1rem; }
+        .mockup-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 0.75rem; }
+        .mockup-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            margin: 0.75rem 0;
+            text-decoration: none;
+        }
+        .mockup-footer-text { font-size: 0.75rem; color: var(--text-subtle); margin-top: 1.5rem; border-top: 1px solid #2a2a2a; padding-top: 1rem; }
+
+        /* ─── FAQ ─── */
+        .faq-list { margin: 1.5rem 0; }
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            background: var(--card-bg);
+            border: none;
+            padding: 1.1rem 1.25rem;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fff;
+            transition: background 0.2s;
+        }
+        .faq-question:hover { background: #161616; }
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+            color: var(--accent);
+            transition: transform 0.25s;
+        }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--card-bg);
+        }
+        .faq-answer-inner {
+            padding: 0 1.25rem 1.25rem;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ─── CTA BOX ─── */
+        .cta-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-box::after {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(0,232,122,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-box h2 {
+            font-size: 1.7rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+        .cta-box p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            transition: opacity 0.2s, transform 0.2s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); text-decoration: none; }
+
+        /* ─── FOOTER ─── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-subtle);
+        }
+        footer a { color: var(--text-muted); }
+
+        /* ─── MODAL ─── */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s;
+        }
+        .modal-overlay.open { opacity: 1; pointer-events: all; }
+        .modal-box {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 680px;
+            overflow: hidden;
+            position: relative;
+            transform: translateY(16px);
+            transition: transform 0.25s;
+        }
+        .modal-overlay.open .modal-box { transform: translateY(0); }
+        .modal-close {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            background: #222;
+            border: none;
+            color: #888;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            font-family: 'Inter', sans-serif;
+        }
+        .modal-close:hover { color: #fff; }
+
+        /* ─── BREADCRUMB ─── */
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.8rem;
+            color: var(--text-subtle);
+        }
+        .breadcrumb a { color: var(--text-subtle); }
+        .breadcrumb span { margin: 0 0.4rem; }
+
+        /* ─── LAST UPDATED ─── */
+        .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.78rem;
+            color: var(--text-subtle);
+            background: #111;
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 640px) {
+            .article-hero { height: 220px; }
+            .article-title { font-size: 1.5rem; }
+            .article-meta { gap: 1rem; }
+            .meta-divider { display: none; }
+            .case-study-stat { font-size: 2.2rem; }
+            .cta-box { padding: 2rem 1.25rem; }
+            .cta-box h2 { font-size: 1.35rem; }
+            .platform-cards { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <!-- FAQPage JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kolik emailů má mít vítací sekvence?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Optimální vítací sekvence obsahuje 4–6 emailů rozložených do 10–14 dnů. Méně nestačí na budování vztahu, více může zákazníky obtěžovat. Pro e-shopy funguje nejlépe 5 emailů: uvítání, brand story, sociální důkaz, odbourání bariér a závěrečná připomínka slevy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak dlouho mají být vítací emaily?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ideální délka vítacího emailu je 150–300 slov. Méně ztrácí kontext, více unavuje. Výjimkou je brand story (email č. 2), který může být delší, pokud je příběh autentický a zapojuje čtenáře emotivně."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kdy posílat vítací sekvenci?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Email č. 1 posílejte okamžitě — do 5 minut od přihlášení. Zákazník je nejvíce angažovaný právě teď. Email č. 2 v den 1–2, email č. 3 v den 3–4, email č. 4 v den 5–7 a email č. 5 v den 10–14. Všechny emaily plánujte na pracovní dny mezi 9:00–11:00 nebo 19:00–21:00."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co dělat, když zákazník nakoupí během vítací sekvence?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zákazníka, který nakoupil, okamžitě vyřaďte z vítací sekvence a přesuňte do post-purchase flow. Pokračovat v zasílání vítacích emailů se slevou zákazníkovi, který už koupil, je chyba, která podrývá důvěru a ztrácí marži. Všechny seriózní platformy (Klaviyo, MailerLite, Mailchimp) tuto logiku umožňují nastavit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak poznat, jestli moje vítací sekvence funguje?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sledujte tři klíčové metriky: open rate prvního emailu (benchmark: 50–60 %), click rate v sekvenenci (benchmark: 8–12 %) a konverzní míra (benchmark: 3–5 % přímých nákupů ze sekvence). Pokud open rate klesá pod 30 %, problém je v subject line nebo doručitelnosti. Pokud je open rate OK ale konverze nízká, problém je v copywritingu nebo nabídce."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Article JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Vítací email sekvence pro e-shop: 5 emailů + hotové šablony",
+      "description": "Jak postavit vítací email sekvenci pro e-shop, která přemění nové odběratele na kupující. 5 emailů, hotové šablony a příklady subject lines.",
+      "image": "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=1200&q=80",
+      "author": {
+        "@type": "Person",
+        "name": "Roman Staněk",
+        "url": "https://reaktivuj.cz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "reaktivuj",
+        "url": "https://reaktivuj.cz"
+      },
+      "datePublished": "2026-03-25",
+      "dateModified": "2026-03-25",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://reaktivuj.cz/blog/vitaci-email-sekvence"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="https://reaktivuj.cz" class="logo">reaktivuj</a>
+            <div class="nav-right">
+                <a href="https://reaktivuj.cz/blog" class="nav-link">Blog</a>
+                <a href="#" class="btn-nav" onclick="openModal(); return false;">Bezplatný hovor →</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FEATURED IMAGE -->
+    <img
+        src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=1200&q=80"
+        alt="Vítací email sekvence pro e-shop"
+        class="article-hero"
+        loading="eager"
+    >
+
+    <!-- ARTICLE HEADER -->
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="https://reaktivuj.cz">reaktivuj.cz</a>
+            <span>›</span>
+            <a href="https://reaktivuj.cz/blog">Blog</a>
+            <span>›</span>
+            Vítací email sekvence
+        </nav>
+
+        <header class="article-header">
+            <div class="article-eyebrow">
+                <span class="tag">Email marketing</span>
+                <span class="tag">Automatizace</span>
+                <span class="article-meta-small">7 minut čtení</span>
+            </div>
+
+            <div class="last-updated">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Naposledy aktualizováno: 25. března 2026
+            </div>
+
+            <h1 class="article-title">Vítací email sekvence pro e-shop: 5 emailů + hotové šablony</h1>
+
+            <p class="article-intro">
+                Vítací email sekvence je série automatických emailů, které zákazník dostane ihned po přihlášení k odběru. Správně postavená sekvence má 4× vyšší open rate než běžný newsletter — a generuje první nákupy ještě předtím, než se zákazník stihne "ochladit".
+            </p>
+
+            <div class="article-meta">
+                <div class="author-info">
+                    <div class="author-avatar">RS</div>
+                    <div>
+                        <div class="author-name">Roman Staněk</div>
+                        <div class="author-role">reaktivuj.cz</div>
+                    </div>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item"><strong>25. března 2026</strong></div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">7 minut čtení</div>
+            </div>
+        </header>
+    </div>
+
+    <!-- ARTICLE BODY -->
+    <div class="container">
+        <article class="article-body">
+
+            <!-- STATS BOX -->
+            <div class="stats-box">
+                <div class="stats-box-title">Proč na vítací sekvenci záleží — data</div>
+                <ul class="stats-list">
+                    <li><strong>4× vyšší open rate</strong> mají vítací emaily oproti standardním newsletterům (Omnisend, 2025)</li>
+                    <li>Průměrná konverzní míra vítací sekvence: <strong>51,9 %</strong> u top e-shopů (Klaviyo benchmarks)</li>
+                    <li><strong>74 % zákazníků</strong> očekává uvítací email ihned po přihlášení — pokud ho nedostanou, odebírají se (Invesp, 2024)</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 1 -->
+            <h2>Proč většina e-shopů vítací sekvenci nemá — nebo ji dělá špatně</h2>
+
+            <p>Podívejte se na svůj email marketing. Máte nastavenou automatickou sekvenci, která zákazníkovi po přihlášení k newsletteru pošle 5 emailů v průběhu dvou týdnů? Pokud ne, nejste sami — ale přicházíte o peníze.</p>
+
+            <p>Tři nejčastější chyby, které vidíme u e-shopů, se kterými přicházíme do kontaktu:</p>
+
+            <ul class="mistakes-list">
+                <li class="mistake-item">
+                    <div class="mistake-icon">✕</div>
+                    <div class="mistake-text">
+                        <strong>Posílají jediný uvítací email</strong>
+                        <span>Přijde automatická zpráva "Díky za přihlášení, tady je tvá sleva 10 %." A pak nic. Zákazník dostane newsletter za tři týdny, kdy už dávno nevíte, kdo jste.</span>
+                    </div>
+                </li>
+                <li class="mistake-item">
+                    <div class="mistake-icon">✕</div>
+                    <div class="mistake-text">
+                        <strong>Nemají žádnou automatizaci</strong>
+                        <span>Emaily posílají ručně, nepravidelně a "když vyjde čas." Vítací sekvenci automatizaci vůbec neřeší, protože "to je složité." Přitom nastavení v MailerLite zabere hodinu.</span>
+                    </div>
+                </li>
+                <li class="mistake-item">
+                    <div class="mistake-icon">✕</div>
+                    <div class="mistake-text">
+                        <strong>Vítací email = generický slevový email</strong>
+                        <span>Žádný brand story, žádný vztah, žádná edukace. Jen sleva, CTA a odhlásit se. Zákazník se neidentifikuje se značkou a koupí jednou — nebo vůbec.</span>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- SECTION 2: 5-EMAIL FRAMEWORK -->
+            <h2>5-emailová vítací sekvence — kompletní framework</h2>
+
+            <p>Toto je přesná struktura, kterou nasazujeme u klientů reaktivuj.cz. Každý email má jasný cíl a přesné místo v sekvenci. Neměňte pořadí.</p>
+
+            <div class="steps-grid">
+
+                <!-- EMAIL 1 -->
+                <div class="step-card">
+                    <div class="step-number-row">
+                        <div class="step-number">1</div>
+                        <div>
+                            <div class="step-label">Odeslat okamžitě po přihlášení</div>
+                            <div class="step-title">Uvítání + doručení dárku</div>
+                        </div>
+                    </div>
+                    <div class="step-subject">
+                        <span class="subject-label">Subject</span>
+                        <span class="subject-text">Vítej v [název e-shopu] 🎉 Tady je tvůj dárek</span>
+                    </div>
+                    <ul class="step-items">
+                        <li>Ihned doručit slibovaný lead magnet nebo slevový kód</li>
+                        <li>Krátce představit značku (2–3 věty, ne esej)</li>
+                        <li>Nastavit očekávání: co zákazník v emailech dostane a jak často</li>
+                        <li>Jeden CTA: "Přejít do obchodu →"</li>
+                    </ul>
+                    <div class="step-cta-chip">CTA: Přejít do obchodu →</div>
+                </div>
+
+                <!-- EMAIL 2 -->
+                <div class="step-card">
+                    <div class="step-number-row">
+                        <div class="step-number">2</div>
+                        <div>
+                            <div class="step-label">Den 1–2 po přihlášení</div>
+                            <div class="step-title">Brand story — proč jste tady</div>
+                        </div>
+                    </div>
+                    <div class="step-subject">
+                        <span class="subject-label">Subject</span>
+                        <span class="subject-text">Proč jsme tu + co tě čeká</span>
+                    </div>
+                    <ul class="step-items">
+                        <li>Příběh značky — proč jste to celé začali (skutečný, ne PR verze)</li>
+                        <li>Čím se lišíte od konkurence (konkrétně, ne "kvalitou a přístupem")</li>
+                        <li>Přirozeně zmínit 1–2 bestsellery v kontextu příběhu</li>
+                        <li>CTA nenásilně vedoucí na bestsellery</li>
+                    </ul>
+                    <div class="step-cta-chip">CTA: Podívej se na naše bestsellery →</div>
+                </div>
+
+                <!-- EMAIL 3 -->
+                <div class="step-card">
+                    <div class="step-number-row">
+                        <div class="step-number">3</div>
+                        <div>
+                            <div class="step-label">Den 3–4 po přihlášení</div>
+                            <div class="step-title">Sociální důkaz — co říkají zákazníci</div>
+                        </div>
+                    </div>
+                    <div class="step-subject">
+                        <span class="subject-label">Subject</span>
+                        <span class="subject-text">Zákazníci nás milují (a tohle říkají)</span>
+                    </div>
+                    <ul class="step-items">
+                        <li>2–3 skutečné recenze zákazníků — s jménem, ideálně s produktem</li>
+                        <li>Fotografie produktu nebo zákazníka jako vizuální kotva</li>
+                        <li>Krátký popis produktu, který recenze chválí</li>
+                        <li>CTA vedoucí přímo do obchodu nebo na konkrétní produkt</li>
+                    </ul>
+                    <div class="step-cta-chip">CTA: Vyzkoušet i já →</div>
+                </div>
+
+                <!-- EMAIL 4 -->
+                <div class="step-card">
+                    <div class="step-number-row">
+                        <div class="step-number">4</div>
+                        <div>
+                            <div class="step-label">Den 5–7 po přihlášení</div>
+                            <div class="step-title">Odbourání bariér — proč nakoupit bezpečně</div>
+                        </div>
+                    </div>
+                    <div class="step-subject">
+                        <span class="subject-label">Subject</span>
+                        <span class="subject-text">Takhle se postaráme o tvou objednávku</span>
+                    </div>
+                    <ul class="step-items">
+                        <li>Transparentní informace o dopravě a době doručení</li>
+                        <li>Jasná politika vrácení zboží (v češtině, ne právní formát)</li>
+                        <li>Zákaznická podpora — jak a kdy se na vás zákazník může obrátit</li>
+                        <li>Připomenout platný slevový kód, pokud ještě nevypršel</li>
+                    </ul>
+                    <div class="step-cta-chip">CTA: První objednávka se slevou →</div>
+                </div>
+
+                <!-- EMAIL 5 -->
+                <div class="step-card">
+                    <div class="step-number-row">
+                        <div class="step-number">5</div>
+                        <div>
+                            <div class="step-label">Den 10–14 po přihlášení</div>
+                            <div class="step-title">Poslední šance — sleva vyprší</div>
+                        </div>
+                    </div>
+                    <div class="step-subject">
+                        <span class="subject-label">Subject</span>
+                        <span class="subject-text">Ještě tu jsi? Máme pro tebe speciální nabídku</span>
+                    </div>
+                    <ul class="step-items">
+                        <li>Přátelská připomínka — "sleva pořád platí, ale ne dlouho"</li>
+                        <li>Urgence: "Sleva vyprší za 48 hodin" — nastavte skutečně platný deadline</li>
+                        <li>Krátké shrnutí co zákazník získá (produkt/kategorie + výhoda)</li>
+                        <li>Silné CTA tlačítko s jasnou výzvou</li>
+                    </ul>
+                    <div class="step-cta-chip">CTA: Využít slevu →</div>
+                </div>
+
+            </div>
+
+            <!-- SECTION 3: SUBJECT LINES TABLE -->
+            <h2>Ukázky subject lines pro každý email</h2>
+
+            <p>Subject line rozhoduje o tom, jestli email otevřou nebo ne. Pro každý email v sekvenci mějte připravené A/B varianty — otestujte, co funguje na vaši databázi.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Subject line varianta A</th>
+                            <th>Subject line varianta B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="email-num-badge">Email 1</span></td>
+                            <td>Vítej 🎉 Tady je tvůj dárek (otevři hned)</td>
+                            <td>Tvůj slevový kód čeká — platí jen 7 dní</td>
+                        </tr>
+                        <tr>
+                            <td><span class="email-num-badge">Email 2</span></td>
+                            <td>Proč jsme to celé začali (ne PR verze)</td>
+                            <td>Tohle nás odlišuje od 99 % e-shopů</td>
+                        </tr>
+                        <tr>
+                            <td><span class="email-num-badge">Email 3</span></td>
+                            <td>„Nikdy jsem nečekal, že to takhle funguje" — Tomáš, Praha</td>
+                            <td>Zákazníci to říkají lépe než my sami</td>
+                        </tr>
+                        <tr>
+                            <td><span class="email-num-badge">Email 4</span></td>
+                            <td>Co se stane, když objednáš — celý proces krok za krokem</td>
+                            <td>Máš obavy? Tohle by tě mělo uklidnit</td>
+                        </tr>
+                        <tr>
+                            <td><span class="email-num-badge">Email 5</span></td>
+                            <td>Sleva vyprší za 48 hodin — tohle je poslední připomínka</td>
+                            <td>Ještě jsi to nestihl? Dáme ti ještě chvíli</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- EMAIL MOCKUP -->
+            <h2>Jak vypadá email č. 1 v praxi</h2>
+
+            <p>Ukázka prvního uvítacího emailu — jednoduchý, přímý, s jasným CTA. Žádné zbytečné grafické prvky, žádné tři různé nabídky.</p>
+
+            <div class="email-mockup">
+                <div class="mockup-chrome">
+                    <div class="chrome-dot red"></div>
+                    <div class="chrome-dot yellow"></div>
+                    <div class="chrome-dot green"></div>
+                </div>
+                <div class="mockup-header">
+                    <div class="mockup-from">Od: <strong>Přírodní kosmetika Lena &lt;ahoj@lenakosmetika.cz&gt;</strong></div>
+                    <div class="mockup-subject-line">Vítej v Lena kosmetika 🎉 Tady je tvůj dárek</div>
+                    <div class="mockup-to">Komu: jana.novakova@gmail.com</div>
+                </div>
+                <div class="mockup-body">
+                    <div class="mockup-greeting">Ahoj Jano,</div>
+                    <div class="mockup-text">
+                        díky, že jsi se přidala k naší komunitě — a hlavně, tady je slibovaný kód na 10 % slevu:
+                    </div>
+                    <div style="background:#0a0a0a; border: 1px dashed #333; border-radius:8px; padding: 1rem 1.5rem; text-align:center; margin: 1rem 0;">
+                        <div style="font-size: 0.75rem; color: #666; margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.1em;">Tvůj slevový kód</div>
+                        <div style="font-size: 1.5rem; font-weight: 900; color: #00e87a; letter-spacing: 0.15em;">VITEJ10</div>
+                        <div style="font-size: 0.75rem; color: #666; margin-top: 0.35rem;">Platí 7 dní · Minimum objednávky: 500 Kč</div>
+                    </div>
+                    <div class="mockup-text">
+                        Lena kosmetika vznikla proto, že jsme nenašly přírodní produkty, kterým bychom věřily — tak jsme si je vyrobily samy. Dnes máme přes 12 000 spokojených zákazníků.
+                    </div>
+                    <div class="mockup-text">
+                        V dalším emailu ti ukážeme, jak začít — i když přírodnína kosmetika je pro tebe nová.
+                    </div>
+                    <a href="#" class="mockup-btn" onclick="return false;">Přejít do obchodu →</a>
+                    <div class="mockup-footer-text">
+                        Dostáváš tento email, protože ses přihlásila na lenakosmetika.cz. <br>
+                        <a href="#" style="color: #555;" onclick="return false;">Odhlásit se z odběru</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: PLATFORMS -->
+            <h2>Jak nastavit vítací sekvenci na populárních platformách</h2>
+
+            <div class="platform-cards">
+                <div class="platform-card">
+                    <div class="platform-name">MailerLite</div>
+                    <p>V sekci <em>Automation</em> vytvořte nový workflow s triggerem "Subscriber joins a group." Přidejte emaily jako kroky a nastavte prodlevy (delay) mezi nimi. MailerLite umožňuje podmínky — např. přeskočit email č. 5, pokud zákazník mezitím nakoupil (propojte přes API nebo Zapier).</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-name">Klaviyo</div>
+                    <p>V sekci <em>Flows</em> vyberte trigger "List or Segment: Added to List." Klaviyo má nativní smart sending a flow filters — přidejte podmínku "Placed Order is false" ke každému emailu, aby zákazník po nákupu automaticky vypadl ze sekvence. Klaviyo je nejlepší volba pro Shopify e-shopy.</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-name">Mailchimp</div>
+                    <p>V sekci <em>Automations → Customer Journeys</em> najdete šablonu "Welcome new subscribers." Nastavte starting point jako "Joins audience" a přidejte kroky s prodlevami. Pro podmínkové větvení (koupil / nekoupil) potřebujete Mailchimp Standard nebo vyšší plán.</p>
+                </div>
+            </div>
+
+            <!-- SECTION 5: MISTAKES -->
+            <h2>Čemu se vyhnout — 5 nejčastějších chyb</h2>
+
+            <ul class="mistakes-list">
+                <li class="mistake-item">
+                    <div class="mistake-icon" style="background: rgba(255,74,74,0.12);">1</div>
+                    <div class="mistake-text">
+                        <strong>Posílat jediný uvítací email</strong>
+                        <span>Jeden email nezbuduje vztah. Zákazník vás zapomene dřív, než stihne nakoupit. Minimum jsou 3 emaily, optimum je 5.</span>
+                    </div>
+                </li>
+                <li class="mistake-item">
+                    <div class="mistake-icon" style="background: rgba(255,74,74,0.12);">2</div>
+                    <div class="mistake-text">
+                        <strong>Každý email je o slevě</strong>
+                        <span>Zákazník se naučí, že od vás dostane slevu vždy — a přestane nakupovat za plnou cenu. Sleva patří do emailu č. 1 a č. 5. Ostatní emaily budují hodnotu a důvěru.</span>
+                    </div>
+                </li>
+                <li class="mistake-item">
+                    <div class="mistake-icon" style="background: rgba(255,74,74,0.12);">3</div>
+                    <div class="mistake-text">
+                        <strong>Neoptimaializovat pro mobil</strong>
+                        <span>62 % emailů se čte na mobilu. Pokud váš email vypadá rozbitě na iPhone, zákazník ho smaže. Testujte každý email v mobilním náhledu před odesláním.</span>
+                    </div>
+                </li>
+                <li class="mistake-item">
+                    <div class="mistake-icon" style="background: rgba(255,74,74,0.12);">4</div>
+                    <div class="mistake-text">
+                        <strong>Generický copy bez osobnosti</strong>
+                        <span>"Vítejte v naší rodině zákazníků. Jsme rádi, že jste zde." Takový text nikdo nečte. Pište tak, jak mluvíte — neformálně, konkrétně, s příběhem.</span>
+                    </div>
+                </li>
+                <li class="mistake-item">
+                    <div class="mistake-icon" style="background: rgba(255,74,74,0.12);">5</div>
+                    <div class="mistake-text">
+                        <strong>Nepouštět zákazníky, kteří nakoupili</strong>
+                        <span>Zákazník koupí v den 3 — a přesto dostane v den 10 email "sleva vyprší!" To podrývá důvěru. Nastavte podmínku: pokud zákazník nakoupil, vypadne ze sekvence a přejde do post-purchase flow.</span>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- CASE STUDY -->
+            <div class="case-study">
+                <div class="case-study-label">Případová studie — reaktivuj.cz klient</div>
+                <div class="case-study-stat">4 349 %</div>
+                <div class="case-study-stat-label">ROI za 3 měsíce po nasazení vítací sekvence (JB Sport)</div>
+                <p>
+                    Klient JB Sport přišel bez jakékoliv email automatizace. Do 72 hodin jsme nasadili 5-emailovou vítací sekvenci na jejich Klaviyo účet. Výsledek za první tři měsíce: 4 349% ROI jen z vítací sekvence. Nový zákazník, který prošel celou sekvencí, měl průměrný LTV 3× vyšší než zákazník, který žádný uvítací email nedostal. Vítací sekvence se stala jejich nejvýnosnější automatizací — a přitom ji stačilo nastavit jednou.
+                </p>
+            </div>
+
+            <!-- FAQ -->
+            <h2>Časté otázky (FAQ)</h2>
+
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Kolik emailů má mít vítací sekvence?
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Optimální vítací sekvence obsahuje 4–6 emailů rozložených do 10–14 dnů. Méně nestačí na budování vztahu, více může zákazníky obtěžovat. Pro e-shopy funguje nejlépe 5 emailů: uvítání, brand story, sociální důkaz, odbourání bariér a závěrečná připomínka slevy.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Jak dlouho mají být vítací emaily?
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Ideální délka vítacího emailu je 150–300 slov. Méně ztrácí kontext, více unavuje. Výjimkou je brand story (email č. 2), který může být delší, pokud je příběh autentický a zapojuje čtenáře emotivně.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Kdy posílat vítací sekvenci?
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Email č. 1 posílejte okamžitě — do 5 minut od přihlášení. Zákazník je nejvíce angažovaný právě teď. Email č. 2 v den 1–2, email č. 3 v den 3–4, email č. 4 v den 5–7 a email č. 5 v den 10–14. Všechny emaily plánujte na pracovní dny mezi 9:00–11:00 nebo 19:00–21:00.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Co dělat, když zákazník nakoupí během vítací sekvence?
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Zákazníka, který nakoupil, okamžitě vyřaďte z vítací sekvence a přesuňte do post-purchase flow. Pokračovat v zasílání vítacích emailů se slevou zákazníkovi, který už koupil, je chyba, která podrývá důvěru a ztrácí marži. Všechny seriózní platformy (Klaviyo, MailerLite, Mailchimp) tuto logiku umožňují nastavit.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Jak poznat, jestli moje vítací sekvence funguje?
+                        <div class="faq-icon">+</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Sledujte tři klíčové metriky: open rate prvního emailu (benchmark: 50–60 %), click rate v sekvenci (benchmark: 8–12 %) a konverzní míra (benchmark: 3–5 % přímých nákupů ze sekvence). Pokud open rate klesá pod 30 %, problém je v subject line nebo doručitelnosti. Pokud je open rate OK, ale konverze nízká, problém je v copywritingu nebo nabídce.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FINAL CTA BOX -->
+            <div class="cta-box">
+                <h2>Nechcete stavět sekvenci sami?</h2>
+                <p>Nastavíme vám celou vítací sekvenci za 72 hodin — včetně copywritingu, automatizace a testování.</p>
+                <button class="btn-primary" onclick="openModal()">Chci bezplatný hovor →</button>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 reaktivuj · <a href="https://reaktivuj.cz">reaktivuj.cz</a></p>
+    </footer>
+
+    <!-- CALENDLY MODAL -->
+    <div class="modal-overlay" id="modal" onclick="handleModalClick(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <iframe
+                src="https://calendly.com/reaktivuj/konzultace?hide_gdpr_banner=1&background_color=111111&text_color=ffffff&primary_color=00e87a"
+                width="100%"
+                height="620"
+                frameborder="0"
+                style="display:block;"
+                title="Rezervovat bezplatný hovor"
+            ></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('modal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('modal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function handleModalClick(e) {
+            if (e.target === document.getElementById('modal')) closeModal();
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function toggleFaq(btn) {
+            var item = btn.closest('.faq-item');
+            var answer = item.querySelector('.faq-answer');
+            var isOpen = item.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(function(el) {
+                el.classList.remove('open');
+                el.querySelector('.faq-answer').style.maxHeight = null;
+            });
+
+            if (!isOpen) {
+                item.classList.add('open');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        }
+    </script>
+
+</body>
+</html>

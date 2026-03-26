@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Email marketing průvodci a strategie | reaktivuj</title>
+    <meta name="description" content="Praktické průvodce email marketingem pro české e-shopy a online podnikatele. Šablony, strategie a návody, které přinášejí výsledky.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://reaktivuj.cz/blog/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog — Email marketing průvodci a strategie | reaktivuj">
+    <meta property="og:description" content="Praktické průvodce email marketingem pro české e-shopy a online podnikatele.">
+    <meta property="og:url" content="https://reaktivuj.cz/blog/">
+    <meta property="og:site_name" content="reaktivuj">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card-bg: #111111;
+            --border: #1a1a1a;
+            --border-light: #222222;
+            --accent: #00e87a;
+            --accent-dim: rgba(0, 232, 122, 0.08);
+            --text: #ffffff;
+            --text-muted: #999999;
+            --text-dim: #666666;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(10,10,10,0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 1.5rem;
+        }
+        .navbar-inner {
+            max-width: 1200px; margin: 0 auto;
+            height: 60px; display: flex;
+            align-items: center; justify-content: space-between;
+        }
+        .navbar-logo {
+            font-size: 1.2rem; font-weight: 900;
+            color: var(--text); text-decoration: none;
+            letter-spacing: -0.03em;
+        }
+        .navbar-logo span { color: var(--accent); }
+        .navbar-right { display: flex; align-items: center; gap: 1.5rem; }
+        .navbar-link {
+            color: var(--text-muted); text-decoration: none;
+            font-size: 0.875rem; font-weight: 500; transition: color 0.2s;
+        }
+        .navbar-link:hover, .navbar-link.active { color: var(--text); }
+        .btn-nav {
+            background: var(--accent); color: #000;
+            border: none; padding: 0.5rem 1.1rem;
+            border-radius: 6px; font-size: 0.875rem;
+            font-weight: 700; cursor: pointer;
+            text-decoration: none; transition: opacity 0.2s, transform 0.2s;
+        }
+        .btn-nav:hover { opacity: 0.88; transform: translateY(-1px); }
+
+        /* Page header */
+        .page-header {
+            padding: 4rem 1.5rem 3rem;
+            max-width: 1200px; margin: 0 auto;
+        }
+        .page-eyebrow {
+            font-size: 0.7rem; font-weight: 700;
+            letter-spacing: 4px; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 1rem;
+        }
+        .page-title {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 900; letter-spacing: -0.03em;
+            line-height: 1.1; margin-bottom: 1rem;
+        }
+        .page-subtitle {
+            font-size: 1.15rem; color: var(--text-muted);
+            max-width: 580px; line-height: 1.6;
+        }
+
+        /* Featured article */
+        .featured-wrap {
+            max-width: 1200px; margin: 0 auto;
+            padding: 0 1.5rem 2.5rem;
+        }
+        .featured-label {
+            font-size: 0.65rem; font-weight: 700;
+            letter-spacing: 3px; text-transform: uppercase;
+            color: var(--text-dim); margin-bottom: 1rem;
+        }
+        .featured-article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.25s;
+        }
+        .featured-article:hover { border-color: rgba(0,232,122,0.4); }
+        .featured-img {
+            width: 100%; height: 340px;
+            object-fit: cover; display: block;
+            filter: brightness(0.7);
+        }
+        .featured-content {
+            padding: 2.5rem;
+            display: flex; flex-direction: column;
+            justify-content: center; gap: 1rem;
+        }
+        .article-category {
+            font-size: 0.65rem; font-weight: 700;
+            letter-spacing: 3px; text-transform: uppercase;
+            color: var(--accent);
+        }
+        .featured-title {
+            font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+            font-weight: 900; line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        .featured-excerpt {
+            font-size: 0.97rem; color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .article-meta-row {
+            display: flex; gap: 1.25rem;
+            font-size: 0.8rem; color: var(--text-dim);
+            align-items: center; flex-wrap: wrap;
+        }
+        .read-more {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--accent); font-size: 0.9rem;
+            font-weight: 700; text-decoration: none;
+            margin-top: 0.25rem;
+            transition: gap 0.2s;
+        }
+        .read-more:hover { gap: 0.7rem; }
+
+        @media (max-width: 700px) {
+            .featured-article { grid-template-columns: 1fr; }
+            .featured-img { height: 220px; }
+        }
+
+        /* Articles grid */
+        .articles-section {
+            max-width: 1200px; margin: 0 auto;
+            padding: 0 1.5rem 5rem;
+        }
+        .section-label {
+            font-size: 0.65rem; font-weight: 700;
+            letter-spacing: 3px; text-transform: uppercase;
+            color: var(--text-dim); margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .article-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.25s, transform 0.2s;
+            display: flex; flex-direction: column;
+        }
+        .article-card:hover {
+            border-color: rgba(0,232,122,0.35);
+            transform: translateY(-2px);
+        }
+        .article-card.coming-soon {
+            opacity: 0.55;
+            cursor: default;
+            pointer-events: none;
+        }
+        .card-img-wrap {
+            width: 100%; height: 200px;
+            overflow: hidden; position: relative;
+        }
+        .card-img {
+            width: 100%; height: 100%;
+            object-fit: cover; display: block;
+            filter: brightness(0.65);
+            transition: transform 0.4s ease;
+        }
+        .article-card:hover .card-img { transform: scale(1.03); }
+        .card-body {
+            padding: 1.4rem;
+            display: flex; flex-direction: column;
+            gap: 0.6rem; flex: 1;
+        }
+        .card-category {
+            font-size: 0.65rem; font-weight: 700;
+            letter-spacing: 3px; text-transform: uppercase;
+            color: var(--accent);
+        }
+        .card-title {
+            font-size: 1.05rem; font-weight: 800;
+            line-height: 1.3; letter-spacing: -0.01em;
+            color: var(--text);
+        }
+        .card-excerpt {
+            font-size: 0.87rem; color: var(--text-muted);
+            line-height: 1.5; flex: 1;
+        }
+        .card-footer {
+            display: flex; justify-content: space-between;
+            align-items: center; font-size: 0.78rem;
+            color: var(--text-dim); padding-top: 0.75rem;
+            border-top: 1px solid var(--border); margin-top: auto;
+        }
+        .card-read-time { display: flex; align-items: center; gap: 0.3rem; }
+        .badge-coming {
+            font-size: 0.65rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-light);
+            color: var(--text-dim);
+            padding: 0.15rem 0.55rem; border-radius: 4px;
+        }
+        .badge-new {
+            font-size: 0.65rem; font-weight: 700;
+            background: var(--accent-dim);
+            border: 1px solid rgba(0,232,122,0.25);
+            color: var(--accent);
+            padding: 0.15rem 0.55rem; border-radius: 4px;
+        }
+
+        /* Bottom CTA */
+        .bottom-cta {
+            max-width: 860px; margin: 0 auto 5rem;
+            padding: 0 1.5rem;
+        }
+        .bottom-cta-box {
+            background: linear-gradient(135deg, rgba(0,232,122,0.07) 0%, rgba(0,232,122,0.02) 100%);
+            border: 1px solid rgba(0,232,122,0.2);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+        }
+        .bottom-cta-box h2 {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 900; letter-spacing: -0.02em;
+            line-height: 1.2; margin-bottom: 0.85rem;
+        }
+        .bottom-cta-box p {
+            color: var(--text-muted); font-size: 1rem;
+            max-width: 480px; margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+        .btn-primary {
+            display: inline-block; background: var(--accent);
+            color: #000; font-family: 'Inter', sans-serif;
+            font-weight: 800; font-size: 1.05rem;
+            padding: 1rem 2.5rem; border-radius: 999px;
+            text-decoration: none; border: none; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0,232,122,0); }
+            50% { box-shadow: 0 0 20px 6px rgba(0,232,122,0.25); }
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,232,122,0.35); animation: none; }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: var(--text-dim); font-size: 0.82rem;
+        }
+        footer a { color: var(--text-muted); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+
+        /* Calendly modal */
+        .modal-overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.82); z-index: 9999;
+            align-items: center; justify-content: center; padding: 1rem;
+        }
+        .modal-overlay.open { display: flex; }
+        .modal-box {
+            background: #111; border: 1px solid #2a2a2a;
+            border-radius: 16px; width: 100%; max-width: 700px;
+            height: min(90vh, 780px); display: flex;
+            flex-direction: column; overflow: hidden; position: relative;
+        }
+        .modal-close {
+            position: absolute; top: 0.75rem; right: 1rem;
+            background: none; border: none; font-size: 1.75rem;
+            color: #888; cursor: pointer; z-index: 2; line-height: 1;
+        }
+        .modal-close:hover { color: var(--text); }
+        .calendly-iframe { flex: 1; border: none; border-radius: 0 0 16px 16px; width: 100%; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/" class="navbar-logo">reaktivuj<span>.</span></a>
+            <div class="navbar-right">
+                <a href="/blog/" class="navbar-link active">Blog</a>
+                <a href="#" class="btn-nav" onclick="openModal(); return false;">Bezplatný hovor &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page header -->
+    <div class="page-header">
+        <p class="page-eyebrow">BLOG</p>
+        <h1 class="page-title">Email marketing, který vydělává</h1>
+        <p class="page-subtitle">Průvodce, šablony a strategie pro e-shopy a online podnikatele, kteří chtějí z emailu udělat hlavní příjmový kanál.</p>
+    </div>
+
+    <!-- Featured article -->
+    <div class="featured-wrap">
+        <p class="featured-label">Doporučujeme</p>
+        <a href="/blog/reaktivacni-emaily-sablony" class="featured-article">
+            <img
+                src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=900&q=80"
+                alt="Reaktivační emaily šablony pro e-shop"
+                class="featured-img"
+                loading="eager"
+            >
+            <div class="featured-content">
+                <p class="article-category">REAKTIVACE · ŠABLONY</p>
+                <h2 class="featured-title">Reaktivační emaily: 7 hotových šablon + subject lines, které přivádějí zákazníky zpět</h2>
+                <p class="featured-excerpt">72 % prvních kupujících se nikdy nevrátí — pokud s nimi nepracujete. Tady jsou 7 přesných šablon včetně subject lines, které reaktivujete neaktivní zákazníky do 72 hodin.</p>
+                <div class="article-meta-row">
+                    <span>Roman Staněk</span>
+                    <span>25. 3. 2026</span>
+                    <span>12 min čtení</span>
+                </div>
+                <span class="read-more">Číst průvodce →</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- Articles grid -->
+    <section class="articles-section">
+        <p class="section-label">Všechny průvodce</p>
+        <div class="articles-grid">
+
+            <!-- Article 1: Kouče -->
+            <a href="/blog/email-marketing-pro-kouce" class="article-card">
+                <div class="card-img-wrap">
+                    <img
+                        src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=700&q=75"
+                        alt="Email marketing pro online kouče"
+                        class="card-img" loading="lazy"
+                    >
+                </div>
+                <div class="card-body">
+                    <p class="card-category">ONLINE KOUČE · FUNNEL</p>
+                    <h3 class="card-title">Email marketing pro online kouče: Jak prodávat kurzy emailem</h3>
+                    <p class="card-excerpt">Kompletní email funnel pro kouče — welcome sekvence, nurture emaily a prodejní sekvence bez hard-sell.</p>
+                    <div class="card-footer">
+                        <span class="card-read-time">11 min čtení</span>
+                        <span class="badge-new">NOVÝ</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 2: Vítací sekvence -->
+            <a href="/blog/vitaci-email-sekvence" class="article-card">
+                <div class="card-img-wrap">
+                    <img
+                        src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=700&q=75"
+                        alt="Vítací email sekvence pro e-shop šablony"
+                        class="card-img" loading="lazy"
+                    >
+                </div>
+                <div class="card-body">
+                    <p class="card-category">WELCOME FLOW · ŠABLONY</p>
+                    <h3 class="card-title">Vítací email sekvence pro e-shop: 5 emailů + hotové šablony</h3>
+                    <p class="card-excerpt">Průměrný welcome email má 4× vyšší open rate než newsletter. Tady je přesný 5-emailový framework se subject lines.</p>
+                    <div class="card-footer">
+                        <span class="card-read-time">10 min čtení</span>
+                        <span class="badge-new">NOVÝ</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 3: Klaviyo -->
+            <a href="/blog/klaviyo-cesky" class="article-card">
+                <div class="card-img-wrap">
+                    <img
+                        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=75"
+                        alt="Klaviyo pro české e-shopy průvodce"
+                        class="card-img" loading="lazy"
+                    >
+                </div>
+                <div class="card-body">
+                    <p class="card-category">KLAVIYO · NÁSTROJE</p>
+                    <h3 class="card-title">Klaviyo pro české e-shopy: Kompletní průvodce + automatizace (2026)</h3>
+                    <p class="card-excerpt">První český průvodce Klaviyo — co to je, jak se liší od Ecomailu a jak nastavit 5 klíčových flows krok za krokem.</p>
+                    <div class="card-footer">
+                        <span class="card-read-time">11 min čtení</span>
+                        <span class="badge-new">NOVÝ</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Coming soon articles -->
+            <div class="article-card coming-soon">
+                <div class="card-img-wrap" style="background:#111; display:flex; align-items:center; justify-content:center;">
+                    <span style="font-size:2rem;">📬</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-category">SPAM · DORUČITELNOST</p>
+                    <h3 class="card-title">Email jde do spamu? 15-bodová kontrolní lista + řešení</h3>
+                    <p class="card-excerpt">Proč emaily padají do spamu a jak to opravit — od nastavení DNS až po čistění databáze.</p>
+                    <div class="card-footer">
+                        <span class="card-read-time">8 min čtení</span>
+                        <span class="badge-coming">PŘIPRAVUJEME</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-card coming-soon">
+                <div class="card-img-wrap" style="background:#111; display:flex; align-items:center; justify-content:center;">
+                    <span style="font-size:2rem;">📊</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-category">SEGMENTACE</p>
+                    <h3 class="card-title">Email list segmentace pro e-shopy: Jednoduchý průvodce</h3>
+                    <p class="card-excerpt">Jak rozdělit databázi na segmenty a posílat každému zákazníkovi to, co ho zajímá.</p>
+                    <div class="card-footer">
+                        <span class="card-read-time">9 min čtení</span>
+                        <span class="badge-coming">PŘIPRAVUJEME</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-card coming-soon">
+                <div class="card-img-wrap" style="background:#111; display:flex; align-items:center; justify-content:center;">
+                    <span style="font-size:2rem;">📈</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-category">OPEN RATE</p>
+                    <h3 class="card-title">Jak zvýšit open rate emailů: 9 testovaných metod (2026)</h3>
+                    <p class="card-excerpt">Subject lines, preheader text, čas odeslání — 9 věcí, které posunout open rate nad 40 %.</p>
+                    <div class="card-footer">
+                        <span class="card-read-time">10 min čtení</span>
+                        <span class="badge-coming">PŘIPRAVUJEME</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-card coming-soon">
+                <div class="card-img-wrap" style="background:#111; display:flex; align-items:center; justify-content:center;">
+                    <span style="font-size:2rem;">🛒</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-category">OPUŠTĚNÝ KOŠÍK</p>
+                    <h3 class="card-title">Opuštěný košík email: 3-emailový flow, který zachrání tržby</h3>
+                    <p class="card-excerpt">Průměrně 70 % nákupních košíků se opustí. Tady je flow, který zachrání 5–15 %.</p>
+                    <div class="card-footer">
+                        <span class="card-read-time">8 min čtení</span>
+                        <span class="badge-coming">PŘIPRAVUJEME</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-card coming-soon">
+                <div class="card-img-wrap" style="background:#111; display:flex; align-items:center; justify-content:center;">
+                    <span style="font-size:2rem;">🔤</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-category">SUBJECT LINES</p>
+                    <h3 class="card-title">Email subject line tipy: 27 příkladů + formula pro vyšší kliky</h3>
+                    <p class="card-excerpt">27 subject lines s vysvětlením proč fungují — a jednoduchá formula pro psaní vlastních.</p>
+                    <div class="card-footer">
+                        <span class="card-read-time">7 min čtení</span>
+                        <span class="badge-coming">PŘIPRAVUJEME</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-card coming-soon">
+                <div class="card-img-wrap" style="background:#111; display:flex; align-items:center; justify-content:center;">
+                    <span style="font-size:2rem;">⚖️</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-category">NÁSTROJE · SROVNÁNÍ</p>
+                    <h3 class="card-title">Ecomail vs SmartEmailing vs MailerLite: Poctivé srovnání (2026)</h3>
+                    <p class="card-excerpt">Která česká platforma je nejlepší pro váš e-shop? Srovnání funkcí, cen a výsledků.</p>
+                    <div class="card-footer">
+                        <span class="card-read-time">12 min čtení</span>
+                        <span class="badge-coming">PŘIPRAVUJEME</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <div class="bottom-cta">
+        <div class="bottom-cta-box">
+            <h2>Nechcete čekat na další článek?</h2>
+            <p>Rezervujte si bezplatný hovor — ukážeme vám přesně, co vašemu email marketingu chybí a kolik vás to stojí každý měsíc.</p>
+            <button class="btn-primary" onclick="openModal()">Chci bezplatný hovor &rarr;</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 <a href="/">reaktivuj</a> · Email marketing, který přináší výsledky · <a href="https://reaktivuj.cz">reaktivuj.cz</a></p>
+    </footer>
+
+    <!-- Calendly modal -->
+    <div class="modal-overlay" id="calendlyModal" onclick="handleModalClick(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <iframe
+                id="calendlyFrame"
+                class="calendly-iframe"
+                src=""
+                data-src="https://calendly.com/reaktivuj/konzultace?hide_gdpr_banner=1&background_color=111111&text_color=ffffff&primary_color=00e87a"
+                title="Rezervujte si bezplatný hovor"
+            ></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            const modal = document.getElementById('calendlyModal');
+            const frame = document.getElementById('calendlyFrame');
+            if (!frame.src || frame.src === window.location.href) {
+                frame.src = frame.dataset.src;
+            }
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('calendlyModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function handleModalClick(e) {
+            if (e.target === document.getElementById('calendlyModal')) closeModal();
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    </script>
+
+</body>
+</html>

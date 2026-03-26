@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaktivační emaily: 7 šablon + subject lines | reaktivuj</title>
+    <meta name="description" content="7 hotových šablon reaktivačních emailů pro e-shopy. Přiveďte zpět zákazníky, kteří přestali nakupovat — do 72 hodin od spuštění kampaně.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Roman Staněk">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Reaktivační emaily: 7 hotových šablon + subject lines, které zákazníky přivádějí zpět">
+    <meta property="og:description" content="7 hotových šablon reaktivačních emailů pro e-shopy. Přiveďte zpět zákazníky, kteří přestali nakupovat — do 72 hodin od spuštění kampaně.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1553484771-371a605b060b?w=1200&q=80">
+    <meta property="og:url" content="https://reaktivuj.cz/blog/reaktivacni-emaily-sablony">
+    <meta property="og:site_name" content="reaktivuj">
+    <meta property="article:author" content="Roman Staněk">
+    <meta property="article:published_time" content="2026-03-25">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Reaktivační emaily: 7 šablon + subject lines | reaktivuj">
+    <meta name="twitter:description" content="7 hotových šablon reaktivačních emailů pro e-shopy. Přiveďte zpět zákazníky, kteří přestali nakupovat.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1553484771-371a605b060b?w=1200&q=80">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card-bg: #111111;
+            --card-bg-2: #141414;
+            --border: #1a1a1a;
+            --border-light: #222222;
+            --accent: #00e87a;
+            --accent-glow: rgba(0, 232, 122, 0.15);
+            --accent-dim: rgba(0, 232, 122, 0.08);
+            --text: #ffffff;
+            --text-muted: #999999;
+            --text-dim: #666666;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            height: 2px;
+            width: 0%;
+            background: var(--accent);
+            z-index: 9999;
+            transition: width 0.1s linear;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10,10,10,0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 1.5rem;
+        }
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar-logo {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.03em;
+        }
+        .navbar-logo span { color: var(--accent); }
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .navbar-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .navbar-link:hover { color: var(--text); }
+        .btn-nav {
+            background: var(--accent);
+            color: #000;
+            border: none;
+            padding: 0.5rem 1.1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.2s;
+            white-space: nowrap;
+        }
+        .btn-nav:hover { opacity: 0.88; transform: translateY(-1px); }
+
+        /* Layout */
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .container-wide {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero / featured image */
+        .article-hero {
+            width: 100%;
+            max-height: 460px;
+            overflow: hidden;
+            position: relative;
+        }
+        .article-hero img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.5);
+        }
+        .article-hero-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 60%;
+            background: linear-gradient(to top, var(--bg), transparent);
+        }
+
+        /* Article header */
+        .article-header {
+            padding: 3rem 1.5rem 2rem;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .article-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .article-title {
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            align-items: center;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+        .article-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .article-meta-item svg {
+            width: 14px; height: 14px;
+            fill: var(--text-dim);
+            flex-shrink: 0;
+        }
+        .badge-update {
+            background: var(--accent-dim);
+            border: 1px solid rgba(0,232,122,0.2);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        /* Article body */
+        .article-body {
+            padding: 0 1.5rem 4rem;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .article-body p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 1.25rem;
+        }
+        .article-body h2 {
+            font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            margin: 3rem 0 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        .article-body h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 1.75rem 0 0.6rem;
+        }
+        .article-body ul, .article-body ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .article-body li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 0.4rem;
+        }
+        .article-body strong { color: var(--text); }
+        .article-body a { color: var(--accent); text-decoration: none; }
+        .article-body a:hover { text-decoration: underline; }
+
+        /* Stats box */
+        .stats-box {
+            background: var(--accent-dim);
+            border: 1px solid rgba(0,232,122,0.25);
+            border-left: 4px solid var(--accent);
+            border-radius: 10px;
+            padding: 1.75rem 2rem;
+            margin: 2rem 0;
+        }
+        .stats-box-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.1rem;
+        }
+        .stats-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .stats-list li {
+            font-size: 0.96rem;
+            color: #ccc;
+            padding: 0.55rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+        .stats-list li:last-child { border-bottom: none; }
+        .stats-list li::before {
+            content: "→";
+            color: var(--accent);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 0.05rem;
+        }
+
+        /* Segment types */
+        .type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .type-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+        }
+        .type-card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
+        .type-card h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.4rem;
+        }
+        .type-card p {
+            font-size: 0.85rem !important;
+            color: var(--text-muted) !important;
+            margin: 0 !important;
+            line-height: 1.5 !important;
+        }
+
+        /* Segmentation box */
+        .seg-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        @media (max-width: 600px) {
+            .seg-grid { grid-template-columns: 1fr; }
+        }
+        .seg-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+        }
+        .seg-card h4 {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+        .seg-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .seg-card li {
+            font-size: 0.88rem !important;
+            color: #bbb !important;
+            padding: 0.3rem 0 !important;
+            border-bottom: 1px solid var(--border) !important;
+            margin: 0 !important;
+        }
+        .seg-card li:last-child { border-bottom: none !important; }
+        .seg-card li strong { color: var(--text) !important; }
+
+        /* === EMAIL TEMPLATE CARDS === */
+        .templates-section {
+            margin: 2rem 0;
+        }
+        .template-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: border-color 0.25s;
+        }
+        .template-card:hover {
+            border-color: rgba(0,232,122,0.35);
+        }
+        .template-card-header {
+            background: #0f0f0f;
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 1.75rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .template-number {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 0.3rem;
+        }
+        .template-name {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--text);
+        }
+        .template-timing {
+            font-size: 0.75rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 0.3rem 0.75rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            align-self: flex-start;
+            margin-top: 0.2rem;
+        }
+        .template-subject-wrap {
+            padding: 1.25rem 1.75rem 0;
+        }
+        .template-subject-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 0.4rem;
+        }
+        .template-subject {
+            background: rgba(0,232,122,0.07);
+            border: 1px solid rgba(0,232,122,0.2);
+            border-radius: 7px;
+            padding: 0.75rem 1.1rem;
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: #f0f0f0;
+            letter-spacing: -0.01em;
+        }
+        .template-body-wrap {
+            padding: 1.25rem 1.75rem;
+        }
+        .template-body-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 0.65rem;
+        }
+        .template-body-text {
+            font-size: 0.92rem;
+            line-height: 1.75;
+            color: #bbb;
+            background: #0d0d0d;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            white-space: pre-line;
+        }
+        .template-body-text p {
+            font-size: 0.92rem !important;
+            line-height: 1.75 !important;
+            color: #bbb !important;
+            margin-bottom: 0.75rem !important;
+        }
+        .template-body-text p:last-child { margin-bottom: 0 !important; }
+        .template-why {
+            margin: 1.25rem 1.75rem 1.75rem;
+            background: var(--accent-dim);
+            border: 1px solid rgba(0,232,122,0.18);
+            border-radius: 8px;
+            padding: 0.85rem 1.1rem;
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-start;
+        }
+        .template-why-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            white-space: nowrap;
+            padding-top: 0.1rem;
+        }
+        .template-why-text {
+            font-size: 0.84rem;
+            color: #aaa;
+            line-height: 1.6;
+        }
+        .template-why-text strong { color: var(--accent); }
+
+        /* Timeline table */
+        .timeline-table-wrap {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            border: 1px solid var(--border-light);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        thead tr {
+            background: #0f0f0f;
+        }
+        th {
+            padding: 0.85rem 1.25rem;
+            text-align: left;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            border-bottom: 1px solid var(--border-light);
+        }
+        td {
+            padding: 0.85rem 1.25rem;
+            color: #ccc;
+            border-bottom: 1px solid var(--border);
+        }
+        tr:last-child td { border-bottom: none; }
+        tr:nth-child(even) td { background: rgba(255,255,255,0.015); }
+        td:first-child {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* Mistakes */
+        .mistakes-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.25rem 0;
+        }
+        .mistakes-list li {
+            display: flex;
+            gap: 0.9rem;
+            align-items: flex-start;
+            padding: 1rem 1.25rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-left: 3px solid #e84b00;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            font-size: 0.96rem !important;
+            color: #ccc !important;
+        }
+        .mistakes-list li::before { display: none; }
+        .mistake-icon {
+            color: #e84b00;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 0.05rem;
+        }
+        .mistake-text strong { color: var(--text); font-weight: 700; }
+
+        /* Case study */
+        .case-study-box {
+            background: linear-gradient(135deg, rgba(0,232,122,0.06), rgba(0,232,122,0.02));
+            border: 1px solid rgba(0,232,122,0.3);
+            border-radius: 14px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .case-study-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .case-study-box blockquote {
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.6;
+            color: var(--text);
+            quotes: none;
+        }
+        .case-study-numbers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+        .case-study-stat {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(0,232,122,0.2);
+            border-radius: 8px;
+            padding: 0.75rem 1.25rem;
+            text-align: center;
+        }
+        .case-study-stat .num {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--accent);
+            display: block;
+            letter-spacing: -0.02em;
+        }
+        .case-study-stat .lbl {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Automation */
+        .automation-steps {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+            margin: 1.25rem 0;
+        }
+        .automation-steps li {
+            counter-increment: step;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.96rem !important;
+            color: #ccc !important;
+            margin: 0 !important;
+        }
+        .automation-steps li:last-child { border-bottom: none; }
+        .automation-steps li::before {
+            content: counter(step);
+            min-width: 28px;
+            height: 28px;
+            background: var(--accent-dim);
+            border: 1px solid rgba(0,232,122,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        .code-tag {
+            background: rgba(0,232,122,0.1);
+            border: 1px solid rgba(0,232,122,0.2);
+            border-radius: 4px;
+            padding: 0.1rem 0.45rem;
+            font-family: monospace;
+            font-size: 0.82rem;
+            color: var(--accent);
+        }
+
+        /* FAQ */
+        .faq-list {
+            margin: 1.5rem 0;
+        }
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 1.15rem 1.5rem;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.97rem;
+            font-weight: 600;
+            color: var(--text);
+            transition: background 0.2s;
+        }
+        .faq-question:hover { background: rgba(255,255,255,0.025); }
+        .faq-question.open { color: var(--accent); }
+        .faq-icon {
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--border-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .faq-question.open .faq-icon {
+            transform: rotate(45deg);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .faq-answer {
+            display: none;
+            padding: 0 1.5rem 1.25rem;
+            font-size: 0.93rem;
+            line-height: 1.75;
+            color: #bbb;
+            border-top: 1px solid var(--border);
+        }
+        .faq-answer.open { display: block; }
+
+        /* CTA section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0,232,122,0.07), rgba(0,232,122,0.02));
+            border: 1px solid rgba(0,232,122,0.25);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .cta-section h2 {
+            font-size: clamp(1.3rem, 3vw, 1.85rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+        }
+        .cta-section p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.75rem;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-cta {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 0.9rem 2.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-cta:hover { opacity: 0.88; transform: translateY(-2px); }
+        .cta-trust {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        /* Calendly modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .modal-overlay.open { display: flex; }
+        .modal-box {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 14px;
+            width: 100%;
+            max-width: 680px;
+            overflow: hidden;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 0.75rem; right: 0.75rem;
+            z-index: 10;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid #333;
+            border-radius: 50%;
+            width: 32px; height: 32px;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            color: #aaa;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .modal-close:hover { background: rgba(255,255,255,0.12); }
+        .calendly-iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-dim);
+        }
+        footer a { color: var(--text-dim); text-decoration: none; }
+        footer a:hover { color: var(--text-muted); }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .template-card-header { flex-direction: column; }
+            .template-subject-wrap, .template-body-wrap, .template-why { padding-left: 1.25rem; padding-right: 1.25rem; }
+            .template-why { margin-left: 1.25rem; margin-right: 1.25rem; margin-bottom: 1.25rem; }
+            .case-study-numbers { flex-direction: column; }
+            .cta-section { padding: 2rem 1.25rem; }
+            .navbar-right .navbar-link { display: none; }
+        }
+    </style>
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Reaktivační emaily: 7 hotových šablon + subject lines, které zákazníky přivádějí zpět",
+        "description": "7 hotových šablon reaktivačních emailů pro e-shopy. Přiveďte zpět zákazníky, kteří přestali nakupovat — do 72 hodin od spuštění kampaně.",
+        "image": "https://images.unsplash.com/photo-1553484771-371a605b060b?w=1200&q=80",
+        "author": {
+            "@type": "Person",
+            "name": "Roman Staněk"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "reaktivuj",
+            "url": "https://reaktivuj.cz"
+        },
+        "datePublished": "2026-03-25",
+        "dateModified": "2026-03-25",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://reaktivuj.cz/blog/reaktivacni-emaily-sablony"
+        },
+        "keywords": ["reaktivace neaktivních zákazníků", "reaktivační email šablona", "win-back email česky", "jak získat zákazníky zpět"]
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Jak poznám, že je zákazník \"neaktivní\"?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Za neaktivního považujeme zákazníka, který za posledních 60–90 dnů neotevřel žádný váš email nebo neprovedl nákup. Přesná hranice závisí na frekvenci vaší komunikace — pokud posíláte emaily jednou za měsíc, okno pro definici neaktivity bude delší než u e-shopů komunikujících každý týden."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Kolik emailů má mít reaktivační kampaň?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Optimální reaktivační sekvence obsahuje 4–6 emailů rozložených do 21–30 dnů. Méně než 3 emaily dává příliš malou šanci na úspěch, více než 6 emailů může zákazníka odradit. Klíčem je správné načasování a postupná gradace od přátelského připomenutí po konkrétní nabídku."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Mám dát slevu v každém reaktivačním emailu?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Rozhodně ne. Discount by měl přijít nejdříve ve třetím emailu sekvence. Pokud začnete slevou hned, zákazníci se naučí nereagovat na první emaily a čekat na slevu. Navíc tím poškozujete vnímání hodnoty svých produktů."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Kdy smažu kontakty z databáze?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Kontakty, které nereagovaly ani na celou reaktivační sekvenci (5–6 emailů za 30 dní), je vhodné přesunout do samostatného segmentu a přestat jim aktivně posílat kampaně. Mazat je úplně nemusíte — ale posílat na ně emaily je zbytečné a poškozuje vaše deliverability skóre."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Jak měřím úspěšnost reaktivační kampaně?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hlavní metriky jsou: míra reaktivace (% kontaktů, které znovu nakoupily nebo začaly otevírat emaily), revenue z kampaně, open rate a click rate jednotlivých emailů v sekvenci, a náklady na reaktivaci jednoho zákazníka oproti akvizici nového."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="https://reaktivuj.cz" class="navbar-logo">reaktivuj</a>
+            <div class="navbar-right">
+                <a href="https://reaktivuj.cz/blog" class="navbar-link">Blog</a>
+                <a href="#" class="btn-nav" onclick="openModal(); return false;">Bezplatný hovor &rarr;</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Featured image -->
+    <div class="article-hero">
+        <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=1200&q=80" alt="Reaktivační emaily — šablony pro e-shopy" loading="eager">
+        <div class="article-hero-overlay"></div>
+    </div>
+
+    <!-- Article header -->
+    <div class="article-header">
+        <p class="article-eyebrow">Email marketing · Reaktivace</p>
+        <h1 class="article-title">Reaktivační emaily: 7 hotových šablon&nbsp;+ subject lines, které zákazníky přivádějí zpět</h1>
+        <div class="article-meta">
+            <div class="article-meta-item">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                Roman Staněk
+            </div>
+            <div class="article-meta-item">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+                25. března 2026
+            </div>
+            <div class="article-meta-item">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23-5.25-3.15V7h1.5z"/></svg>
+                9 minut čtení
+            </div>
+            <span class="badge-update">Aktualizováno: 25. března 2026</span>
+        </div>
+    </div>
+
+    <!-- Article body -->
+    <article class="article-body">
+
+        <p>Reaktivační email je zpráva zákazníkovi, který u vás přestal nakupovat nebo přestal otevírat vaše emaily. Správná reaktivační kampaň přivede zpět <strong>20–30 % neaktivních zákazníků</strong> — bez reklamy, jen díky dobře napsanému emailu ve správný čas.</p>
+
+        <!-- Stats block -->
+        <div class="stats-box">
+            <p class="stats-box-title">Proč reaktivace funguje — čísla, která mluví za vše</p>
+            <ul class="stats-list">
+                <li><strong>72 %</strong> prvních kupujících se nikdy nevrátí bez follow-up komunikace <em>(Bain &amp; Company)</em></li>
+                <li>Reaktivační emaily mají průměrně <strong>14,2 % open rate</strong> — přesto je nepoužívá 43 % e-shopů</li>
+                <li>Opakující se zákazník utratí průměrně <strong>67 % více</strong> než nový zákazník <em>(BIA Advisory)</em></li>
+                <li>Cena za udržení zákazníka je <strong>5–7× nižší</strong> než za získání nového <em>(Harvard Business Review)</em></li>
+            </ul>
+        </div>
+
+        <h2>Kdy zákazníci "zmizí"?</h2>
+
+        <p>Než spustíte reaktivační kampaň, je důležité pochopit, s kým vlastně komunikujete. Neaktivní databáze se skládá ze tří velmi odlišných skupin lidí — a každá vyžaduje jiný přístup.</p>
+
+        <div class="type-grid">
+            <div class="type-card">
+                <div class="type-card-icon">👻</div>
+                <h4>Neaktivní odběratelé</h4>
+                <p>Zákazníci, kteří přestali otevírat vaše emaily před 60 nebo více dny. Stále jsou v databázi, ale nereagují na nic, co posíláte.</p>
+            </div>
+            <div class="type-card">
+                <div class="type-card-icon">🛍️</div>
+                <h4>Jednorázový kupující</h4>
+                <p>Koupili jednou, možná před půl rokem, a od té doby nic. Tato skupina má obvykle nejvyšší potenciál — zájem o vaše produkty projevili činem.</p>
+            </div>
+            <div class="type-card">
+                <div class="type-card-icon">🧟</div>
+                <h4>"Zombie kontakty"</h4>
+                <p>Zaregistrovali se, stáhli lead magnet nebo se přihlásili k newsletteru — ale nikdy nic nekoupili. Vyžadují jiné sdělení než ti, kteří zažili váš produkt.</p>
+            </div>
+        </div>
+
+        <h2>Segmentace před reaktivací</h2>
+
+        <p>Posílat stejný reaktivační email všem je jedna z nejčastějších chyb. Zákazník, který nakoupil před 3 měsíci, reaguje jinak než ten, kdo u vás byl před dvěma lety. Segmentace vám pomůže správně načasovat intenzitu komunikace a tón zprávy.</p>
+
+        <div class="seg-grid">
+            <div class="seg-card">
+                <h4>Poslední nákup</h4>
+                <ul>
+                    <li><strong>90 dní</strong> — teplý kontakt, stačí připomenout</li>
+                    <li><strong>180 dní</strong> — potřebuje motivaci (novinka, nabídka)</li>
+                    <li><strong>365 dní</strong> — studený kontakt, nutná silná nabídka</li>
+                </ul>
+            </div>
+            <div class="seg-card">
+                <h4>Poslední otevření emailu</h4>
+                <ul>
+                    <li><strong>30 dní</strong> — pravděpodobně přehlédnutí</li>
+                    <li><strong>60 dní</strong> — klesající zájem</li>
+                    <li><strong>90+ dní</strong> — plná reaktivační sekvence</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Čím přesněji segmentujete, tím relevantnější budou vaše zprávy — a tím vyšší bude míra reaktivace. Obecné emaily bez personalizace skončí ve spamu nebo budou ignorovány.</p>
+
+        <h2>7 hotových šablon reaktivačních emailů</h2>
+
+        <p>Níže najdete 7 šablon, které tvoří kompletní reaktivační sekvenci. Každou si upravte podle svého brandu — podstatné je zachovat strukturu a logiku postupné gradace.</p>
+
+        <div class="templates-section">
+
+            <!-- Šablona 1 -->
+            <div class="template-card">
+                <div class="template-card-header">
+                    <div>
+                        <div class="template-number">Šablona 01</div>
+                        <div class="template-name">👋 "Stýská se nám po tobě"</div>
+                    </div>
+                    <span class="template-timing">Den 0 · Přátelský check-in</span>
+                </div>
+                <div class="template-subject-wrap">
+                    <div class="template-subject-label">Subject line</div>
+                    <div class="template-subject">Stýská se nám po tobě, [jméno] 👋</div>
+                </div>
+                <div class="template-body-wrap">
+                    <div class="template-body-label">Text emailu</div>
+                    <div class="template-body-text">
+                        <p>Ahoj [jméno],</p>
+                        <p>všimli jsme si, že tě tu chvíli nebylo — a upřímně, chybíš nám.</p>
+                        <p>Nechceme být otravní. Jen jsme chtěli dát vědět, že jsme pořád tady. Děláme to, co jsme dělali vždy — [krátký popis hodnoty, co děláte nejlépe].</p>
+                        <p>Jestli tě zajímá, co se u nás od té doby změnilo, nebo prostě chceš zjistit, co je nového — stačí kliknout níže. Jsme rádi za každou zprávu.</p>
+                        <p>S pozdravem,<br>[jméno], tým [název obchodu]</p>
+                        <p><strong>→ Podívej se, co je nového</strong></p>
+                    </div>
+                </div>
+                <div class="template-why">
+                    <span class="template-why-label">Proč to funguje</span>
+                    <span class="template-why-text">Žádný tlak, žádná sleva, žádná urgence. Jen <strong>lidský tón</strong>, který zákazníka nepřekvapí agresivní nabídkou. Otevírají ho lidé, kteří by jinak smazali první email s procentní slevou — tímto způsobem otevřete dveře pro zbytek sekvence.</span>
+                </div>
+            </div>
+
+            <!-- Šablona 2 -->
+            <div class="template-card">
+                <div class="template-card-header">
+                    <div>
+                        <div class="template-number">Šablona 02</div>
+                        <div class="template-name">🆕 "Co se změnilo"</div>
+                    </div>
+                    <span class="template-timing">Den 3 · Vzbudit zájem</span>
+                </div>
+                <div class="template-subject-wrap">
+                    <div class="template-subject-label">Subject line</div>
+                    <div class="template-subject">Od té doby, co jsi tu naposledy byl/a...</div>
+                </div>
+                <div class="template-body-wrap">
+                    <div class="template-body-label">Text emailu</div>
+                    <div class="template-body-text">
+                        <p>Ahoj [jméno],</p>
+                        <p>od tvé poslední návštěvy se toho dost změnilo. Tady je rychlý přehled toho nejdůležitějšího:</p>
+                        <p>✓ Přidali jsme [nový produkt nebo kategorie]<br>
+                        ✓ Zlepšili jsme dopravu — objednávky do [čas] chodí druhý den<br>
+                        ✓ Spustili jsme [věrnostní program / novou funkci / novinku]</p>
+                        <p>Hodně zákazníků nám píše, že se vrátili kvůli [konkrétní věci]. Třeba tě taky zaujme.</p>
+                        <p>Mrkni se, co je nového —</p>
+                        <p><strong>→ Prohlédnout novinky</strong></p>
+                    </div>
+                </div>
+                <div class="template-why">
+                    <span class="template-why-label">Proč to funguje</span>
+                    <span class="template-why-text">Zákazník odešel z konkrétního důvodu — ať to byl produkt, cena nebo zkušenost. Tento email mu říká: <strong>situace se změnila</strong>. Dává mu legitimní důvod vrátit se bez pocitu, že ho přemlouváte.</span>
+                </div>
+            </div>
+
+            <!-- Šablona 3 -->
+            <div class="template-card">
+                <div class="template-card-header">
+                    <div>
+                        <div class="template-number">Šablona 03</div>
+                        <div class="template-name">🎁 "Speciální nabídka pro tebe"</div>
+                    </div>
+                    <span class="template-timing">Den 7 · Konverze</span>
+                </div>
+                <div class="template-subject-wrap">
+                    <div class="template-subject-label">Subject line</div>
+                    <div class="template-subject">Jen pro tebe: 15 % zpět za [název obchodu]</div>
+                </div>
+                <div class="template-body-wrap">
+                    <div class="template-body-label">Text emailu</div>
+                    <div class="template-body-text">
+                        <p>Ahoj [jméno],</p>
+                        <p>protože si tě vážíme, připravili jsme pro tebe osobní nabídku. Jako poděkování za to, že si nás vybral/a.</p>
+                        <p><strong>15 % sleva na celý nákup</strong><br>
+                        Kód: <strong>VITEJ-ZPET</strong><br>
+                        Platí do: [datum, 7 dní od odeslání]</p>
+                        <p>Tuto nabídku nedostává nikdo jiný — je jen pro zákazníky, kteří nás znají.</p>
+                        <p>Těšíme se na tebe zpátky.</p>
+                        <p><strong>→ Uplatnit slevu</strong></p>
+                    </div>
+                </div>
+                <div class="template-why">
+                    <span class="template-why-label">Proč to funguje</span>
+                    <span class="template-why-text">Teprve <strong>třetí email</strong> přináší slevu — a protože přichází po dvou lidských zprávách, nepůsobí genericky. Pocit exkluzivity ("jen pro tebe") zvyšuje míru uplatnění kódu oproti hromadným slevovým emailům.</span>
+                </div>
+            </div>
+
+            <!-- Šablona 4 -->
+            <div class="template-card">
+                <div class="template-card-header">
+                    <div>
+                        <div class="template-number">Šablona 04</div>
+                        <div class="template-name">⭐ "Připomínka oblíbených produktů"</div>
+                    </div>
+                    <span class="template-timing">Den 10 · Personalizace</span>
+                </div>
+                <div class="template-subject-wrap">
+                    <div class="template-subject-label">Subject line</div>
+                    <div class="template-subject">Pamatuješ na [kategorie produktu]?</div>
+                </div>
+                <div class="template-body-wrap">
+                    <div class="template-body-label">Text emailu</div>
+                    <div class="template-body-text">
+                        <p>Ahoj [jméno],</p>
+                        <p>vzpomněli jsme si na tebe — konkrétně na to, co tě u nás zaujalo naposledy.</p>
+                        <p>Tyhle produkty, které sis prohlížel/a (nebo koupil/a), jsou stále dostupné. A u některých jsme přidali nové varianty, které by tě mohly zajímat:</p>
+                        <p>→ [Produkt 1 — název + krátký popis]<br>
+                        → [Produkt 2 — název + krátký popis]<br>
+                        → [Produkt 3 — název + krátký popis]</p>
+                        <p>Stačí kliknout a pokračovat tam, kde jsi skončil/a.</p>
+                        <p><strong>→ Zobrazit moje produkty</strong></p>
+                    </div>
+                </div>
+                <div class="template-why">
+                    <span class="template-why-label">Proč to funguje</span>
+                    <span class="template-why-text">Behaviorální personalizace zvyšuje CTR o desítky procent. Zákazník vidí, že mu neposíláte generický obsah — vidíte, co ho zajímá, a reagujete na to. <strong>Relevantní obsah vede k relevantní akci.</strong></span>
+                </div>
+            </div>
+
+            <!-- Šablona 5 -->
+            <div class="template-card">
+                <div class="template-card-header">
+                    <div>
+                        <div class="template-number">Šablona 05</div>
+                        <div class="template-name">🤝 "Zpětná vazba"</div>
+                    </div>
+                    <span class="template-timing">Den 14 · Pochopit proč</span>
+                </div>
+                <div class="template-subject-wrap">
+                    <div class="template-subject-label">Subject line</div>
+                    <div class="template-subject">Udělali jsme něco špatně?</div>
+                </div>
+                <div class="template-body-wrap">
+                    <div class="template-body-label">Text emailu</div>
+                    <div class="template-body-text">
+                        <p>Ahoj [jméno],</p>
+                        <p>upřímná otázka: udělali jsme něco špatně?</p>
+                        <p>Všimli jsme si, že jsi u nás chvíli nebyl/a. Nechceme tě obtěžovat — ale chceme pochopit, jestli jsme mohli udělat něco lépe.</p>
+                        <p>Kdybys mi mohl/a odpovědět na jednu jednoduchou otázku, byl bych moc rád. Žádný formulář, žádné klikání — stačí napsat přímo na tento email.</p>
+                        <p><strong>Co tě vedlo k tomu, že u nás přestal/a nakupovat?</strong></p>
+                        <p>Každou odpověď čtu osobně. Díky za upřímnost.</p>
+                        <p>Roman, [název obchodu]</p>
+                    </div>
+                </div>
+                <div class="template-why">
+                    <span class="template-why-label">Proč to funguje</span>
+                    <span class="template-why-text">Tento email má <strong>dvojí efekt</strong>: část zákazníků odpoví a dá vám cennou zpětnou vazbu, část se vrátí jen proto, že cítí, že vám na nich záleží. Přímá otázka bez prodejního záměru je extrémně odzbrojující.</span>
+                </div>
+            </div>
+
+            <!-- Šablona 6 -->
+            <div class="template-card">
+                <div class="template-card-header">
+                    <div>
+                        <div class="template-number">Šablona 06</div>
+                        <div class="template-name">🚪 "Poslední šance"</div>
+                    </div>
+                    <span class="template-timing">Den 21 · Finální pokus</span>
+                </div>
+                <div class="template-subject-wrap">
+                    <div class="template-subject-label">Subject line</div>
+                    <div class="template-subject">Toto je náš poslední email — pokud nechceš, odhlásit se</div>
+                </div>
+                <div class="template-body-wrap">
+                    <div class="template-body-label">Text emailu</div>
+                    <div class="template-body-text">
+                        <p>Ahoj [jméno],</p>
+                        <p>nechceme ti plnit schránku emaily, které nechceš číst. Proto toto bude pravděpodobně náš poslední email — pokud nám nedáš vědět, že mám pokračovat.</p>
+                        <p>Kdybys chtěl/a zůstat v kontaktu, klikni níže. Budeme ti posílat jen to nejdůležitější — žádný spam, žádné každodenní nabídky.</p>
+                        <p>A pokud se rozhodneš odejít — bez problémů. Odhlásit se můžeš jedním kliknutím.</p>
+                        <p>Ale než odejdeš: tady je důvod, proč zůstat —<br>
+                        [Stručně: vaše největší hodnota. Co zákazník dostává tím, že je v databázi?]</p>
+                        <p><strong>→ Chci zůstat v kontaktu</strong><br>
+                        <span style="font-size:0.85rem;color:#666;">nebo: odhlásit se kliknutím zde</span></p>
+                    </div>
+                </div>
+                <div class="template-why">
+                    <span class="template-why-label">Proč to funguje</span>
+                    <span class="template-why-text">Psychologie ztráty funguje i zde — zákazník, který byl dosud pasivní, najednou čelí konkrétní volbě. Paradoxně právě <strong>nabídka odhlášení přiměje část lidí zůstat</strong>. Zároveň čistíte databázi od nezájemců, čímž zlepšujete deliverability.</span>
+                </div>
+            </div>
+
+            <!-- Šablona 7 -->
+            <div class="template-card">
+                <div class="template-card-header">
+                    <div>
+                        <div class="template-number">Šablona 07</div>
+                        <div class="template-name">⏰ "Win-back s urgency"</div>
+                    </div>
+                    <span class="template-timing">Den 24 · Finální urgence</span>
+                </div>
+                <div class="template-subject-wrap">
+                    <div class="template-subject-label">Subject line</div>
+                    <div class="template-subject">Tvoje sleva vyprší za 24 hodin ⏰</div>
+                </div>
+                <div class="template-body-wrap">
+                    <div class="template-body-label">Text emailu</div>
+                    <div class="template-body-text">
+                        <p>Ahoj [jméno],</p>
+                        <p>posílám rychlou připomínku — tvoje osobní sleva <strong>15 % na celý nákup</strong> vyprší zítra ve 23:59.</p>
+                        <p>Kód: <strong>VITEJ-ZPET</strong></p>
+                        <p>Po zítřku tento kód přestane fungovat a nový ti nepošleme.</p>
+                        <p>Jestli ses ještě nerozhodl/a — tady jsou nejoblíbenější produkty, na které kód funguje:</p>
+                        <p>→ [Produkt 1]<br>
+                        → [Produkt 2]<br>
+                        → [Produkt 3]</p>
+                        <p>Stačí zadat kód při objednávce. Doprava nad [X Kč] zdarma.</p>
+                        <p><strong>→ Nakoupit se slevou (do 24 hod)</strong></p>
+                    </div>
+                </div>
+                <div class="template-why">
+                    <span class="template-why-label">Proč to funguje</span>
+                    <span class="template-why-text">Kombinace <strong>konkrétního deadline + připomínky hodnoty + odstraňování tření</strong> (doprava zdarma, konkrétní produkty) funguje jako finální tlak pro zákazníky, kteří váhali. Urgence musí být reálná — pokud kód prodloužíte, zákazníci si toho všimnou.</span>
+                </div>
+            </div>
+
+        </div><!-- /templates-section -->
+
+        <h2>Načasování reaktivační kampaně</h2>
+
+        <p>Správné načasování je polovina úspěchu. Tady je doporučená timeline pro celou sekvenci:</p>
+
+        <div class="timeline-table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Den</th>
+                        <th>Šablona</th>
+                        <th>Cíl</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>Šablona 1 — přátelský check-in</td>
+                        <td>Připomenout existenci, otevřít komunikaci</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Šablona 2 — co se změnilo</td>
+                        <td>Vzbudit zájem, ukázat novou hodnotu</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Šablona 3 — osobní nabídka se slevou</td>
+                        <td>Konvertovat zájemce na nákup</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Šablona 4 — oblíbené produkty</td>
+                        <td>Personalizovaná připomínka pro váhající</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Šablona 5 — zpětná vazba</td>
+                        <td>Pochopit proč odešli, budovat vztah</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>Šablona 6 — poslední email</td>
+                        <td>Finální šance, čistění databáze</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>Šablona 7 — urgency win-back</td>
+                        <td>Finální konverzní tlak se slevou</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><strong>Tip:</strong> Zákazníci, kteří neotevřeli ani jeden email ze sekvence, přesuňte po dnu 21 do samostatného segmentu "zombie" kontaktů. Těm přestaňte posílat kampaně — poškozují vaše doručitelnost.</p>
+
+        <h2>Co NEDĚLAT — 4 chyby, které reaktivaci zabijí</h2>
+
+        <ul class="mistakes-list">
+            <li>
+                <span class="mistake-icon">✕</span>
+                <span class="mistake-text"><strong>Slevovat hned v prvním emailu.</strong> Zákazníky tím trénujete, aby ignorovali váš první email a čekali na slevu. Postupně ztrácíte schopnost prodávat za plnou cenu.</span>
+            </li>
+            <li>
+                <span class="mistake-icon">✕</span>
+                <span class="mistake-text"><strong>Posílat 5 emailů za 5 dní.</strong> Zákazník se cítí pronásledován, označí vás jako spam a odhlásí se. Reaktivace vyžaduje trpělivost a respekt ke vztahu.</span>
+            </li>
+            <li>
+                <span class="mistake-icon">✕</span>
+                <span class="mistake-text"><strong>Posílat stejný email celé databázi.</strong> Zákazník, který nakoupil před 3 měsíci, potřebuje jiné sdělení než ten, kdo u vás byl naposledy před 2 lety. Bez segmentace je míra reaktivace zlomková.</span>
+            </li>
+            <li>
+                <span class="mistake-icon">✕</span>
+                <span class="mistake-text"><strong>Vzdát se po jednom emailu.</strong> Výzkumy konzistentně ukazují, že nejvyšší míra reaktivace přichází ve 3. až 5. emailu sekvence. Většina e-shopů pošle jeden email a čeká. A čeká.</span>
+            </li>
+        </ul>
+
+        <h2>Případová studie: SEVT + reaktivační sekvence</h2>
+
+        <div class="case-study-box">
+            <p class="case-study-label">Případová studie · reaktivuj.cz</p>
+            <blockquote>Náš klient SEVT zaznamenal +176 % nárůst emailových tržeb za 5 měsíců po nasazení reaktivační sekvence. Z 12 000 neaktivních kontaktů se vrátilo přes 2 300 zákazníků — bez jediné koruny investované do reklamy.</blockquote>
+            <div class="case-study-numbers">
+                <div class="case-study-stat">
+                    <span class="num">+176 %</span>
+                    <span class="lbl">nárůst emailových tržeb</span>
+                </div>
+                <div class="case-study-stat">
+                    <span class="num">2 300+</span>
+                    <span class="lbl">vrácených zákazníků</span>
+                </div>
+                <div class="case-study-stat">
+                    <span class="num">19,2 %</span>
+                    <span class="lbl">míra reaktivace</span>
+                </div>
+                <div class="case-study-stat">
+                    <span class="num">5 měsíců</span>
+                    <span class="lbl">do stabilních výsledků</span>
+                </div>
+            </div>
+        </div>
+
+        <h2>Automatizace reaktivační kampaně</h2>
+
+        <p>Reaktivační sekvenci nemusíte spouštět ručně — a neměli byste. Nastavte ji jednou jako automatizaci a nechte ji pracovat 24/7 na pozadí. Tady je postup pro nejrozšířenější platformy:</p>
+
+        <ol class="automation-steps">
+            <li>V MailerLite nebo Klaviyo vytvořte nový <span class="code-tag">Automation workflow</span></li>
+            <li>Nastavte trigger: <span class="code-tag">Last activity &gt; 60 days</span> (nebo <span class="code-tag">last purchase &gt; 90 days</span>)</li>
+            <li>Přidejte kontakty do segmentu <span class="code-tag">Reaktivace — aktivní</span></li>
+            <li>Nahrajte všech 7 emailů se správnými časovými prodlevami (viz timeline výše)</li>
+            <li>Nastavte podmínku: pokud zákazník v průběhu sekvence nakoupí nebo otevře email → <span class="code-tag">exit workflow</span></li>
+            <li>Zákazníky, kteří celou sekvenci dokončí bez reakce, automaticky přesuňte do segmentu <span class="code-tag">Neaktivní — nevysílat</span></li>
+        </ol>
+
+        <p>Toto nastavení zajistí, že každý zákazník, který přestane být aktivní, automaticky vstoupí do reaktivační sekvence — bez vaší ruční práce. Jednou nastaveno, trvale fungující.</p>
+
+        <h2>Časté otázky o reaktivačních emailech</h2>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Jak poznám, že je zákazník "neaktivní"?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Za neaktivního považujeme zákazníka, který za posledních 60–90 dnů neotevřel žádný váš email nebo neprovedl nákup. Přesná hranice závisí na frekvenci vaší komunikace — pokud posíláte emaily jednou za měsíc, okno pro definici neaktivity bude delší než u e-shopů komunikujících každý týden.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Kolik emailů má mít reaktivační kampaň?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Optimální reaktivační sekvence obsahuje 4–6 emailů rozložených do 21–30 dnů. Méně než 3 emaily dávají příliš malou šanci na úspěch, více než 6 emailů může zákazníka odradit. Klíčem je správné načasování a postupná gradace od přátelského připomenutí po konkrétní nabídku.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Mám dát slevu v každém reaktivačním emailu?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Rozhodně ne. Discount by měl přijít nejdříve ve třetím emailu sekvence. Pokud začnete slevou hned, zákazníci se naučí nereagovat na první emaily a čekat na slevu. Navíc tím poškozujete vnímání hodnoty svých produktů.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Kdy smažu kontakty z databáze?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Kontakty, které nereagovaly ani na celou reaktivační sekvenci (5–6 emailů za 30 dní), je vhodné přesunout do samostatného segmentu a přestat jim aktivně posílat kampaně. Mazat je úplně nemusíte — ale posílat na ně emaily je zbytečné a poškozuje vaše deliverability skóre.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Jak měřím úspěšnost reaktivační kampaně?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Hlavní metriky jsou: míra reaktivace (% kontaktů, které znovu nakoupily nebo začaly otevírat emaily), revenue z kampaně, open rate a click rate jednotlivých emailů v sekvenci, a náklady na reaktivaci jednoho zákazníka oproti akvizici nového.
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Nechcete vytvářet reaktivační kampaň sami?</h2>
+            <p>Spustíme ji za vás do 72 hodin. Napíšeme emaily, nastavíme automatizaci a přivedeme zpět zákazníky, kteří u vás přestali nakupovat. Výsledky nebo neplatíte.</p>
+            <a href="#" class="btn-cta" onclick="openModal(); return false;">Chci bezplatný hovor &rarr;</a>
+            <p class="cta-trust">Bez závazků · Bez smluv · Reakce do 24 hodin</p>
+        </div>
+
+    </article>
+
+    <!-- Calendly modal -->
+    <div class="modal-overlay" id="calendlyModal" onclick="handleModalClick(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()" aria-label="Zavřít">&times;</button>
+            <iframe
+                class="calendly-iframe"
+                id="calendlyFrame"
+                src=""
+                data-src="https://calendly.com/reaktivuj/konzultace?hide_gdpr_banner=1&background_color=111111&text_color=ffffff&primary_color=00e87a"
+                frameborder="0"
+                allow="payment"
+                title="Rezervace bezplatného hovoru">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 reaktivuj · <a href="https://reaktivuj.cz">reaktivuj.cz</a></p>
+    </footer>
+
+    <script>
+        // Progress bar
+        window.addEventListener('scroll', function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // FAQ accordion
+        function toggleFaq(btn) {
+            var answer = btn.nextElementSibling;
+            var isOpen = answer.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.faq-answer').forEach(function(a) { a.classList.remove('open'); });
+            document.querySelectorAll('.faq-question').forEach(function(b) { b.classList.remove('open'); });
+
+            // Open clicked if was closed
+            if (!isOpen) {
+                answer.classList.add('open');
+                btn.classList.add('open');
+            }
+        }
+
+        // Calendly modal
+        function openModal() {
+            var modal = document.getElementById('calendlyModal');
+            var iframe = document.getElementById('calendlyFrame');
+            // Lazy-load iframe src
+            if (!iframe.src || iframe.src === window.location.href) {
+                iframe.src = iframe.getAttribute('data-src');
+            }
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('calendlyModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function handleModalClick(e) {
+            if (e.target === document.getElementById('calendlyModal')) {
+                closeModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+
+</body>
+</html>
