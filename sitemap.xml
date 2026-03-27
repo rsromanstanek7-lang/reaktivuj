@@ -17,33 +17,100 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Published articles -->
+  <!-- Pillar page -->
   <url>
-    <loc>https://reaktivuj.cz/blog/email-marketing-pro-kouce</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://reaktivuj.cz/blog/email-marketing-pro-eshopy</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Phase 1 cluster -->
+  <url>
+    <loc>https://reaktivuj.cz/blog/opusteny-kosik-email</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://reaktivuj.cz/blog/retencni-marketing</loc>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://reaktivuj.cz/blog/vitaci-email-sekvence</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://reaktivuj.cz/blog/reaktivacni-emaily-sablony</loc>
-    <lastmod>2026-03-25</lastmod>
+    <loc>https://reaktivuj.cz/blog/srovnani-emailingovych-nastroju</loc>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Phase 2 cluster -->
+  <url>
+    <loc>https://reaktivuj.cz/blog/ponakupni-emaily</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://reaktivuj.cz/blog/segmentace-emailu</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://reaktivuj.cz/blog/jak-psat-emaily</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Phase 3 cluster -->
+  <url>
+    <loc>https://reaktivuj.cz/blog/cena-email-marketingu</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://reaktivuj.cz/blog/email-marketing-vs-ppc</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Bonus articles -->
+  <url>
+    <loc>https://reaktivuj.cz/blog/reaktivacni-emaily-sablony</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://reaktivuj.cz/blog/email-marketing-pro-kouce</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://reaktivuj.cz/blog/klaviyo-cesky</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
 </urlset>

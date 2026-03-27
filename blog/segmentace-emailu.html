@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segmentace emailů: Jak segmentovat databázi | reaktivuj</title>
+    <meta name="description" content="Jak segmentovat emailovou databázi pro e-shop. 5 typů segmentace, konkrétní příklady a nastavení v Ecomail a SmartEmailing. Přestaňte posílat všem to samé.">
+    <meta name="keywords" content="segmentace emailů, segmentace databáze, email list segmentace, emailová segmentace e-shop, RFM segmentace">
+    <meta name="author" content="Roman Staněk">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://reaktivuj.cz/blog/segmentace-emailu">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Segmentace emailů: Jak segmentovat databázi a zvýšit tržby | reaktivuj">
+    <meta property="og:description" content="Jak segmentovat emailovou databázi pro e-shop. 5 typů segmentace, konkrétní příklady a nastavení v Ecomail a SmartEmailing. Přestaňte posílat všem to samé.">
+    <meta property="og:url" content="https://reaktivuj.cz/blog/segmentace-emailu">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80">
+    <meta property="og:site_name" content="reaktivuj">
+    <meta property="article:published_time" content="2026-03-26">
+    <meta property="article:modified_time" content="2026-03-26">
+    <meta property="article:author" content="Roman Staněk">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Segmentace emailů: Jak segmentovat databázi a zvýšit tržby | reaktivuj">
+    <meta name="twitter:description" content="5 typů segmentace emailové databáze pro e-shop. Konkrétní nastavení v Ecomail a SmartEmailing.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <!-- JSON-LD: Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Segmentace emailů: Jak segmentovat databázi a zvýšit tržby",
+      "description": "Jak segmentovat emailovou databázi pro e-shop. 5 typů segmentace, konkrétní příklady a nastavení v Ecomail a SmartEmailing.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+      "author": { "@type": "Person", "name": "Roman Staněk" },
+      "publisher": { "@type": "Organization", "name": "reaktivuj", "url": "https://reaktivuj.cz" },
+      "datePublished": "2026-03-26",
+      "dateModified": "2026-03-26",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://reaktivuj.cz/blog/segmentace-emailu" }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Co je segmentace emailů?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Segmentace emailů je rozdělení emailové databáze do menších skupin podle společných vlastností — nákupního chování, aktivity, hodnoty objednávek nebo demografických dat. Každá skupina pak dostává jiný obsah přizpůsobený jejím potřebám. Výsledek: vyšší open rate, vyšší konverze a nižší počet odhlášení." }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak začít se segmentací emailové databáze?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Začni s pěti základními segmenty: noví subscribers (první 30 dní), aktivní zákazníci (nákup za posledních 90 dní), VIP zákazníci (top 10–20 % podle hodnoty), rizikoví zákazníci (90–180 dní bez nákupu) a neaktivní (180+ dní). Tyhle segmenty zvládne nastavit každý e-shop v Ecomail nebo SmartEmailing za odpoledne." }
+        },
+        {
+          "@type": "Question",
+          "name": "O kolik procent segmentace zvyšuje tržby z emailů?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Segmentované kampaně přinášejí o 760 % vyšší tržby než single-segment kampaně (DMA). Segmentované emaily mají zároveň o 14,31 % vyšší open rate než nesegmentované (Mailchimp). Důvod je jednoduchý: zákazník dostane relevantní zprávu ve správný čas." }
+        },
+        {
+          "@type": "Question",
+          "name": "Co je RFM segmentace a jak ji použít v e-shopu?",
+          "acceptedAnswer": { "@type": "Answer", "text": "RFM segmentace hodnotí zákazníky podle tří parametrů: Recency (kdy naposledy nakoupili), Frequency (jak často nakupují) a Monetary (kolik celkem utratili). Zákazník s vysokým RFM skóre je VIP, zákazník s nízkým R je kandidát na win-back. V praxi stačí exportovat data z e-shopu, spočítat skóre a vytvořit segmenty v emailingovém nástroji." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kdy segmentace emailů nedává smysl?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Segmentace nedává smysl při databázi pod 500 kontaktů — nemáš dost dat pro statisticky relevantní výsledky. Stejně tak pokud nemáš historii nákupů nebo pokud posíláš emaily méně než jednou za měsíc. V těchto případech je lepší nejdřív databázi vybudovat a pak segmentovat." }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --gray-900: #111111;
+            --gray-800: #1a1a1a;
+            --gray-700: #2a2a2a;
+            --gray-600: #3a3a3a;
+            --gray-400: #888888;
+            --gray-300: #aaaaaa;
+            --gray-200: #cccccc;
+            --gray-100: #eeeeee;
+            --accent: #22c55e;
+            --accent-dark: #16a34a;
+            --accent-glow: rgba(34, 197, 94, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-800);
+            padding: 0 24px;
+        }
+        .nav-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .nav-logo { font-weight: 800; font-size: 18px; color: var(--white); text-decoration: none; letter-spacing: -0.5px; }
+        .nav-logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 8px; align-items: center; }
+        .nav-links a { color: var(--gray-300); text-decoration: none; font-size: 14px; font-weight: 500; padding: 6px 12px; border-radius: 6px; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--white); }
+        .nav-cta { background: var(--accent) !important; color: var(--black) !important; font-weight: 700 !important; padding: 8px 16px !important; border-radius: 8px !important; }
+        .nav-cta:hover { background: var(--accent-dark) !important; }
+
+        .hero { max-width: 760px; margin: 0 auto; padding: 56px 24px 40px; }
+        .breadcrumb { font-size: 13px; color: var(--gray-400); margin-bottom: 20px; }
+        .breadcrumb a { color: var(--gray-400); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent); }
+        .category-tag { display: inline-block; background: var(--accent-glow); color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; margin-bottom: 16px; }
+        h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 900; line-height: 1.2; letter-spacing: -1px; margin-bottom: 20px; }
+        .hero-intro { font-size: 19px; color: var(--gray-200); line-height: 1.6; margin-bottom: 28px; max-width: 680px; }
+        .meta-row { display: flex; align-items: center; gap: 16px; font-size: 13px; color: var(--gray-400); flex-wrap: wrap; }
+        .meta-row .updated { color: var(--accent); font-weight: 600; }
+        .meta-dot { color: var(--gray-700); }
+
+        .hero-image { max-width: 760px; margin: 0 auto 0; padding: 0 24px; }
+        .hero-image img { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; border: 1px solid var(--gray-800); }
+
+        article { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+
+        .stats-box { background: var(--gray-900); border: 1px solid var(--gray-700); border-left: 4px solid var(--accent); border-radius: 12px; padding: 28px 32px; margin: 40px 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 32px; font-weight: 900; color: var(--accent); letter-spacing: -1px; display: block; }
+        .stat-label { font-size: 13px; color: var(--gray-300); margin-top: 4px; line-height: 1.4; }
+        .stat-source { font-size: 11px; color: var(--gray-400); margin-top: 4px; }
+
+        h2 { font-size: clamp(22px, 3.5vw, 28px); font-weight: 800; letter-spacing: -0.5px; margin: 52px 0 20px; color: var(--white); }
+        h3 { font-size: 20px; font-weight: 700; margin: 36px 0 14px; color: var(--white); }
+        p { margin-bottom: 20px; color: var(--gray-200); }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul, ol { padding-left: 24px; margin-bottom: 20px; color: var(--gray-200); }
+        li { margin-bottom: 8px; }
+        strong { color: var(--white); font-weight: 700; }
+
+        .callout { background: var(--accent-glow); border: 1px solid var(--accent); border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+        .callout strong { color: var(--accent); }
+        .callout p { color: var(--gray-200); margin: 0; }
+
+        .warning-box { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.4); border-left: 4px solid #ef4444; border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+        .warning-box strong { color: #ef4444; }
+        .warning-box p { color: var(--gray-200); margin: 0; }
+
+        /* SEGMENT CARDS */
+        .segment-stack { display: flex; flex-direction: column; gap: 16px; margin: 28px 0; }
+        .segment-card { background: var(--gray-900); border: 1px solid var(--gray-700); border-radius: 14px; padding: 24px 28px; display: flex; gap: 20px; align-items: flex-start; }
+        .segment-number { background: var(--accent); color: var(--black); font-weight: 900; font-size: 16px; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .segment-body { flex: 1; }
+        .segment-body h3 { font-size: 17px; font-weight: 800; color: var(--white); margin: 0 0 6px; }
+        .segment-meta { font-size: 12px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .segment-body p { font-size: 15px; color: var(--gray-300); margin: 0; }
+        .segment-body ul { margin: 10px 0 0; padding-left: 18px; }
+        .segment-body ul li { font-size: 14px; color: var(--gray-300); margin-bottom: 4px; }
+
+        /* RFM TABLE */
+        .table-wrap { overflow-x: auto; margin: 28px 0; }
+        table { width: 100%; border-collapse: collapse; font-size: 15px; }
+        th { background: var(--gray-800); color: var(--white); font-weight: 700; padding: 12px 16px; text-align: left; border-bottom: 2px solid var(--gray-600); white-space: nowrap; }
+        td { padding: 12px 16px; border-bottom: 1px solid var(--gray-800); color: var(--gray-200); vertical-align: top; }
+        tr:last-child td { border-bottom: none; }
+        .check { color: var(--accent); font-weight: 700; }
+        .highlight-row td { background: rgba(34,197,94,0.05); }
+
+        /* STEPS */
+        .steps { margin: 28px 0; }
+        .step-item { display: flex; gap: 16px; margin-bottom: 12px; align-items: flex-start; }
+        .step-num { background: var(--gray-800); border: 1px solid var(--gray-600); color: var(--accent); font-weight: 800; font-size: 13px; width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .step-content { background: var(--gray-900); border: 1px solid var(--gray-800); border-radius: 10px; padding: 14px 18px; flex: 1; }
+        .step-content strong { display: block; color: var(--white); font-size: 15px; margin-bottom: 4px; }
+        .step-content p { font-size: 14px; color: var(--gray-300); margin: 0; }
+
+        /* FAQ */
+        .faq-section { margin: 60px 0 0; }
+        .faq-section h2 { margin-bottom: 28px; }
+        .faq-item { border-bottom: 1px solid var(--gray-800); padding: 24px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 { font-size: 17px; font-weight: 700; color: var(--white); margin: 0 0 12px; }
+        .faq-item p { margin: 0; color: var(--gray-300); font-size: 15px; }
+
+        /* AUTHOR */
+        .author-box { display: flex; align-items: center; gap: 16px; background: var(--gray-900); border: 1px solid var(--gray-700); border-radius: 12px; padding: 20px 24px; margin: 48px 0 32px; }
+        .author-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 900; color: var(--black); flex-shrink: 0; }
+        .author-info { font-size: 14px; }
+        .author-name { font-weight: 700; color: var(--white); font-size: 16px; }
+        .author-bio { color: var(--gray-400); margin-top: 2px; }
+
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, var(--gray-900), var(--gray-800)); border: 1px solid var(--gray-600); border-radius: 16px; padding: 40px; text-align: center; margin: 48px 0; }
+        .cta-section h2 { font-size: 26px; margin: 0 0 16px; }
+        .cta-section p { color: var(--gray-300); margin-bottom: 28px; font-size: 16px; }
+        .cta-btn { display: inline-block; background: var(--accent); color: var(--black); font-weight: 800; font-size: 16px; padding: 14px 32px; border-radius: 10px; text-decoration: none; cursor: pointer; border: none; transition: background 0.2s, transform 0.1s; }
+        .cta-btn:hover { background: var(--accent-dark); transform: translateY(-1px); text-decoration: none; }
+
+        /* RELATED */
+        .related-section { margin: 64px 0 0; }
+        .related-section h2 { font-size: 22px; margin-bottom: 24px; }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .related-card { background: var(--gray-900); border: 1px solid var(--gray-800); border-radius: 10px; padding: 20px; text-decoration: none; transition: border-color 0.2s; display: block; }
+        .related-card:hover { border-color: var(--accent); text-decoration: none; }
+        .related-tag { font-size: 11px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .related-title { font-size: 14px; font-weight: 700; color: var(--white); line-height: 1.4; }
+
+        footer { border-top: 1px solid var(--gray-800); padding: 32px 24px; text-align: center; font-size: 13px; color: var(--gray-400); }
+        footer a { color: var(--gray-400); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+
+        @media (max-width: 640px) {
+            .stats-box { grid-template-columns: 1fr; gap: 20px; }
+            .related-grid { grid-template-columns: 1fr; }
+            .segment-card { flex-direction: column; gap: 12px; }
+            .hero-image img { height: 220px; }
+            h1 { letter-spacing: -0.5px; }
+            .cta-section { padding: 28px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="https://reaktivuj.cz" class="nav-logo">reaktivuj<span>.</span></a>
+        <div class="nav-links">
+            <a href="/blog">Blog</a>
+            <a href="https://reaktivuj.cz" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/roman-reaktivuj/konzultace'});return false;">Bezplatný hovor →</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="breadcrumb">
+        <a href="https://reaktivuj.cz">reaktivuj.cz</a> / <a href="/blog">Blog</a> / Segmentace emailů
+    </div>
+    <div class="category-tag">Strategie</div>
+    <h1>Segmentace emailů: Jak segmentovat databázi a zvýšit tržby</h1>
+    <p class="hero-intro">Průměrný e-shop posílá stejný email 10 000 lidem. Nový subscriber dostane totéž co věrný zákazník, který koupil pětkrát. Výsledek? Open rate 15 % a tržby, které zůstávají na stole. Segmentace to mění.</p>
+    <div class="meta-row">
+        <span class="updated">Naposledy aktualizováno: 26. 3. 2026</span>
+        <span class="meta-dot">·</span>
+        <span>Roman Staněk</span>
+        <span class="meta-dot">·</span>
+        <span>9 min čtení</span>
+    </div>
+</header>
+
+<div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80"
+         alt="segmentace emailů databáze analytics e-shop"
+         width="1200" height="630">
+</div>
+
+<article>
+
+    <div class="stats-box">
+        <div class="stat-item">
+            <span class="stat-number">+14,31 %</span>
+            <div class="stat-label">vyšší open rate mají segmentované emaily oproti nesegmentovaným</div>
+            <div class="stat-source">Mailchimp</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">760 %</span>
+            <div class="stat-label">vyšší tržby přinášejí segmentované kampaně než single-segment mailing</div>
+            <div class="stat-source">DMA</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">72 %</span>
+            <div class="stat-label">zákazníků reaguje pouze na personalizované zprávy relevantní jejich zájmům</div>
+            <div class="stat-source">SmarterHQ</div>
+        </div>
+    </div>
+
+    <h2>Proč segmentace zvyšuje tržby, ne jen open rate</h2>
+
+    <p>Mnoho e-shopů sleduje segmentaci emailů jako taktiku pro lepší statistiky. Vyšší open rate vypadá hezky v reportu. Ale to není důvod, proč ji dělat.</p>
+
+    <p>Segmentace zvyšuje tržby, protože <strong>relevantní zpráva ve správný čas vede k nákupu.</strong> Zákazník, který koupil před třemi dny, nepotřebuje uvítací nabídku. Potřebuje email o tom, jak z produktu vytěžit maximum, a cross-sell, který má smysl k jeho nákupu.</p>
+
+    <p>Zákazník, který nekoupil 150 dní, nepotřebuje novinky o novém zboží. Potřebuje připomenutí, proč u tebe nakoupil poprvé, a důvod, proč se vrátit.</p>
+
+    <p>Posílat všem to samé je jako mít prodavače v kamenném obchodě, který každému zákazníkovi bez rozdílu říká totéž. Zákazník, který přišel potřetí tento měsíc, to pozná. A odejde.</p>
+
+    <div class="callout">
+        <p><strong>Praktický příklad:</strong> E-shop s doplňky stravy posílal newsletter celé databázi. Po zavedení segmentace podle nákupní aktivity a kategorie produktů vzrostly tržby z emailů o 210 % za tři měsíce. Databáze se nezměnila. Změnila se relevance zpráv.</p>
+    </div>
+
+    <p>Segmentace také snižuje počet odhlášení. Lidé se neodhlašují proto, že dostávají příliš mnoho emailů. Odhlašují se proto, že dostávají emaily, které je nezajímají. Segmentovaná databáze ti drží zdravou míru doručitelnosti a nižší spam skóre.</p>
+
+    <p>Více o základech email marketingu pro e-shopy si přečti v článku <a href="/blog/email-marketing-pro-eshopy">Email marketing pro e-shopy: Kompletní průvodce</a>.</p>
+
+    <h2>5 základních segmentů pro každý e-shop</h2>
+
+    <p>Nezačínaj s dvaceti segmenty. Tyhle pět pokryjí 90 % situací a dají ti okamžité výsledky.</p>
+
+    <div class="segment-stack">
+
+        <div class="segment-card">
+            <div class="segment-number">1</div>
+            <div class="segment-body">
+                <div class="segment-meta">První 30 dní</div>
+                <h3>Noví subscribers</h3>
+                <p>Lidé, kteří se přihlásili k odběru, ale ještě nenakoupili. Nebo nakoupili poprvé za posledních 30 dní. Toto je nejdůležitější segment pro budování vztahu.</p>
+                <ul>
+                    <li>Pošli uvítací sekvenci (3–5 emailů): kdo jsi, co nabízíš, proč tě zákazníci mají rádi</li>
+                    <li>Vzdělávej je o produktech, nejčastějších otázkách a výhodách nakupování u tebe</li>
+                    <li>Nabídni slevu na první (nebo druhý) nákup — ale až ve třetím emailu, ne hned</li>
+                    <li>Neposílej jim stejné promo akce jako zákazníkům, kteří nakoupili desětkrát</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="segment-card">
+            <div class="segment-number">2</div>
+            <div class="segment-body">
+                <div class="segment-meta">Nákup za posledních 90 dní</div>
+                <h3>Aktivní zákazníci</h3>
+                <p>Zákazníci, kteří nakoupili v posledních třech měsících. Jsou teplí, znají tě, a pravděpodobnost dalšího nákupu je nejvyšší.</p>
+                <ul>
+                    <li>Cross-sell: produkty relevantní k tomu, co koupili</li>
+                    <li>Novinky a restocky z kategorií, které je zajímají</li>
+                    <li>Pozvání do věrnostního programu, pokud ho máš</li>
+                    <li>Sezónní nabídky a výprodeje — tito zákazníci konvertují nejlépe</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="segment-card">
+            <div class="segment-number">3</div>
+            <div class="segment-body">
+                <div class="segment-meta">Top 10–20 % podle hodnoty objednávek</div>
+                <h3>VIP zákazníci</h3>
+                <p>Zákazníci s nejvyšší hodnotou objednávek nebo nejčastějšími nákupy. Tito lidé generují neúměrně velký podíl tržeb — a zaslouží si jiné zacházení.</p>
+                <ul>
+                    <li>Early access k novým produktům a výprodejům</li>
+                    <li>Exkluzivní nabídky, které nespatří zbytek databáze</li>
+                    <li>Osobní tón: jménem, s odkazem na jejich předchozí nákupy</li>
+                    <li>Oslava věrnosti: výroční email, poděkování, dárek k objednávce</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="segment-card">
+            <div class="segment-number">4</div>
+            <div class="segment-body">
+                <div class="segment-meta">90–180 dní bez nákupu</div>
+                <h3>Rizikoví zákazníci</h3>
+                <p>Zákazníci, kteří začínají „usínat". Ještě nejsou ztraceni, ale bez aktivního oslovení brzy přejdou ke konkurenci nebo přestanou databázi otevírat.</p>
+                <ul>
+                    <li>Win-back sekvence: připomenutí, co u tebe mají rádi</li>
+                    <li>Dotaz na spokojenost — otevírá konverzaci bez tvrdého prodeje</li>
+                    <li>Časově omezená nabídka s konkrétním důvodem (výprodej, nová kolekce)</li>
+                    <li>Ukázka toho, co propásli — nové produkty, zákaznické recenze</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="segment-card">
+            <div class="segment-number">5</div>
+            <div class="segment-body">
+                <div class="segment-meta">180+ dní bez nákupu</div>
+                <h3>Neaktivní zákazníci</h3>
+                <p>Zákazníci, kteří dlouhodobě neotvírají emaily ani nenakupují. Posílání jim standardního obsahu poškozuje doručitelnost celé databáze.</p>
+                <ul>
+                    <li>Reaktivační sekvence: 2–3 emaily s jednoduchým CTA ("Stále tě zajímáme?")</li>
+                    <li>Pokud nereagují ani na reaktivační emaily, vyřaď je z databáze</li>
+                    <li>Čistá databáze = lepší doručitelnost pro zbytek kontaktů</li>
+                    <li>Viz náš průvodce: <a href="/blog/retencni-marketing">retenční marketing a win-back strategie</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <h2>Jak segmentovat podle RFM</h2>
+
+    <p>RFM je analytická metoda, která hodnotí zákazníky podle tří dimenzí. Používají ji světové e-commerce firmy, ale zvládneš ji aplikovat i na střední e-shop s Excelem.</p>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Parametr</th>
+                    <th>Co měří</th>
+                    <th>Praktická otázka</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-row">
+                    <td><strong>R — Recency</strong></td>
+                    <td>Kdy naposledy zákazník nakoupil</td>
+                    <td>Nakoupil za posledních 30 / 90 / 180 dní?</td>
+                </tr>
+                <tr>
+                    <td><strong>F — Frequency</strong></td>
+                    <td>Jak často zákazník nakupuje</td>
+                    <td>Má 1 objednávku nebo 5+?</td>
+                </tr>
+                <tr>
+                    <td><strong>M — Monetary</strong></td>
+                    <td>Celková hodnota nákupů zákazníka</td>
+                    <td>Utratil 500 Kč nebo 15 000 Kč?</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>V praxi přiřadíš každému zákazníkovi skóre 1–5 v každé dimenzi. Zákazník s hodnotami R5, F5, M5 je tvůj nejlepší zákazník — přes to nejede vlak, takového zákazníka si otoč a investuj do něj.</p>
+
+    <p>Zákazník R1, F1, M1 je kandidát na vyčištění z databáze. Zákazník R2, F4, M4 je rizikový VIP — dříve kupoval hodně a často, ale teď začíná chladnout. To je nejdůležitější segment pro win-back.</p>
+
+    <div class="callout">
+        <p><strong>Jak na to v praxi:</strong> Exportuj historii objednávek z e-shopu do Excelu. Spočítej pro každého zákazníka počet dní od posledního nákupu (R), počet objednávek (F) a celkovou hodnotu (M). Seřaď každý sloupec a rozděl do pětin. Výsledkem jsou RFM skóre, podle kterých vytvoříš segmenty v emailingovém nástroji.</p>
+    </div>
+
+    <h2>Jak nastavit segmenty v Ecomail a SmartEmailing</h2>
+
+    <p>Obě česká emailingová řešení segmentaci zvládají. Postup se liší v detailech, ale logika je stejná.</p>
+
+    <h3>Ecomail</h3>
+
+    <div class="steps">
+        <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <strong>Propoj e-shop přes API nebo plugin</strong>
+                <p>Ecomail má nativní integraci pro Shoptet, WooCommerce a Shopify. Po propojení se nákupní data synchronizují automaticky.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <strong>Jdi do sekce Kontakty a klikni na Segmenty</strong>
+                <p>Vytvoř nový segment. Ecomail umožňuje filtrovat podle data posledního nákupu, počtu nákupů, hodnoty objednávek i kategorie produktů.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <strong>Nastav podmínky pro každý segment</strong>
+                <p>Příklad pro aktivní zákazníky: "Datum posledního nákupu je v posledních 90 dnech" + "Celkový počet objednávek je 1 nebo více". Ulož a segment se bude automaticky aktualizovat.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-content">
+                <strong>Přiřaď segmenty k automatizacím a kampaním</strong>
+                <p>Při vytváření kampaně nebo automationu vyber cílový segment místo "Celá databáze". To je celé kouzlo.</p>
+            </div>
+        </div>
+    </div>
+
+    <h3>SmartEmailing</h3>
+
+    <div class="steps">
+        <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <strong>Nastav importy nebo API napojení na e-shop</strong>
+                <p>SmartEmailing má vlastní XML feed a REST API. Pro Shoptet existuje přímá integrace. Nákupní data přijdou jako custom fields u každého kontaktu.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <strong>Vytvoř skupiny nebo dynamické segmenty</strong>
+                <p>Ve SmartEmailingu pracuješ s "Kontaktními skupinami" pro statické segmenty nebo s "Automatizačními podmínkami" pro dynamické. Dynamické jsou výrazně užitečnější — aktualizují se samy.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <strong>Použij custom fields pro RFM data</strong>
+                <p>Nastav custom fields: "Datum posledního nákupu", "Počet objednávek", "Celková hodnota". Pravidelně je aktualizuj přes import nebo API. Pak filtruj podle těchto polí.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-content">
+                <strong>Vytvořte scénáře v automationu</strong>
+                <p>SmartEmailing má vizuální builder automatizací. Postav scénář: "Pokud zákazník nenakoupil 90 dní, přesun do segmentu Rizikoví a spusť win-back sekvenci."</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Nejčastější chyby v segmentaci emailů</h2>
+
+    <p>Segmentace je mocný nástroj, ale tyhle chyby ji znehodnotí dřív, než ti přinese výsledky.</p>
+
+    <h3>Příliš mnoho segmentů najednou</h3>
+
+    <p>Vidím to pravidelně: e-shop si nastaví 15 segmentů, vytvoří různý obsah pro každý z nich, a pak to za tři týdny vzdá, protože je to příliš moc práce. Začni s pěti segmenty popsanými výše. Přidávej další až tehdy, když ti základní segmenty fungují a máš kapacitu.</p>
+
+    <h3>Segmenty se neaktualizují automaticky</h3>
+
+    <p>Zákazník se přesunuje mezi segmenty. Někdo, kdo byl aktivní, se za 90 dní stane rizikovým. Pokud segmenty neaktualizuješ automaticky nebo pravidelně ručně, posíláš špatné zprávy špatným lidem. Nastav dynamické podmínky, ne statické seznamy.</p>
+
+    <h3>Segmentace bez změny obsahu</h3>
+
+    <p>Tohle je nejčastější chyba. E-shop nastaví segmenty, ale pošle všem ten stejný newsletter. Segmentace má smysl jen tehdy, když každý segment dostane jiný obsah. Jinak je to jen zbytečná administrativa.</p>
+
+    <div class="warning-box">
+        <p><strong>Pozor:</strong> Segmentace ti nepomůže, pokud nemáš nákupní data. Před segmentací zkontroluj, zda tvůj emailingový nástroj skutečně přijímá data z e-shopu. Mnoho e-shopů má napojení technicky rozbité nebo neúplné.</p>
+    </div>
+
+    <p>Více o retenci zákazníků a návazných strategiích na email marketing najdeš v článku <a href="/blog/retencni-marketing">retenční marketing pro e-shopy</a>.</p>
+
+    <h2>Kdy segmentace nedává smysl</h2>
+
+    <p>Segmentace je nástroj pro e-shopy s daty. V těchto situacích ji odkládej:</p>
+
+    <ul>
+        <li><strong>Databáze pod 500 kontaktů.</strong> Nemáš dost dat pro statisticky relevantní výsledky. Každý segment bude mít 50–100 lidí a výsledky ti nic neřeknou. Nejdřív vybuduj databázi, pak segmentuj.</li>
+        <li><strong>Žádná historie nákupů.</strong> Segmentace podle chování funguje jen tehdy, když chování vidíš. Pokud tvůj e-shop nepředává nákupní data do emailingového nástroje, pracuješ naslepo.</li>
+        <li><strong>Posíláš méně než jednou za měsíc.</strong> Pokud e-mailová komunikace funguje ad hoc, segmentace ti nepomůže. Nejdřív nastav pravidelný rhythmus, pak přidávej segmentaci.</li>
+        <li><strong>Nemáš kapacitu na různý obsah.</strong> Segmentace bez různého obsahu pro různé segmenty je zbytečná. Pokud nemáš čas psát různé verze, počkej, až kapacitu budeš mít.</li>
+    </ul>
+
+    <p>Pokud se v některém z těchto bodů poznáváš, začni nejdřív od základů. Co potřebuješ vědět o nastavení email marketingu pro e-shop od nuly, najdeš na <a href="https://reaktivuj.cz">reaktivuj.cz</a>.</p>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+        <h2>Nejčastější otázky o segmentaci emailů</h2>
+
+        <div class="faq-item">
+            <h3>Co je segmentace emailů?</h3>
+            <p>Segmentace emailů je rozdělení emailové databáze do menších skupin podle společných vlastností — nákupního chování, aktivity, hodnoty objednávek nebo demografických dat. Každá skupina pak dostává jiný obsah přizpůsobený jejím potřebám. Výsledek: vyšší open rate, vyšší konverze a nižší počet odhlášení.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Jak začít se segmentací emailové databáze?</h3>
+            <p>Začni s pěti základními segmenty: noví subscribers (první 30 dní), aktivní zákazníci (nákup za posledních 90 dní), VIP zákazníci (top 10–20 % podle hodnoty), rizikoví zákazníci (90–180 dní bez nákupu) a neaktivní (180+ dní). Tyhle segmenty zvládne nastavit každý e-shop v Ecomail nebo SmartEmailing za odpoledne.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>O kolik procent segmentace zvyšuje tržby z emailů?</h3>
+            <p>Segmentované kampaně přinášejí o 760 % vyšší tržby než single-segment kampaně (DMA). Segmentované emaily mají zároveň o 14,31 % vyšší open rate než nesegmentované (Mailchimp). Důvod je jednoduchý: zákazník dostane relevantní zprávu ve správný čas.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Co je RFM segmentace a jak ji použít v e-shopu?</h3>
+            <p>RFM segmentace hodnotí zákazníky podle tří parametrů: Recency (kdy naposledy nakoupili), Frequency (jak často nakupují) a Monetary (kolik celkem utratili). Zákazník s vysokým RFM skóre je VIP, zákazník s nízkým R je kandidát na win-back. V praxi stačí exportovat data z e-shopu, spočítat skóre a vytvořit segmenty v emailingovém nástroji.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Kdy segmentace emailů nedává smysl?</h3>
+            <p>Segmentace nedává smysl při databázi pod 500 kontaktů — nemáš dost dat pro statisticky relevantní výsledky. Stejně tak pokud nemáš historii nákupů nebo pokud posíláš emaily méně než jednou za měsíc. V těchto případech je lepší nejdřív databázi vybudovat a pak segmentovat.</p>
+        </div>
+    </div>
+
+    <!-- Author -->
+    <div class="author-box">
+        <div class="author-avatar">R</div>
+        <div class="author-info">
+            <div class="author-name">Roman Staněk</div>
+            <div class="author-bio">Email marketing specialista. Pomáhám e-shopům zvyšovat tržby z existující databáze bez navyšování reklamního budgetu. Zakladatel reaktivuj.cz.</div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+        <h2>Chceš nastavit segmentaci pro svůj e-shop?</h2>
+        <p>Projdeme tvoji databázi, navrhneme segmenty a ukážeme, kde nechávají tržby na stole. Hovor je zdarma, trvá 30 minut.</p>
+        <a class="cta-btn" href="https://calendly.com/roman-reaktivuj/konzultace" onclick="Calendly.initPopupWidget({url:'https://calendly.com/roman-reaktivuj/konzultace'});return false;">Chci bezplatný hovor →</a>
+    </div>
+
+    <!-- Related -->
+    <div class="related-section">
+        <h2>Související články</h2>
+        <div class="related-grid">
+            <a href="/blog/email-marketing-pro-eshopy" class="related-card">
+                <div class="related-tag">Strategie</div>
+                <div class="related-title">Email marketing pro e-shopy: Kompletní průvodce 2026</div>
+            </a>
+            <a href="/blog/retencni-marketing" class="related-card">
+                <div class="related-tag">Retence</div>
+                <div class="related-title">Retenční marketing: Jak udržet zákazníky a zvýšit LTV</div>
+            </a>
+            <a href="/blog/reaktivacni-emaily-sablony" class="related-card">
+                <div class="related-tag">Win-back</div>
+                <div class="related-title">Reaktivační emaily: Šablony a strategie pro win-back kampaně</div>
+            </a>
+        </div>
+    </div>
+
+</article>
+
+<footer>
+    <p>
+        <a href="https://reaktivuj.cz">reaktivuj.cz</a>
+        &nbsp;·&nbsp;
+        <a href="/blog">Blog</a>
+        &nbsp;·&nbsp;
+        <a href="https://reaktivuj.cz/kontakt">Kontakt</a>
+    </p>
+    <p style="margin-top: 12px;">Copyright &copy; 2026 reaktivuj.cz &mdash; všechna práva vyhrazena.</p>
+</footer>
+
+</body>
+</html>
